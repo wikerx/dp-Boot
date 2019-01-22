@@ -1,0 +1,40 @@
+@layout("../../system/layout.html", {title: "InnoDB free: 9216 kB"}){
+<table class="form" id="form">
+    <tr>
+        <td class="formTitle">部门名称<font face="宋体">*</font></td>
+        <td class="formValue">
+            <input type="text" class="form-control" placeholder="部门名称" v-model="sysDepartment.name" isvalid="yes" checkexpession="NotNull">
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">创建人<font face="宋体">*</font></td>
+        <td class="formValue">
+            <input type="text" class="form-control" placeholder="创建人" v-model="sysDepartment.creater" isvalid="yes" checkexpession="NotNull" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">部门经理<font face="宋体">*</font></td>
+        <td class="formValue">
+            <select style="width:290px;" class="form-control userSelect" isvalid="yes">
+                <option v-model="sysDepartment.managerId" selected><b style="color: #00B83F;">{{sysDepartment.manager}}</b></option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">部门描述信息<font face="宋体">*</font></td>
+        <td class="formValue">
+            <textarea type="text" class="form-control" placeholder="部门描述信息" v-model="sysDepartment.discribe" isvalid="yes" checkexpession="NotNull"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">信息查看权限<font face="宋体">*</font></td>
+        <td class="formValue">
+            <select class="form-control" v-model="sysDepartment.check" isvalid="yes" checkexpession="NotNull">
+                <option value="0"><b style="color: #FD482C;">关闭</b></option>
+                <option value="1"><b style="color: #00B83F;">开启</b></option>
+            </select>
+        </td>
+    </tr>
+</table>
+<script src="${ctxPath}/static/js/base/dept/edit.js"></script>
+@}

@@ -1,0 +1,30 @@
+@layout("../../system/layout.html", {title: "InnoDB free: 9216 kB"}){
+<div class="row">
+    <div class="col-md-4 form-inline pull-left">
+        <div class="form-group">
+                <input v-model="name" \@keyup.enter="load" type="text" class="form-control" placeholder="请输入部门名称" style="width: 120px;" />
+                <input v-model="creater" \@keyup.enter="load" type="text" class="form-control" placeholder="请输入创建人" style="width: 120px;" />
+                <input v-model="createTime" \@keyup.enter="load" type="text" class="form-control" placeholder="请输入创建时间" style="width: 120px;" />
+                <input v-model="manager" \@keyup.enter="load" type="text" class="form-control" placeholder="请输入部门经理" style="width: 120px;" />
+        </div>
+    </div>
+    <div class="col-md-4 form-inline pull-center">
+        <div class="form-group">
+            <a class="btn btn-primary" \@click="load"><i class="fa fa-search"></i>&nbsp;查询</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="btn-toolbar pull-right">
+            <div class="btn-group">
+                <a v-if="hasPermission('sys:dept:list')" class="btn btn-default" onclick="reload();"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                <a v-if="hasPermission('sys:dept:save')" class="btn btn-default" \@click="save"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                <a v-if="hasPermission('sys:dept:remove')" class="btn btn-default" \@click="remove(true)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <table id="dataGrid"></table>
+</div>
+<script src="${ctxPath}/static/js/base/dept/list.js"></script>
+@}

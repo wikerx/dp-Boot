@@ -1,0 +1,32 @@
+@layout("../../system/layout.html", {title: "部门管理"}){
+<table class="form" id="form">
+    <tr>
+        <td class="formTitle">部门名称<font face="宋体">*</font></td>
+        <td class="formValue">
+            <input type="text" class="form-control" placeholder="部门名称" v-model="sysDepartment.name" isvalid="yes" checkexpession="NotNull">
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">部门描述信息<font face="宋体">*</font></td>
+        <td class="formValue">
+            <textarea class="form-control" placeholder="部门描述信息" v-model="sysDepartment.discribe" isvalid="yes" checkexpession="NotNull"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">部门经理；<font face="宋体">*</font></td>
+        <td class="formValue">
+            <select style="width:290px;" class="form-control userSelect" isvalid="yes" checkexpession="NotNull"></select>
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">信息查看权限<font face="宋体">*</font></td>
+        <td class="formValue">
+            <select class="form-control" v-model="sysDepartment.check" isvalid="yes" checkexpession="NotNull">
+                <option value="0"><b style="color: #FD482C;">关闭</b></option>
+                <option value="1"><b style="color: #00B83F;">开启</b></option>
+            </select>
+        </td>
+    </tr>
+</table>
+<script src="${ctxPath}/static/js/base/dept/add.js"></script>
+@}

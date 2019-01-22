@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.scott.dp.modules.sys.dao.SysDepartmentMapper">
+	<!--查询所有部门信息-->
+	<select id="listAll" resultType="com.scott.dp.modules.sys.entity.SysDepartmentEntity">
+		SELECT a.id,a.name FROM  sys_department a ORDER BY  a.id DESC
+	</select>
+
+
+	<select id="listForPage" resultType="com.scott.dp.modules.sys.entity.SysDepartmentEntity">
+		SELECT a.id,a.name,a.create_id,b.username AS creater,a.create_time,a.manager_id,c.username AS manager,a.discribe,a.check
+		FROM sys_department a
+		LEFT JOIN sys_user b ON a.create_id = b.user_id
+		LEFT JOIN sys_user c ON a.manager_id = c.user_id
+		WHERE 1 = 1
+		<if test="name != null and name.trim() != ''">
+			AND a.name LIKE concat('%',#{name},'%')
+		</if>
+		<if test="creater != null and creater.trim() != ''">
+			and b.username LIKE concat('%',#{creater},'%')
+		</if>
+		<if test="manager != null and manager.trim() != ''">
+			AND c.username  LIKE concat('%',#{manager},'%')
+		</if>
+		<if test=" startDate != null and startDate != '' and endDate != null and endDate != '' ">
+			AND a.create_time BETWEEN #{startDate} AND #{endDate}
+		</if>
+	</select>
+	
+	<insert id="save">
+		INSERT INTO sys_department (
+			`name`, 
+			`create_id`, 
+			`create_time`, 
+			`discribe`, 
+			`manager_id`, 
+			`check`
+		)
+		VALUES (
+			#{name}, 
+			#{createId}, 
+			NOW(),
+			#{discribe}, 
+			#{managerId}, 
+			#{check}
+		)
+	</insert>
+	
+	<select id="getObjectById" resultType="com.scott.dp.modules.sys.entity.SysDepartmentEntity">
+		SELECT a.id,a.name,a.create_id,b.username AS creater,a.create_time,a.manager_id,c.username AS manager,a.discribe,a.check
+		FROM sys_department a
+		LEFT JOIN sys_user b ON a.create_id = b.user_id
+		LEFT JOIN sys_user c ON a.manager_id = c.user_id
+		WHERE
+		a.id = #{id}
+	</select>
+	
+	<update id="update">
+		UPDATE sys_department
+	 	<set>
+			<if test="name != null">`name` = #{name}, </if>
+			<if test="createId != null">`create_id` = #{createId}, </if>
+			create_time = NOW(),
+			<if test="discribe != null">`discribe` = #{discribe}, </if>
+			<if test="managerId != null">`manager_id` = #{managerId}, </if>
+			<if test="check != null">`check` = #{check}</if>
+		</set>
+		WHERE
+			id = #{id}
+	</update>
+	
+	<delete id="batchRemove">
+		DELETE
+		FROM
+			sys_department
+		WHERE
+			id IN
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>
