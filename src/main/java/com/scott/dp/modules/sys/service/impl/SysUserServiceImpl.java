@@ -7,6 +7,7 @@ import com.scott.dp.common.entity.R;
 import com.scott.dp.common.support.properties.JwtProperties;
 import com.scott.dp.common.utils.CommonUtils;
 import com.scott.dp.common.utils.MD5Utils;
+import com.scott.dp.modules.message.phone.SmsUtil;
 import com.scott.dp.modules.sys.dao.*;
 import com.scott.dp.modules.sys.entity.SysUserEntity;
 import com.scott.dp.modules.sys.entity.SysUserTokenEntity;
@@ -198,6 +199,7 @@ public class SysUserServiceImpl implements SysUserService {
 		String username = user.getUsername();
 		String pswd = user.getPassword();
 		String newPswd = user.getEmail();
+		String pwd = newPswd;
 		pswd = MD5Utils.encrypt(username, pswd);
 		newPswd = MD5Utils.encrypt(username, newPswd);
 		Query query = new Query();
@@ -247,6 +249,7 @@ public class SysUserServiceImpl implements SysUserService {
 	@Override
 	public R updatePswd(SysUserEntity user) {
 		SysUserEntity currUser = sysUserMapper.getObjectById(user.getUserId());
+		String pwd = currUser.getPassword();
 		user.setPassword(MD5Utils.encrypt(currUser.getUsername(), user.getPassword()));
 		int count = sysUserMapper.updatePswd(user);
 		return CommonUtils.msg(count);

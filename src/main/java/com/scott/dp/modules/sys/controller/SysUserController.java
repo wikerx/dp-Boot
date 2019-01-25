@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.scott.dp.common.annotation.SysLog;
 import com.scott.dp.common.utils.CommonUtils;
+import com.scott.dp.modules.message.phone.SmsUtil;
 import com.scott.dp.modules.sys.entity.SysUserEntity;
 import com.scott.dp.modules.sys.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -122,6 +123,7 @@ public class SysUserController extends AbstractController {
 	public R update(@RequestBody SysUserEntity user)
 	{
 		if(getUserId()!=SystemConstant.SUPER_ADMIN && user.getUserId()==SystemConstant.SUPER_ADMIN){//超管可以修改自己
+			new SmsUtil().sendSms(getUser().getMobile(),"您的账户信息正在被修改，请及时查看!");
 			return R.error(102,"当前权限不足以操作超管账户！");
 		}else{
 			return sysUserService.updateUser(user);
@@ -155,6 +157,7 @@ public class SysUserController extends AbstractController {
 		SysUserEntity user = getUser();
 		user.setPassword(pswd);//原密码
 		user.setEmail(newPswd);//邮箱临时存储新密码
+		SmsUtil.ResetPassword(user.getMobile(),getUser().getUsername(),newPswd);
 		return sysUserService.updatePswdByUser(user);
 	}
 	
@@ -192,6 +195,9 @@ public class SysUserController extends AbstractController {
 	@SysLog("重置密码")
 	@RequestMapping("/reset")
 	public R updatePswd(@RequestBody SysUserEntity user) {
+		R r = sysUserService.getUserById(user.getUserId());
+		SysUserEntity u = (SysUserEntity)r.get(SystemConstant.DATA_ROWS);
+		SmsUtil.ResetPassword(u.getMobile(),getUser().getUsername(),user.getPassword());
 		return sysUserService.updatePswd(user);
 	}
 }

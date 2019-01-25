@@ -31,8 +31,7 @@ var vm = new Vue({
 				url: '../../sys/dept/listAll?_' + $.now(),
 				placeholder: '请选择所属部门',
 				value: 'id',
-				text: 'name',
-				selected: vm.user.deptIdList
+				text: 'name'
 			});
 		},
 		orgTree: function() {

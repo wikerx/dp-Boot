@@ -48,7 +48,10 @@ function getGrid() {
 		}, {
 			field : "mobile",
 			title : "手机号",
-			width : "130px"
+			width : "130px",
+            formatter : function(value , row, index) {
+                return value.substring(0, 3)+"<b style='color: #761c19;'>***</b>"+value.substring(value.length-4, 4);
+            }
 		}, {
 			field : "status",
 			title : "状态",
