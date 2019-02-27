@@ -4,7 +4,7 @@
         <div class="form-group">
         <% for(column in columns!) { %>
                 <% if(column.columnName != pk.columnName || pk.extra != 'auto_increment') { %>
-            <input v-model="${column.fieldName}" \@keyup.enter="load" type="text" class="form-control" placeholder="请输入${column.columnComment}" style="width: 120px;" />
+            <input v-model="${column.fieldName}" \@keyup.enter="load" type="text" class="form-control" placeholder="请输入${column.columnComment}" style="width: 80px;" />
                  <% } %>
                 <% } %>
         </div>

@@ -18,7 +18,9 @@ function getGrid() {
 		url: '../../${requestMapping}/list?_' + $.now(),
 		height: $(window).height()-56,
 		queryParams: function(params){
-			params.name = vm.keyword;
+			<% for(column in columns!) { %>
+                  params.${column.fieldName} = vm.${column.fieldName};
+            <% } %>
 			return params;
 		},
 		columns: [
