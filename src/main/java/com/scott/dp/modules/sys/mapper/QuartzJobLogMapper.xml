@@ -23,6 +23,12 @@
 			<if test="name != null and name.trim() != ''">
 				AND bean_name LIKE concat('%',#{name},'%')
 			</if>
+			<if test="methodName != null and methodName.trim() != ''">
+				AND method_name LIKE concat('%',#{methodName},'%')
+			</if>
+			<if test="status != null and status.trim() != ''">
+				AND status LIKE concat('%',#{status},'%')
+			</if>
 		</where>
 		ORDER BY
 			gmt_create DESC

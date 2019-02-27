@@ -18,7 +18,8 @@ function getGrid() {
 		url: '../../sys/dept/list?_' + $.now(),
 		height: $(window).height()-56,
 		queryParams: function(params){
-			params.name = vm.keyword;
+			params.name = vm.name;
+			params.manager = vm.manager;
 			return params;
 		},
 		columns: [

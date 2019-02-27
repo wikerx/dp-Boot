@@ -1,0 +1,32 @@
+@layout("../../system/layout.html", {title: "定时任务日志; InnoDB free: 27648 kB"}){
+<div class="row">
+    <div class="col-md-4 form-inline pull-left">
+        <div class="form-group">
+            <input v-model="jobId" \@keyup.enter="load" type="text" class="form-control" placeholder="请输入任务id" style="width: 80px;" />
+            <input v-model="beanName" \@keyup.enter="load" type="text" class="form-control" placeholder="请输入spring bean名称" style="width: 80px;" />
+            <input v-model="methodName" \@keyup.enter="load" type="text" class="form-control" placeholder="请输入方法名" style="width: 80px;" />
+            <select v-model="status" \@keyup.enter="load" class="form-control" style="width: 80px;">
+                <option value="">所有</option>
+                <option  value="1">执行成功</option>
+                <option  value="0">执行失败</option>
+            </select>
+        </div>
+    </div>
+        <div class="col-md-4 form-inline pull-center">
+            <div class="form-group">
+                <a class="btn btn-primary" \@click="load"><i class="fa fa-search"></i>&nbsp;查询</a>
+            </div>
+        </div>
+        <div class="col-md-4 form-inline pull-right">
+            <div class="btn-group">
+                <a v-if="hasPermission('quartz:job:log:list')" class="btn btn-default" onclick="reload();"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                <!--<a v-if="hasPermission('quartz:job:log:remove')" class="btn btn-default" \@click="remove(true)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                <a v-if="hasPermission('quartz:job:log:clear')" class="btn btn-default" \@click="clear"><i class="fa fa-eraser"></i>&nbsp;清空</a>-->
+            </div>
+        </div>
+</div>
+<div class="row">
+    <table id="dataGrid"></table>
+</div>
+<script src="${ctxPath}/static/js/base/quartz/job/log/list.js"></script>
+@}

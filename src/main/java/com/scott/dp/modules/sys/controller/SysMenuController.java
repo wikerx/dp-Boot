@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import com.scott.dp.common.constant.SystemConstant;
 import com.scott.dp.modules.sys.entity.SysRoleEntity;
 import com.scott.dp.modules.sys.entity.SysUserEntity;
 import com.scott.dp.modules.sys.service.SysRoleService;
@@ -55,11 +56,15 @@ public class SysMenuController extends AbstractController {
 	 * @return
 	 */
 	@RequestMapping("/listByRoleId")
-	public List<SysMenuEntity> selectByRoleId() {
+	public List<SysMenuEntity> selectByRoleId(@RequestParam Map<String, Object> params) {
 		SysUserEntity userEntity = getUser();
-		List<Long> list= sysRoleService.listUserRoleId(userEntity.getUserId());
-		Long roleId = Long.parseLong(list.get(0).toString());//多个权限只取第一个
-		return sysMenuService.selectByRoleId(roleId);
+		if(userEntity.getUserId()== SystemConstant.SUPER_ADMIN){//新的菜单只有管理员能操作
+			return sysMenuService.listMenu(params);
+		}else {
+			List<Long> list = sysRoleService.listUserRoleId(userEntity.getUserId());
+			Long roleId = Long.parseLong(list.get(0).toString());//多个权限只取第一个
+			return sysMenuService.selectByRoleId(roleId);
+		}
 	}
 	
 	/**
