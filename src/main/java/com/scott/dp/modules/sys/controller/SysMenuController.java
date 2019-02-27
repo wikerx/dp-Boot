@@ -5,6 +5,9 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import com.scott.dp.modules.sys.entity.SysRoleEntity;
+import com.scott.dp.modules.sys.entity.SysUserEntity;
+import com.scott.dp.modules.sys.service.SysRoleService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +28,8 @@ public class SysMenuController extends AbstractController {
 
 	@Resource
 	private SysMenuService sysMenuService;
+	@Resource
+	private SysRoleService sysRoleService;
 	
 	/**
 	 * 用户菜单
@@ -43,6 +48,18 @@ public class SysMenuController extends AbstractController {
 	@RequestMapping("/list")
 	public List<SysMenuEntity> listMenu(@RequestParam Map<String, Object> params) {
 		return sysMenuService.listMenu(params);
+	}
+	/**
+	 * 菜单列表 根据权限编号
+	 * @param
+	 * @return
+	 */
+	@RequestMapping("/listByRoleId")
+	public List<SysMenuEntity> selectByRoleId() {
+		SysUserEntity userEntity = getUser();
+		List<Long> list= sysRoleService.listUserRoleId(userEntity.getUserId());
+		Long roleId = Long.parseLong(list.get(0).toString());//多个权限只取第一个
+		return sysMenuService.selectByRoleId(roleId);
 	}
 	
 	/**

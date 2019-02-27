@@ -97,7 +97,7 @@ public class SysUserController extends AbstractController {
 	public R save(@RequestBody SysUserEntity user) {
 		SysUserEntity u = sysUserService.getByUserName(user.getUsername());
 		if(u!=null){
-			return R.error(101,"该用户已存在！");
+			return R.error("该用户已存在！");
 		}else {
 			user.setUserIdCreate(getUserId());
 			return sysUserService.saveUser(user);
@@ -128,7 +128,7 @@ public class SysUserController extends AbstractController {
 	{
 		if(getUserId()!=SystemConstant.SUPER_ADMIN && user.getUserId()==SystemConstant.SUPER_ADMIN){//超管可以修改自己
 			new SmsUtil().sendSms(getUser().getMobile(),"您的账户信息正在被修改，请及时查看!");
-			return R.error(102,"当前权限不足以操作超管账户！");
+			return R.error("当前权限不足以操作超管账户！");
 		}else{
 			if(Ognl.isEmpty(user.getDeptId())) {
 				user.setDeptId(Long.parseLong(getSession().getAttribute("deptId").toString()));
@@ -145,13 +145,27 @@ public class SysUserController extends AbstractController {
 	@SysLog("删除用户")
 	@RequestMapping("/remove")
 	public R batchRemove(@RequestBody Long[] id) {
-		if(getUserId()==SystemConstant.SUPER_ADMIN){
-			return R.error(102,"当前权限不足以操作超管账户！");
+		System.out.println(id.toString());
+		if(isInArray(id)){
+			return R.error("当前权限不足以操作超管账户！");
 		}else {
 			return sysUserService.batchRemove(id);
 		}
 	}
-	
+
+	/*超管账户核对*/
+	private boolean isInArray(Long[] id){
+		boolean is = false;
+		for (int i = 0; i < id.length; i++) {
+			if(id[i]==SystemConstant.SUPER_ADMIN){
+				is = true;
+				break;
+			}
+		}
+		return is;
+	}
+
+
 	/**
 	 * 用户修改密码
 	 * @param pswd
@@ -188,7 +202,7 @@ public class SysUserController extends AbstractController {
 	@RequestMapping("/disable")
 	public R updateUserDisable(@RequestBody Long[] id) {
 		if(getUserId()==SystemConstant.SUPER_ADMIN){
-			return R.error(102,"当前权限不足以操作超管账户！");
+			return R.error("当前权限不足以操作超管账户！");
 		}else {
 			return sysUserService.updateUserDisable(id);
 		}

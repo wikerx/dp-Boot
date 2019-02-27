@@ -36,6 +36,13 @@
 			m.order_num ASC
 	</select>
 	
+	<select id="selectByRoleId" resultType="com.scott.dp.modules.sys.entity.SysMenuEntity">
+		SELECT m.menu_id, m.parent_id, ( SELECT p.name FROM sys_menu p WHERE p.menu_id = m.parent_id ) AS parentName,
+		m.name, m.url, m.perms, m.type, m.icon, m.order_num FROM sys_menu m
+		LEFT JOIN sys_role_menu r ON r.menu_id = m.menu_id WHERE r.role_id = #{roleId}
+		ORDER BY m.order_num ASC
+	</select>
+	
 	<select id="listNotButton" resultType="com.scott.dp.modules.sys.entity.SysMenuEntity">
 		SELECT
 			menu_id,

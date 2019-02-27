@@ -145,5 +145,10 @@ public class SysRoleServiceImpl implements SysRoleService {
 		}
 		return CommonUtils.msg(count);
 	}
-	
+
+
+	/*根据用户Id查询角色id集合*/
+	public List<Long> listUserRoleId(Long userId){
+		return sysUserRoleMapper.listUserRoleId(userId);
+	}
 }

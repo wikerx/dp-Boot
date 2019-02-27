@@ -26,6 +26,9 @@ public interface SysMenuService {
 	 */
 	List<SysMenuEntity> listMenu(Map<String, Object> params);
 
+	/*根据权限Id查询可操作菜单*/
+	List<SysMenuEntity> selectByRoleId(Long roleId);
+
 	/**
 	 * 查询目录和菜单
 	 * @return

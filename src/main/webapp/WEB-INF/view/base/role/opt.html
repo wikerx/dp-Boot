@@ -27,16 +27,20 @@
         },
         methods: {
             getMenu: function (menuId) {
+                console.log("vm.role.roleId:"+vm.role.roleId)
                 $.ajax({
                     type: 'get',
                     async: false,
                     contentType: 'application/json',
-                    url: '../../sys/menu/list?_' + $.now(),
+                    //url: '../../sys/menu/list?_' + $.now(),
+                    url: '../../sys/menu/listByRoleId?_' + $.now(),
                     data: null,
                     success: function (r) {
-                        ztree = $.fn.zTree
-                            .init($("#menuTree"), setting, r);
+                        ztree = $.fn.zTree.init($("#menuTree"), setting, r);
                         ztree.expandAll(true);
+                    },
+                    error:function (e) {
+                        console.log("error")
                     },
                     dataType: 'json'
                 });
@@ -46,11 +50,11 @@
                 $.SetForm({
                     url: '../../sys/role/info',
                     param: vm.role.roleId,
-                    success: function (data) {
+                    success: function(data) {
                         vm.role = data;
                         //勾选角色所拥有的菜单
                         var menuIds = vm.role.menuIdList;
-                        for (var i = 0; i < menuIds.length; i++) {
+                        for(var i=0; i<menuIds.length; i++) {
                             var node = ztree.getNodeByParam("menuId", menuIds[i]);
                             ztree.checkNode(node, true, false);
                         }

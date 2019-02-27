@@ -110,6 +110,10 @@ public class SysMenuServiceImpl implements SysMenuService {
 		return menuList;
 	}
 
+	/*根据权限Id查询可操作菜单*/
+	public List<SysMenuEntity> selectByRoleId(Long roleId){
+		return  sysMenuMapper.selectByRoleId(roleId);
+	}
 	/**
 	 * 查询非按钮菜单
 	 * @return

@@ -67,5 +67,7 @@ public interface SysRoleService {
 	 * @return
 	 */
 	R updateRoleDataAuthorization(SysRoleEntity role);
-	
+
+	/*根据用户Id查询角色id集合*/
+	public List<Long> listUserRoleId(Long userId);
 }
