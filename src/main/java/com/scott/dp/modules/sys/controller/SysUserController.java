@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.scott.dp.common.annotation.SysLog;
 import com.scott.dp.common.utils.CommonUtils;
+import com.scott.dp.common.utils.Ognl;
 import com.scott.dp.modules.message.phone.SmsUtil;
 import com.scott.dp.modules.sys.entity.SysUserEntity;
 import com.scott.dp.modules.sys.service.SysUserService;
@@ -110,7 +111,10 @@ public class SysUserController extends AbstractController {
 	 */
 	@RequestMapping("/infoUser")
 	public R getById(@RequestBody Long userId) {
-		return sysUserService.getUserById(userId);
+		R r = sysUserService.getUserById(userId);
+		SysUserEntity user = (SysUserEntity)r.get("rows");
+		getSession().setAttribute("deptId",user.getDeptId());
+		return r;
 	}
 	
 	/**
@@ -126,6 +130,9 @@ public class SysUserController extends AbstractController {
 			new SmsUtil().sendSms(getUser().getMobile(),"您的账户信息正在被修改，请及时查看!");
 			return R.error(102,"当前权限不足以操作超管账户！");
 		}else{
+			if(Ognl.isEmpty(user.getDeptId())) {
+				user.setDeptId(Long.parseLong(getSession().getAttribute("deptId").toString()));
+			}
 			return sysUserService.updateUser(user);
 		}
 	}

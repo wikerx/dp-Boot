@@ -210,4 +210,9 @@
 			user_id = #{userId}
 	</update>
 
+	<!--查询当前用户所属部门的所有人员信息-->
+	<select id="select" resultType="com.scott.dp.modules.sys.entity.SysUserEntity">
+		SELECT user_id,username FROM sys_user WHERE dept_id = #{deptId}
+	</select>
+
 </mapper>

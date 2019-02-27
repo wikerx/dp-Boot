@@ -80,7 +80,7 @@ var vm = new Vue({
 				title: '部门信息',
 				url: 'base/dept/add.html?_' + $.now(),
 				width: '420px',
-				height: '400px',
+				height: '450px',
 				yes : function(iframeId) {
 					top.frames[iframeId].vm.acceptClick();
 				},
@@ -91,7 +91,7 @@ var vm = new Vue({
                 title: '部门信息',
                 url: 'base/dept/edit.html?_' + $.now(),
                 width: '420px',
-                height: '400px',
+                height: '550px',
                 success: function(iframeId){
                     top.frames[iframeId].vm.sysDepartment.id = id;
                     top.frames[iframeId].vm.setForm();

@@ -17,7 +17,7 @@
     <tr>
         <td class="formTitle">所属部门<font face="宋体">*</font></td>
         <td class="formValue">
-            <select style="width:350px;" class="form-control deptSelect" isvalid="yes" checkexpession="NotNull">
+            <select style="width:350px;" class="form-control deptSelect" isvalid="no" checkexpession="NotNull">
                 <option v-model="user.deptId" selected><b style="color: #00B83F;">{{user.deptName}}</b></option>
             </select>
         </td>
@@ -35,9 +35,10 @@
         </td>
     </tr>
     <tr>
-        <td class="formTitle">手机号</td>
+        <td class="formTitle">手机号<font face="宋体">*</font></td>
         <td class="formValue">
-            <input type="text" class="form-control" placeholder="手机号" v-model="user.mobile">
+            <input type="text" class="form-control" placeholder="手机号" v-model="user.mobile" isvalid="yes"
+                   checkexpession="NotNull" minlength="10">
         </td>
     </tr>
     <tr>

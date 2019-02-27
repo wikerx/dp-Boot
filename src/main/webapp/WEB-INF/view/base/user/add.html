@@ -36,7 +36,8 @@
     <tr>
         <td class="formTitle">手机号</td>
         <td class="formValue">
-            <input type="text" class="form-control" placeholder="手机号" v-model="user.mobile">
+            <input type="text" class="form-control" placeholder="手机号" v-model="user.mobile" isvalid="yes"
+                   checkexpession="NotNull" minlength="10">
         </td>
     </tr>
     <tr>
