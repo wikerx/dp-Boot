@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2019-01-22 17:02:53
+Date: 2019-02-27 15:57:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -170,7 +170,7 @@ CREATE TABLE `qrtz_scheduler_state` (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('quartzScheduler', 'PC-2018121109141548144874681', '1548147763632', '15000');
+INSERT INTO `qrtz_scheduler_state` VALUES ('quartzScheduler', 'PC-Xue1551253920981', '1551254241283', '15000');
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -3885,11 +3885,11 @@ CREATE TABLE `sys_department` (
 -- ----------------------------
 -- Records of sys_department
 -- ----------------------------
-INSERT INTO `sys_department` VALUES ('1', '技术一部', '1', '2019-01-04 11:58:11', '技术部门第一分部门', '1', '1');
-INSERT INTO `sys_department` VALUES ('2', '技术二部', '1', '2019-01-04 16:48:08', '技术部门第二分部门', '2', '0');
+INSERT INTO `sys_department` VALUES ('1', '技术一部', '1', '2019-02-27 10:53:26', '技术部门第一分部门', '1', '1');
+INSERT INTO `sys_department` VALUES ('2', '技术二部', '1', '2019-01-24 10:17:31', '技术部门第二分部门', '2', '1');
 INSERT INTO `sys_department` VALUES ('3', '事业部', '1', '2019-01-04 16:48:16', '事业...', '4', '1');
 INSERT INTO `sys_department` VALUES ('4', '测试部', '1', '2019-01-04 16:48:53', '软件及数据测试', '3', '1');
-INSERT INTO `sys_department` VALUES ('5', '茶水部', '1', '2019-01-04 16:53:11', '端茶送水', '2', '0');
+INSERT INTO `sys_department` VALUES ('5', '茶水部', '1', '2019-01-04 16:53:11', '端茶送水', '2', '1');
 
 -- ----------------------------
 -- Table structure for sys_file
@@ -3926,7 +3926,7 @@ CREATE TABLE `sys_log` (
   `ip` varchar(64) default NULL COMMENT 'IP地址',
   `gmt_create` datetime default NULL COMMENT '创建时间',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=443 DEFAULT CHARSET=utf8 COMMENT='系统日志';
+) ENGINE=InnoDB AUTO_INCREMENT=662 DEFAULT CHARSET=utf8 COMMENT='系统日志';
 
 -- ----------------------------
 -- Records of sys_log
@@ -4373,6 +4373,225 @@ INSERT INTO `sys_log` VALUES ('439', '1', 'admin', '登录', '17', 'com.scott.dp
 INSERT INTO `sys_log` VALUES ('440', '1', 'admin', '登录', '11', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '112.95.161.196', '2019-01-22 12:15:39');
 INSERT INTO `sys_log` VALUES ('441', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '112.95.161.196', '2019-01-22 12:16:40');
 INSERT INTO `sys_log` VALUES ('442', '1', 'admin', '登录', '27', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '112.95.161.196', '2019-01-22 16:30:25');
+INSERT INTO `sys_log` VALUES ('443', '1', 'admin', '登录', '60', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 10:01:30');
+INSERT INTO `sys_log` VALUES ('444', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 10:07:47');
+INSERT INTO `sys_log` VALUES ('445', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 10:13:15');
+INSERT INTO `sys_log` VALUES ('446', '1', 'admin', '修改用户', '19', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":4,\"orgId\":4,\"orgName\":\"信息部\",\"username\":\"test1\",\"password\":\"8633f0d4269a3a5f0455cadcd64f02f3\",\"email\":null,\"mobile\":\"18772101110\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":\"事业部\",\"check\":0,\"managerId\":null,\"roleIdList\":[2]}', '0:0:0:0:0:0:0:1', '2019-01-24 10:17:11');
+INSERT INTO `sys_log` VALUES ('447', '1', 'admin', '修改部门信息', '8', 'com.scott.dp.modules.sys.controller.SysDepartmentController.update()', '{\"id\":2,\"name\":\"技术二部\",\"createId\":1,\"creater\":\"admin\",\"createTime\":1548296251156,\"discribe\":\"技术部门第二分部门\",\"managerId\":null,\"manager\":\"scott\",\"check\":0}', '0:0:0:0:0:0:0:1', '2019-01-24 10:17:31');
+INSERT INTO `sys_log` VALUES ('448', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 10:19:40');
+INSERT INTO `sys_log` VALUES ('449', '1', 'admin', '登录', '12', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 10:22:09');
+INSERT INTO `sys_log` VALUES ('450', '1', 'admin', '登录', '20', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 14:52:32');
+INSERT INTO `sys_log` VALUES ('451', '1', 'admin', '重置密码', '158', 'com.scott.dp.modules.sys.controller.SysUserController.updatePswd()', '{\"userId\":4,\"orgId\":null,\"orgName\":null,\"username\":null,\"password\":\"2b53946eef1393fd070eb14cbce00dae\",\"email\":null,\"mobile\":null,\"status\":null,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":null,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":null}', '0:0:0:0:0:0:0:1', '2019-01-24 14:52:50');
+INSERT INTO `sys_log` VALUES ('452', '1', 'admin', '登录', '11', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 15:01:11');
+INSERT INTO `sys_log` VALUES ('453', '1', 'admin', '重置密码', '139', 'com.scott.dp.modules.sys.controller.SysUserController.updatePswd()', '{\"userId\":4,\"orgId\":null,\"orgName\":null,\"username\":null,\"password\":\"8633f0d4269a3a5f0455cadcd64f02f3\",\"email\":null,\"mobile\":null,\"status\":null,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":null,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":null}', '0:0:0:0:0:0:0:1', '2019-01-24 15:01:26');
+INSERT INTO `sys_log` VALUES ('454', '1', 'admin', '重置密码', '55469', 'com.scott.dp.modules.sys.controller.SysUserController.updatePswd()', '{\"userId\":4,\"orgId\":null,\"orgName\":null,\"username\":null,\"password\":\"8633f0d4269a3a5f0455cadcd64f02f3\",\"email\":null,\"mobile\":null,\"status\":null,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":null,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":null}', '0:0:0:0:0:0:0:1', '2019-01-24 15:03:19');
+INSERT INTO `sys_log` VALUES ('455', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 15:04:34');
+INSERT INTO `sys_log` VALUES ('456', '1', 'admin', '修改密码', '132', 'com.scott.dp.modules.sys.controller.SysUserController.updatePswdByUser()', '\"123456\"', '0:0:0:0:0:0:0:1', '2019-01-24 15:04:44');
+INSERT INTO `sys_log` VALUES ('457', '1', 'admin', '修改密码', '31700', 'com.scott.dp.modules.sys.controller.SysUserController.updatePswdByUser()', '\"123456\"', '0:0:0:0:0:0:0:1', '2019-01-24 15:05:51');
+INSERT INTO `sys_log` VALUES ('458', '1', 'admin', '修改密码', '12648', 'com.scott.dp.modules.sys.controller.SysUserController.updatePswdByUser()', '\"123456\"', '0:0:0:0:0:0:0:1', '2019-01-24 15:06:16');
+INSERT INTO `sys_log` VALUES ('459', '-1', null, '退出系统', '2', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-01-24 15:06:20');
+INSERT INTO `sys_log` VALUES ('460', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 15:06:26');
+INSERT INTO `sys_log` VALUES ('461', '1', 'admin', '修改密码', '30777', 'com.scott.dp.modules.sys.controller.SysUserController.updatePswdByUser()', '\"123456\"', '0:0:0:0:0:0:0:1', '2019-01-24 15:07:04');
+INSERT INTO `sys_log` VALUES ('462', '1', 'admin', '登录', '11', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 15:11:43');
+INSERT INTO `sys_log` VALUES ('463', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 15:13:47');
+INSERT INTO `sys_log` VALUES ('464', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 15:16:20');
+INSERT INTO `sys_log` VALUES ('465', '1', 'admin', '重置密码', '17230', 'com.scott.dp.modules.sys.controller.SysUserController.updatePswd()', '{\"userId\":4,\"orgId\":null,\"orgName\":null,\"username\":null,\"password\":\"8633f0d4269a3a5f0455cadcd64f02f3\",\"email\":null,\"mobile\":null,\"status\":null,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":null,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":null}', '0:0:0:0:0:0:0:1', '2019-01-24 15:16:48');
+INSERT INTO `sys_log` VALUES ('466', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 15:21:36');
+INSERT INTO `sys_log` VALUES ('467', '1', 'admin', '修改用户', '15', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":4,\"orgId\":4,\"orgName\":\"信息部\",\"username\":\"test1\",\"password\":\"8633f0d4269a3a5f0455cadcd64f02f3\",\"email\":null,\"mobile\":\"18772101110\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":\"事业部\",\"check\":0,\"managerId\":null,\"roleIdList\":[2]}', '0:0:0:0:0:0:0:1', '2019-01-24 15:21:52');
+INSERT INTO `sys_log` VALUES ('468', '-1', '获取用户信息为空', '登录', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{\"errorMsg\":\"验证码错误\"}', '0:0:0:0:0:0:0:1', '2019-01-24 15:27:31');
+INSERT INTO `sys_log` VALUES ('469', '1', 'admin', '登录', '21', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-01-24 15:27:40');
+INSERT INTO `sys_log` VALUES ('470', '1', 'admin', '登录', '59', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 09:56:28');
+INSERT INTO `sys_log` VALUES ('471', '-1', null, '退出系统', '3', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 09:58:57');
+INSERT INTO `sys_log` VALUES ('472', '2', 'scott', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 09:59:12');
+INSERT INTO `sys_log` VALUES ('473', '2', 'scott', '新增角色', '4', 'com.scott.dp.modules.sys.controller.SysRoleController.saveRole()', '{\"roleId\":null,\"orgId\":4,\"orgName\":\"信息部\",\"roleName\":\"scott下级员工\",\"roleSign\":\"scott下级员工\",\"remark\":null,\"userIdCreate\":2,\"menuIdList\":null,\"orgIdList\":null,\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 10:02:55');
+INSERT INTO `sys_log` VALUES ('474', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 10:03:09');
+INSERT INTO `sys_log` VALUES ('475', '1', 'admin', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 10:03:15');
+INSERT INTO `sys_log` VALUES ('476', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 10:06:06');
+INSERT INTO `sys_log` VALUES ('477', '2', 'scott', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 10:06:18');
+INSERT INTO `sys_log` VALUES ('478', '2', 'scott', '修改角色', '9', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRole()', '{\"roleId\":1,\"orgId\":2,\"orgName\":\"中国-深圳\",\"roleName\":\"超级管理员\",\"roleSign\":\"administrator\",\"remark\":\"【系统内置】1\",\"userIdCreate\":null,\"menuIdList\":[1,65,66,67,68,69,37,38,39,40,41,2,20,21,22,23,4,32,33,34,35,27,28,29,30,47,48,49,50,51,55,56,57,58,63,52,53,54,59,60,61,62,64,3,36,42,43,44,45,7,15,16,17,18,19,46,6,11,12,13,14,24,25,26],\"orgIdList\":[1,2,4,5,3],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 10:06:51');
+INSERT INTO `sys_log` VALUES ('479', '2', 'scott', '修改角色', '5', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRole()', '{\"roleId\":1,\"orgId\":2,\"orgName\":\"中国-深圳\",\"roleName\":\"超级管理员\",\"roleSign\":\"administrator\",\"remark\":\"【系统内置】\",\"userIdCreate\":null,\"menuIdList\":[1,65,66,67,68,69,37,38,39,40,41,2,20,21,22,23,4,32,33,34,35,27,28,29,30,47,48,49,50,51,55,56,57,58,63,52,53,54,59,60,61,62,64,3,36,42,43,44,45,7,15,16,17,18,19,46,6,11,12,13,14,24,25,26],\"orgIdList\":[1,2,4,5,3],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 10:06:57');
+INSERT INTO `sys_log` VALUES ('480', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 10:09:01');
+INSERT INTO `sys_log` VALUES ('481', '-1', '获取用户信息为空', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{\"errorMsg\":\"用户名不存在\"}', '0:0:0:0:0:0:0:1', '2019-02-27 10:09:10');
+INSERT INTO `sys_log` VALUES ('482', '4', 'test1', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 10:09:34');
+INSERT INTO `sys_log` VALUES ('483', '4', 'test1', '新增角色', '4', 'com.scott.dp.modules.sys.controller.SysRoleController.saveRole()', '{\"roleId\":null,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"roleName\":\"123\",\"roleSign\":\"1234\",\"remark\":\"234\",\"userIdCreate\":4,\"menuIdList\":null,\"orgIdList\":null,\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 10:09:50');
+INSERT INTO `sys_log` VALUES ('484', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 10:11:10');
+INSERT INTO `sys_log` VALUES ('485', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 10:11:20');
+INSERT INTO `sys_log` VALUES ('486', '1', 'admin', '操作权限', '37', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleOptAuthorization()', '{\"roleId\":2,\"orgId\":2,\"orgName\":\"中国-深圳\",\"roleName\":\"系统管理员\",\"roleSign\":\"admin\",\"remark\":\"系统分管\",\"userIdCreate\":null,\"menuIdList\":[1,37,38,39,40,41,4,32,33,34,35,27,28,29,30,47,48,49,50,51,55,56,57,58,63,52,53,54,62,64,3,36,42,43,44,45,7,15,16,17,18,19,46,6,11,12,13,14,24,25,26,65,66,67,68,69],\"orgIdList\":[2,4,5],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 10:13:13');
+INSERT INTO `sys_log` VALUES ('487', '1', 'admin', '数据权限', '12', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleDataAuthorization()', '{\"roleId\":2,\"orgId\":2,\"orgName\":\"中国-深圳\",\"roleName\":\"系统管理员\",\"roleSign\":\"admin\",\"remark\":\"系统分管\",\"userIdCreate\":null,\"menuIdList\":[1,37,38,39,40,41,4,32,33,34,35,27,28,29,30,47,48,49,50,51,55,56,57,58,63,52,53,54,62,64,3,36,42,43,44,45,7,15,16,17,18,19,46,6,11,12,13,14,24,25,26,65,66,67,68,69],\"orgIdList\":[1,2,4,5,3],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 10:13:24');
+INSERT INTO `sys_log` VALUES ('488', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 10:13:53');
+INSERT INTO `sys_log` VALUES ('489', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 10:14:03');
+INSERT INTO `sys_log` VALUES ('490', '2', 'scott', '操作权限', '6', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleOptAuthorization()', '{\"roleId\":4,\"orgId\":4,\"orgName\":\"信息部\",\"roleName\":\"scott下级员工\",\"roleSign\":\"scott下级员工\",\"remark\":null,\"userIdCreate\":null,\"menuIdList\":[null],\"orgIdList\":[],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 10:14:40');
+INSERT INTO `sys_log` VALUES ('491', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 10:15:49');
+INSERT INTO `sys_log` VALUES ('492', '1', 'admin', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 10:15:53');
+INSERT INTO `sys_log` VALUES ('493', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 10:19:14');
+INSERT INTO `sys_log` VALUES ('494', '2', 'scott', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 10:19:25');
+INSERT INTO `sys_log` VALUES ('495', '2', 'scott', '新增用户', '11', 'com.scott.dp.modules.sys.controller.SysUserController.save()', '{\"userId\":5,\"orgId\":4,\"orgName\":\"信息部\",\"username\":\"123\",\"password\":\"3c47bb446ccb4a6a993b3f17748b68a4\",\"email\":null,\"mobile\":null,\"status\":1,\"userIdCreate\":2,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 10:20:06');
+INSERT INTO `sys_log` VALUES ('496', '2', 'scott', '新增用户', '12', 'com.scott.dp.modules.sys.controller.SysUserController.save()', '{\"userId\":6,\"orgId\":4,\"orgName\":\"信息部\",\"username\":\"12312\",\"password\":\"deabfa5be24660e3679f1a0f34222a48\",\"email\":\"123123123\",\"mobile\":\"12123\",\"status\":1,\"userIdCreate\":2,\"remark\":\"123\",\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 10:20:54');
+INSERT INTO `sys_log` VALUES ('497', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 10:21:00');
+INSERT INTO `sys_log` VALUES ('498', '1', 'admin', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 10:21:06');
+INSERT INTO `sys_log` VALUES ('499', '1', 'admin', '登录', '19', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 10:34:19');
+INSERT INTO `sys_log` VALUES ('500', '1', 'admin', '登录', '20', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 10:52:57');
+INSERT INTO `sys_log` VALUES ('501', '1', 'admin', '修改部门信息', '8', 'com.scott.dp.modules.sys.controller.SysDepartmentController.update()', '{\"id\":1,\"name\":\"技术一部\",\"createId\":1,\"creater\":\"admin\",\"createTime\":1551236006486,\"discribe\":\"技术部门第一分部门\",\"managerId\":1,\"manager\":\"admin\",\"check\":1}', '0:0:0:0:0:0:0:1', '2019-02-27 10:53:26');
+INSERT INTO `sys_log` VALUES ('502', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 11:04:59');
+INSERT INTO `sys_log` VALUES ('503', '1', 'admin', '新增用户', '13', 'com.scott.dp.modules.sys.controller.SysUserController.save()', '{\"userId\":7,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"13123\",\"password\":\"f37c2cc3f79848612a9448ffdded2c77\",\"email\":\"123123\",\"mobile\":\"1213123\",\"status\":1,\"userIdCreate\":1,\"remark\":\"123123\",\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 11:05:28');
+INSERT INTO `sys_log` VALUES ('504', '1', 'admin', '修改用户', '16', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":7,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"13123\",\"password\":\"f37c2cc3f79848612a9448ffdded2c77\",\"email\":\"123123\",\"mobile\":\"\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":\"事业部\",\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 11:05:45');
+INSERT INTO `sys_log` VALUES ('505', '1', 'admin', '登录', '20', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 11:08:14');
+INSERT INTO `sys_log` VALUES ('506', '1', 'admin', '登录', '20', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 11:09:47');
+INSERT INTO `sys_log` VALUES ('507', '1', 'admin', '修改用户', '17', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":7,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"13123\",\"password\":\"f37c2cc3f79848612a9448ffdded2c77\",\"email\":\"123123\",\"mobile\":\"\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":\"事业部\",\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 11:11:24');
+INSERT INTO `sys_log` VALUES ('508', '1', 'admin', '登录', '11', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 11:14:35');
+INSERT INTO `sys_log` VALUES ('509', '1', 'admin', '修改用户', '12', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":7,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"13123\",\"password\":\"f37c2cc3f79848612a9448ffdded2c77\",\"email\":\"123123\",\"mobile\":\"123\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":\"事业部\",\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 11:14:54');
+INSERT INTO `sys_log` VALUES ('510', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 11:22:47');
+INSERT INTO `sys_log` VALUES ('511', '1', 'admin', '登录', '18', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 11:25:16');
+INSERT INTO `sys_log` VALUES ('512', '1', 'admin', '登录', '24', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 11:28:46');
+INSERT INTO `sys_log` VALUES ('513', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 11:30:23');
+INSERT INTO `sys_log` VALUES ('514', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 11:35:56');
+INSERT INTO `sys_log` VALUES ('515', '1', 'admin', '修改用户', '28810', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":6,\"orgId\":4,\"orgName\":\"信息部\",\"username\":\"12312\",\"password\":\"deabfa5be24660e3679f1a0f34222a48\",\"email\":\"123123123\",\"mobile\":\"18772101116\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":\"事业部\",\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 11:36:47');
+INSERT INTO `sys_log` VALUES ('516', '1', 'admin', '操作权限', '13', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleOptAuthorization()', '{\"roleId\":4,\"orgId\":4,\"orgName\":\"信息部\",\"roleName\":\"scott下级员工\",\"roleSign\":\"scott下级员工\",\"remark\":null,\"userIdCreate\":null,\"menuIdList\":[1,37,38,39,40,41,2,20,21,22,23,4,32,33,34,35,27,28,29,30,47,48,49,50,51,55,56,57,58,63,52,53,54,59,60,61,62,64,3,36,42,43,44,45,7,15,16,17,18,19,46,6,11,12,13,14,24,25,26,65,66,67,68,69],\"orgIdList\":[],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 11:37:25');
+INSERT INTO `sys_log` VALUES ('517', '-1', null, '退出系统', '2', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 11:37:54');
+INSERT INTO `sys_log` VALUES ('518', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 11:38:03');
+INSERT INTO `sys_log` VALUES ('519', '2', 'scott', '新增用户', '14', 'com.scott.dp.modules.sys.controller.SysUserController.save()', '{\"userId\":8,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"scott1\",\"password\":\"52806415ed0c1678e56fd7ab3710543b\",\"email\":\"123123\",\"mobile\":\"123123123123\",\"status\":1,\"userIdCreate\":2,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":1,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 11:40:00');
+INSERT INTO `sys_log` VALUES ('520', '2', 'scott', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:07:06');
+INSERT INTO `sys_log` VALUES ('521', '2', 'scott', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:10:09');
+INSERT INTO `sys_log` VALUES ('522', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:11:45');
+INSERT INTO `sys_log` VALUES ('523', '2', 'scott', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:12:46');
+INSERT INTO `sys_log` VALUES ('524', '2', 'scott', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:13:55');
+INSERT INTO `sys_log` VALUES ('525', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:16:35');
+INSERT INTO `sys_log` VALUES ('526', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 12:16:49');
+INSERT INTO `sys_log` VALUES ('527', '2', 'scott', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:16:57');
+INSERT INTO `sys_log` VALUES ('528', '2', 'scott', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:17:49');
+INSERT INTO `sys_log` VALUES ('529', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 12:47:50');
+INSERT INTO `sys_log` VALUES ('530', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:47:55');
+INSERT INTO `sys_log` VALUES ('531', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 12:48:32');
+INSERT INTO `sys_log` VALUES ('532', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:48:42');
+INSERT INTO `sys_log` VALUES ('533', '-1', '获取用户信息为空', '登录', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{\"errorMsg\":\"验证码错误\"}', '0:0:0:0:0:0:0:1', '2019-02-27 12:52:37');
+INSERT INTO `sys_log` VALUES ('534', '2', 'scott', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:52:45');
+INSERT INTO `sys_log` VALUES ('535', '2', 'scott', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:55:08');
+INSERT INTO `sys_log` VALUES ('536', '2', 'scott', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:56:10');
+INSERT INTO `sys_log` VALUES ('537', '2', 'scott', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 12:59:10');
+INSERT INTO `sys_log` VALUES ('538', '2', 'scott', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:00:40');
+INSERT INTO `sys_log` VALUES ('539', '2', 'scott', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:03:10');
+INSERT INTO `sys_log` VALUES ('540', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 13:03:38');
+INSERT INTO `sys_log` VALUES ('541', '1', 'admin', '登录', '3', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:03:46');
+INSERT INTO `sys_log` VALUES ('542', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:05:04');
+INSERT INTO `sys_log` VALUES ('543', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:07:29');
+INSERT INTO `sys_log` VALUES ('544', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:08:37');
+INSERT INTO `sys_log` VALUES ('545', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 13:09:06');
+INSERT INTO `sys_log` VALUES ('546', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:09:14');
+INSERT INTO `sys_log` VALUES ('547', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:11:57');
+INSERT INTO `sys_log` VALUES ('548', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:12:50');
+INSERT INTO `sys_log` VALUES ('549', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 13:13:43');
+INSERT INTO `sys_log` VALUES ('550', '-1', '获取用户信息为空', '登录', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{\"errorMsg\":\"验证码错误\"}', '0:0:0:0:0:0:0:1', '2019-02-27 13:13:50');
+INSERT INTO `sys_log` VALUES ('551', '2', 'scott', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:13:58');
+INSERT INTO `sys_log` VALUES ('552', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:15:22');
+INSERT INTO `sys_log` VALUES ('553', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 13:15:38');
+INSERT INTO `sys_log` VALUES ('554', '-1', '获取用户信息为空', '登录', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{\"errorMsg\":\"验证码错误\"}', '0:0:0:0:0:0:0:1', '2019-02-27 13:15:46');
+INSERT INTO `sys_log` VALUES ('555', '2', 'scott', '登录', '3', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:15:56');
+INSERT INTO `sys_log` VALUES ('556', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:19:10');
+INSERT INTO `sys_log` VALUES ('557', '1', 'admin', '操作权限', '7', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleOptAuthorization()', '{\"roleId\":4,\"orgId\":4,\"orgName\":\"信息部\",\"roleName\":\"scott下级员工\",\"roleSign\":\"scott下级员工\",\"remark\":null,\"userIdCreate\":null,\"menuIdList\":[3,6,11,12,13,14,24,25,26],\"orgIdList\":[],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 13:19:38');
+INSERT INTO `sys_log` VALUES ('558', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:20:35');
+INSERT INTO `sys_log` VALUES ('559', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:23:44');
+INSERT INTO `sys_log` VALUES ('560', '1', 'admin', '操作权限', '10', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleOptAuthorization()', '{\"roleId\":4,\"orgId\":4,\"orgName\":\"信息部\",\"roleName\":\"scott下级员工\",\"roleSign\":\"scott下级员工\",\"remark\":null,\"userIdCreate\":null,\"menuIdList\":[1,37,38,39,40,41,4,32,33,34,35,27,28,29,30,47,48,49,50,51,55,56,57,58,63,52,53,54,59,60,61,62,64,3,36,42,43,44,45,7,15,16,17,18,19,46,6,11,12,13,14,24,25,26,65,66,67,68,69],\"orgIdList\":[],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 13:24:37');
+INSERT INTO `sys_log` VALUES ('561', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:26:11');
+INSERT INTO `sys_log` VALUES ('562', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 13:26:26');
+INSERT INTO `sys_log` VALUES ('563', '2', 'scott', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:26:36');
+INSERT INTO `sys_log` VALUES ('564', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:31:00');
+INSERT INTO `sys_log` VALUES ('565', '1', 'admin', '删除角色', '27', 'com.scott.dp.modules.sys.controller.SysRoleController.batchRemove()', '[5]', '0:0:0:0:0:0:0:1', '2019-02-27 13:31:28');
+INSERT INTO `sys_log` VALUES ('566', '1', 'admin', '数据权限', '9896', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleDataAuthorization()', '{\"roleId\":4,\"orgId\":4,\"orgName\":\"信息部\",\"roleName\":\"scott下级员工\",\"roleSign\":\"scott下级员工\",\"remark\":null,\"userIdCreate\":null,\"menuIdList\":[1,37,38,39,40,41,4,32,33,34,35,27,28,29,30,47,48,49,50,51,55,56,57,58,63,52,53,54,59,60,61,62,64,3,36,42,43,44,45,7,15,16,17,18,19,46,6,11,12,13,14,24,25,26,65,66,67,68,69],\"orgIdList\":[1,2,4,5,3],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 13:31:48');
+INSERT INTO `sys_log` VALUES ('567', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 13:33:00');
+INSERT INTO `sys_log` VALUES ('568', '2', 'scott', '登录', '3', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:33:09');
+INSERT INTO `sys_log` VALUES ('569', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 13:34:24');
+INSERT INTO `sys_log` VALUES ('570', '1', 'admin', '登录', '3', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:34:29');
+INSERT INTO `sys_log` VALUES ('571', '1', 'admin', '操作权限', '7', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleOptAuthorization()', '{\"roleId\":4,\"orgId\":4,\"orgName\":\"信息部\",\"roleName\":\"scott下级员工\",\"roleSign\":\"scott下级员工\",\"remark\":null,\"userIdCreate\":null,\"menuIdList\":[1,64,3,7,15,16,17,18,19,46],\"orgIdList\":[1,2,4,5,3],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 13:45:00');
+INSERT INTO `sys_log` VALUES ('572', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 13:47:37');
+INSERT INTO `sys_log` VALUES ('573', '2', 'scott', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:47:47');
+INSERT INTO `sys_log` VALUES ('574', '2', 'scott', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:49:28');
+INSERT INTO `sys_log` VALUES ('575', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 13:53:35');
+INSERT INTO `sys_log` VALUES ('576', '1', 'admin', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:53:42');
+INSERT INTO `sys_log` VALUES ('577', '-1', '获取用户信息为空', '登录', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{\"errorMsg\":\"验证码错误\"}', '0:0:0:0:0:0:0:1', '2019-02-27 13:55:07');
+INSERT INTO `sys_log` VALUES ('578', '2', 'scott', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:55:17');
+INSERT INTO `sys_log` VALUES ('579', '1', 'admin', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:58:01');
+INSERT INTO `sys_log` VALUES ('580', '1', 'admin', '操作权限', '8', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleOptAuthorization()', '{\"roleId\":4,\"orgId\":4,\"orgName\":\"信息部\",\"roleName\":\"scott下级员工\",\"roleSign\":\"scott下级员工\",\"remark\":null,\"userIdCreate\":null,\"menuIdList\":[1,64,3,36,42,43,44,45,7,15,16,17,18,19,46],\"orgIdList\":[1,2,4,5,3],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 13:58:19');
+INSERT INTO `sys_log` VALUES ('581', '1', 'admin', '修改用户', '11', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":2,\"orgId\":2,\"orgName\":\"中国-深圳\",\"username\":\"scott\",\"password\":\"779ce9af22dd468e86ac396e8c18b877\",\"email\":\"scott@gmail.com\",\"mobile\":\"18772101112\",\"status\":1,\"userIdCreate\":null,\"remark\":\"备注...\",\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":2,\"deptName\":\"技术二部\",\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 13:58:37');
+INSERT INTO `sys_log` VALUES ('582', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 13:58:41');
+INSERT INTO `sys_log` VALUES ('583', '-1', '获取用户信息为空', '登录', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{\"errorMsg\":\"验证码错误\"}', '0:0:0:0:0:0:0:1', '2019-02-27 13:58:50');
+INSERT INTO `sys_log` VALUES ('584', '2', 'scott', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 13:59:00');
+INSERT INTO `sys_log` VALUES ('585', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:03:23');
+INSERT INTO `sys_log` VALUES ('586', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 14:03:45');
+INSERT INTO `sys_log` VALUES ('587', '2', 'scott', '登录', '3', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:03:55');
+INSERT INTO `sys_log` VALUES ('588', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:10:20');
+INSERT INTO `sys_log` VALUES ('589', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 14:10:32');
+INSERT INTO `sys_log` VALUES ('590', '2', 'scott', '登录', '3', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:10:41');
+INSERT INTO `sys_log` VALUES ('591', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:14:23');
+INSERT INTO `sys_log` VALUES ('592', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 14:14:52');
+INSERT INTO `sys_log` VALUES ('593', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:15:02');
+INSERT INTO `sys_log` VALUES ('594', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:21:12');
+INSERT INTO `sys_log` VALUES ('595', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 14:22:06');
+INSERT INTO `sys_log` VALUES ('596', '2', 'scott', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:22:15');
+INSERT INTO `sys_log` VALUES ('597', '1', 'admin', '登录', '11', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:26:00');
+INSERT INTO `sys_log` VALUES ('598', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 14:27:13');
+INSERT INTO `sys_log` VALUES ('599', '2', 'scott', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:27:24');
+INSERT INTO `sys_log` VALUES ('600', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:29:07');
+INSERT INTO `sys_log` VALUES ('601', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:30:14');
+INSERT INTO `sys_log` VALUES ('602', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:31:58');
+INSERT INTO `sys_log` VALUES ('603', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:32:43');
+INSERT INTO `sys_log` VALUES ('604', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 14:33:03');
+INSERT INTO `sys_log` VALUES ('605', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:33:12');
+INSERT INTO `sys_log` VALUES ('606', '2', 'scott', '登录', '14', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:34:50');
+INSERT INTO `sys_log` VALUES ('607', '2', 'scott', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:35:52');
+INSERT INTO `sys_log` VALUES ('608', '2', 'scott', '登录', '53', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:50:49');
+INSERT INTO `sys_log` VALUES ('609', '-1', null, '退出系统', '17', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 14:51:15');
+INSERT INTO `sys_log` VALUES ('610', '1', 'admin', '登录', '12', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:51:22');
+INSERT INTO `sys_log` VALUES ('611', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:52:41');
+INSERT INTO `sys_log` VALUES ('612', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:54:00');
+INSERT INTO `sys_log` VALUES ('613', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:55:27');
+INSERT INTO `sys_log` VALUES ('614', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 14:56:40');
+INSERT INTO `sys_log` VALUES ('615', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:01:50');
+INSERT INTO `sys_log` VALUES ('616', '1', 'admin', '登录', '18', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:03:10');
+INSERT INTO `sys_log` VALUES ('617', '-1', '获取用户信息为空', '登录', '2', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{\"errorMsg\":\"验证码错误\"}', '0:0:0:0:0:0:0:1', '2019-02-27 15:25:37');
+INSERT INTO `sys_log` VALUES ('618', '2', 'scott', '登录', '26', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:25:47');
+INSERT INTO `sys_log` VALUES ('619', '-1', null, '退出系统', '3', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 15:26:09');
+INSERT INTO `sys_log` VALUES ('620', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:26:16');
+INSERT INTO `sys_log` VALUES ('621', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:27:20');
+INSERT INTO `sys_log` VALUES ('622', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:28:04');
+INSERT INTO `sys_log` VALUES ('623', '1', 'admin', '修改用户', '16', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":2,\"orgId\":2,\"orgName\":\"中国-深圳\",\"username\":\"scott\",\"password\":\"779ce9af22dd468e86ac396e8c18b877\",\"email\":\"scott@gmail.com\",\"mobile\":\"18772101112\",\"status\":1,\"userIdCreate\":null,\"remark\":\"备注...\",\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":2,\"deptName\":\"技术二部\",\"check\":0,\"managerId\":null,\"roleIdList\":[2]}', '0:0:0:0:0:0:0:1', '2019-02-27 15:28:33');
+INSERT INTO `sys_log` VALUES ('624', '1', 'admin', '删除用户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.batchRemove()', '[7,6,5]', '0:0:0:0:0:0:0:1', '2019-02-27 15:28:42');
+INSERT INTO `sys_log` VALUES ('625', '1', 'admin', '删除用户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.batchRemove()', '[7,6,5]', '0:0:0:0:0:0:0:1', '2019-02-27 15:28:45');
+INSERT INTO `sys_log` VALUES ('626', '1', 'admin', '删除用户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.batchRemove()', '[7]', '0:0:0:0:0:0:0:1', '2019-02-27 15:28:54');
+INSERT INTO `sys_log` VALUES ('627', '1', 'admin', '操作权限', '11', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleOptAuthorization()', '{\"roleId\":4,\"orgId\":4,\"orgName\":\"信息部\",\"roleName\":\"scott下级员工\",\"roleSign\":\"scott下级员工\",\"remark\":null,\"userIdCreate\":null,\"menuIdList\":[1,64,3,36,42,43,44,45,7,15,16,17,18,19,46,6,12,13,14,24,25,26,11],\"orgIdList\":[1,2,4,5,3],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 15:29:15');
+INSERT INTO `sys_log` VALUES ('628', '1', 'admin', '重置密码', '322', 'com.scott.dp.modules.sys.controller.SysUserController.updatePswd()', '{\"userId\":8,\"orgId\":null,\"orgName\":null,\"username\":null,\"password\":\"52806415ed0c1678e56fd7ab3710543b\",\"email\":null,\"mobile\":null,\"status\":null,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":null,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 15:29:35');
+INSERT INTO `sys_log` VALUES ('629', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 15:29:39');
+INSERT INTO `sys_log` VALUES ('630', '8', 'scott1', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:29:48');
+INSERT INTO `sys_log` VALUES ('631', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 15:29:59');
+INSERT INTO `sys_log` VALUES ('632', '2', 'scott', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:30:08');
+INSERT INTO `sys_log` VALUES ('633', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 15:30:26');
+INSERT INTO `sys_log` VALUES ('634', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:30:33');
+INSERT INTO `sys_log` VALUES ('635', '1', 'admin', '修改用户', '12', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":2,\"orgId\":2,\"orgName\":\"中国-深圳\",\"username\":\"scott\",\"password\":\"779ce9af22dd468e86ac396e8c18b877\",\"email\":\"scott@gmail.com\",\"mobile\":\"18772101112\",\"status\":1,\"userIdCreate\":null,\"remark\":\"备注...\",\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":2,\"deptName\":\"技术二部\",\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 15:30:45');
+INSERT INTO `sys_log` VALUES ('636', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 15:30:48');
+INSERT INTO `sys_log` VALUES ('637', '2', 'scott', '登录', '4', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:30:57');
+INSERT INTO `sys_log` VALUES ('638', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 15:31:19');
+INSERT INTO `sys_log` VALUES ('639', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:31:24');
+INSERT INTO `sys_log` VALUES ('640', '1', 'admin', '修改用户', '12', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":2,\"orgId\":2,\"orgName\":\"中国-深圳\",\"username\":\"scott\",\"password\":\"779ce9af22dd468e86ac396e8c18b877\",\"email\":\"scott@gmail.com\",\"mobile\":\"18772101112\",\"status\":1,\"userIdCreate\":null,\"remark\":\"备注...\",\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":2,\"deptName\":\"技术二部\",\"check\":0,\"managerId\":null,\"roleIdList\":[2]}', '0:0:0:0:0:0:0:1', '2019-02-27 15:31:34');
+INSERT INTO `sys_log` VALUES ('641', '1', 'admin', '删除用户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.batchRemove()', '[7]', '0:0:0:0:0:0:0:1', '2019-02-27 15:32:17');
+INSERT INTO `sys_log` VALUES ('642', '1', 'admin', '修改用户', '9', 'com.scott.dp.modules.sys.controller.SysUserController.update()', '{\"userId\":8,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"scott1\",\"password\":\"52806415ed0c1678e56fd7ab3710543b\",\"email\":\"123123\",\"mobile\":\"123123123123\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":1,\"deptName\":\"技术一部\",\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 15:33:15');
+INSERT INTO `sys_log` VALUES ('643', '1', 'admin', '删除用户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.batchRemove()', '[7]', '0:0:0:0:0:0:0:1', '2019-02-27 15:33:21');
+INSERT INTO `sys_log` VALUES ('644', '1', 'admin', '删除用户', '26385', 'com.scott.dp.modules.sys.controller.SysUserController.batchRemove()', '[7]', '0:0:0:0:0:0:0:1', '2019-02-27 15:34:20');
+INSERT INTO `sys_log` VALUES ('645', '1', 'admin', '登录', '19', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:41:10');
+INSERT INTO `sys_log` VALUES ('646', '1', 'admin', '删除用户', '26228', 'com.scott.dp.modules.sys.controller.SysUserController.batchRemove()', '[7,6]', '0:0:0:0:0:0:0:1', '2019-02-27 15:41:49');
+INSERT INTO `sys_log` VALUES ('647', '1', 'admin', '删除用户', '14600', 'com.scott.dp.modules.sys.controller.SysUserController.batchRemove()', '[2,1]', '0:0:0:0:0:0:0:1', '2019-02-27 15:42:13');
+INSERT INTO `sys_log` VALUES ('648', '1', 'admin', '登录', '18', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:43:39');
+INSERT INTO `sys_log` VALUES ('649', '1', 'admin', '删除用户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.batchRemove()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-27 15:43:49');
+INSERT INTO `sys_log` VALUES ('650', '1', 'admin', '删除用户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.batchRemove()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-27 15:43:57');
+INSERT INTO `sys_log` VALUES ('651', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:44:56');
+INSERT INTO `sys_log` VALUES ('652', '1', 'admin', '新增用户', '4', 'com.scott.dp.modules.sys.controller.SysUserController.save()', '{\"userId\":null,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"123\",\"password\":\"123456\",\"email\":\"123\",\"mobile\":\"123\",\"status\":1,\"userIdCreate\":null,\"remark\":\"123\",\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":4,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 15:45:39');
+INSERT INTO `sys_log` VALUES ('653', '1', 'admin', '新增用户', '5', 'com.scott.dp.modules.sys.controller.SysUserController.save()', '{\"userId\":null,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"123\",\"password\":\"123123123\",\"email\":null,\"mobile\":\"123123123\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 15:47:26');
+INSERT INTO `sys_log` VALUES ('654', '1', 'admin', '新增用户', '3', 'com.scott.dp.modules.sys.controller.SysUserController.save()', '{\"userId\":null,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"123\",\"password\":\"123123123\",\"email\":null,\"mobile\":\"123123123\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 15:48:12');
+INSERT INTO `sys_log` VALUES ('655', '1', 'admin', '新增用户', '3', 'com.scott.dp.modules.sys.controller.SysUserController.save()', '{\"userId\":null,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"123\",\"password\":\"123123123\",\"email\":null,\"mobile\":\"123123\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":4,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 15:48:58');
+INSERT INTO `sys_log` VALUES ('656', '1', 'admin', '登录', '11', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:51:11');
+INSERT INTO `sys_log` VALUES ('657', '1', 'admin', '新增用户', '4', 'com.scott.dp.modules.sys.controller.SysUserController.save()', '{\"userId\":null,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"username\":\"123\",\"password\":\"123123123\",\"email\":null,\"mobile\":\"123123123\",\"status\":1,\"userIdCreate\":null,\"remark\":null,\"gmtCreate\":null,\"gmtModified\":null,\"deptId\":3,\"deptName\":null,\"check\":0,\"managerId\":null,\"roleIdList\":[4]}', '0:0:0:0:0:0:0:1', '2019-02-27 15:51:31');
+INSERT INTO `sys_log` VALUES ('658', '1', 'admin', '登录', '13', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 15:52:26');
+INSERT INTO `sys_log` VALUES ('659', '1', 'admin', '禁用账户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserDisable()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-27 15:52:51');
+INSERT INTO `sys_log` VALUES ('660', '1', 'admin', '启用账户', '9', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserEnable()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-27 15:52:54');
+INSERT INTO `sys_log` VALUES ('661', '1', 'admin', '禁用账户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserDisable()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-27 15:52:56');
 
 -- ----------------------------
 -- Table structure for sys_macro
@@ -4521,14 +4740,15 @@ CREATE TABLE `sys_role` (
   `gmt_create` datetime default NULL COMMENT '创建时间',
   `gmt_modified` datetime default NULL COMMENT '创建时间',
   PRIMARY KEY  (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='系统角色';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='系统角色';
 
 -- ----------------------------
 -- Records of sys_role
 -- ----------------------------
-INSERT INTO `sys_role` VALUES ('1', '2', '超级管理员', 'administrator', '【系统内置】', '2', '2017-08-12 00:43:52', '2019-01-03 15:03:45');
+INSERT INTO `sys_role` VALUES ('1', '2', '超级管理员', 'administrator', '【系统内置】', '2', '2017-08-12 00:43:52', '2019-02-27 10:06:57');
 INSERT INTO `sys_role` VALUES ('2', '2', '系统管理员', 'admin', '系统分管', '1', '2019-01-03 15:03:25', null);
 INSERT INTO `sys_role` VALUES ('3', '4', '信息管理员', 'message', '信息管理', '1', '2019-01-04 14:14:00', null);
+INSERT INTO `sys_role` VALUES ('4', '4', 'scott下级员工', 'scott下级员工', null, '2', '2019-02-27 10:02:55', null);
 
 -- ----------------------------
 -- Table structure for sys_role_menu
@@ -4539,7 +4759,7 @@ CREATE TABLE `sys_role_menu` (
   `role_id` bigint(20) default NULL COMMENT '角色ID',
   `menu_id` bigint(20) default NULL COMMENT '菜单ID',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=200 DEFAULT CHARSET=utf8 COMMENT='角色与菜单对应关系';
+) ENGINE=InnoDB AUTO_INCREMENT=437 DEFAULT CHARSET=utf8 COMMENT='角色与菜单对应关系';
 
 -- ----------------------------
 -- Records of sys_role_menu
@@ -4608,62 +4828,6 @@ INSERT INTO `sys_role_menu` VALUES ('120', '1', '14');
 INSERT INTO `sys_role_menu` VALUES ('121', '1', '24');
 INSERT INTO `sys_role_menu` VALUES ('122', '1', '25');
 INSERT INTO `sys_role_menu` VALUES ('123', '1', '26');
-INSERT INTO `sys_role_menu` VALUES ('124', '2', '1');
-INSERT INTO `sys_role_menu` VALUES ('125', '2', '37');
-INSERT INTO `sys_role_menu` VALUES ('126', '2', '38');
-INSERT INTO `sys_role_menu` VALUES ('127', '2', '39');
-INSERT INTO `sys_role_menu` VALUES ('128', '2', '40');
-INSERT INTO `sys_role_menu` VALUES ('129', '2', '41');
-INSERT INTO `sys_role_menu` VALUES ('130', '2', '4');
-INSERT INTO `sys_role_menu` VALUES ('131', '2', '32');
-INSERT INTO `sys_role_menu` VALUES ('132', '2', '33');
-INSERT INTO `sys_role_menu` VALUES ('133', '2', '34');
-INSERT INTO `sys_role_menu` VALUES ('134', '2', '35');
-INSERT INTO `sys_role_menu` VALUES ('135', '2', '27');
-INSERT INTO `sys_role_menu` VALUES ('136', '2', '28');
-INSERT INTO `sys_role_menu` VALUES ('137', '2', '29');
-INSERT INTO `sys_role_menu` VALUES ('138', '2', '30');
-INSERT INTO `sys_role_menu` VALUES ('139', '2', '47');
-INSERT INTO `sys_role_menu` VALUES ('140', '2', '48');
-INSERT INTO `sys_role_menu` VALUES ('141', '2', '49');
-INSERT INTO `sys_role_menu` VALUES ('142', '2', '50');
-INSERT INTO `sys_role_menu` VALUES ('143', '2', '51');
-INSERT INTO `sys_role_menu` VALUES ('144', '2', '55');
-INSERT INTO `sys_role_menu` VALUES ('145', '2', '56');
-INSERT INTO `sys_role_menu` VALUES ('146', '2', '57');
-INSERT INTO `sys_role_menu` VALUES ('147', '2', '58');
-INSERT INTO `sys_role_menu` VALUES ('148', '2', '63');
-INSERT INTO `sys_role_menu` VALUES ('149', '2', '52');
-INSERT INTO `sys_role_menu` VALUES ('150', '2', '53');
-INSERT INTO `sys_role_menu` VALUES ('151', '2', '54');
-INSERT INTO `sys_role_menu` VALUES ('152', '2', '62');
-INSERT INTO `sys_role_menu` VALUES ('153', '2', '64');
-INSERT INTO `sys_role_menu` VALUES ('154', '2', '3');
-INSERT INTO `sys_role_menu` VALUES ('155', '2', '36');
-INSERT INTO `sys_role_menu` VALUES ('156', '2', '42');
-INSERT INTO `sys_role_menu` VALUES ('157', '2', '43');
-INSERT INTO `sys_role_menu` VALUES ('158', '2', '44');
-INSERT INTO `sys_role_menu` VALUES ('159', '2', '45');
-INSERT INTO `sys_role_menu` VALUES ('160', '2', '7');
-INSERT INTO `sys_role_menu` VALUES ('161', '2', '15');
-INSERT INTO `sys_role_menu` VALUES ('162', '2', '16');
-INSERT INTO `sys_role_menu` VALUES ('163', '2', '17');
-INSERT INTO `sys_role_menu` VALUES ('164', '2', '18');
-INSERT INTO `sys_role_menu` VALUES ('165', '2', '19');
-INSERT INTO `sys_role_menu` VALUES ('166', '2', '46');
-INSERT INTO `sys_role_menu` VALUES ('167', '2', '6');
-INSERT INTO `sys_role_menu` VALUES ('168', '2', '11');
-INSERT INTO `sys_role_menu` VALUES ('169', '2', '12');
-INSERT INTO `sys_role_menu` VALUES ('170', '2', '13');
-INSERT INTO `sys_role_menu` VALUES ('171', '2', '14');
-INSERT INTO `sys_role_menu` VALUES ('172', '2', '24');
-INSERT INTO `sys_role_menu` VALUES ('173', '2', '25');
-INSERT INTO `sys_role_menu` VALUES ('174', '2', '26');
-INSERT INTO `sys_role_menu` VALUES ('175', '2', '65');
-INSERT INTO `sys_role_menu` VALUES ('176', '2', '66');
-INSERT INTO `sys_role_menu` VALUES ('177', '2', '67');
-INSERT INTO `sys_role_menu` VALUES ('178', '2', '68');
-INSERT INTO `sys_role_menu` VALUES ('179', '2', '69');
 INSERT INTO `sys_role_menu` VALUES ('180', '3', '1');
 INSERT INTO `sys_role_menu` VALUES ('181', '3', '37');
 INSERT INTO `sys_role_menu` VALUES ('182', '3', '38');
@@ -4684,6 +4848,85 @@ INSERT INTO `sys_role_menu` VALUES ('196', '3', '66');
 INSERT INTO `sys_role_menu` VALUES ('197', '3', '67');
 INSERT INTO `sys_role_menu` VALUES ('198', '3', '68');
 INSERT INTO `sys_role_menu` VALUES ('199', '3', '69');
+INSERT INTO `sys_role_menu` VALUES ('200', '2', '1');
+INSERT INTO `sys_role_menu` VALUES ('201', '2', '37');
+INSERT INTO `sys_role_menu` VALUES ('202', '2', '38');
+INSERT INTO `sys_role_menu` VALUES ('203', '2', '39');
+INSERT INTO `sys_role_menu` VALUES ('204', '2', '40');
+INSERT INTO `sys_role_menu` VALUES ('205', '2', '41');
+INSERT INTO `sys_role_menu` VALUES ('206', '2', '4');
+INSERT INTO `sys_role_menu` VALUES ('207', '2', '32');
+INSERT INTO `sys_role_menu` VALUES ('208', '2', '33');
+INSERT INTO `sys_role_menu` VALUES ('209', '2', '34');
+INSERT INTO `sys_role_menu` VALUES ('210', '2', '35');
+INSERT INTO `sys_role_menu` VALUES ('211', '2', '27');
+INSERT INTO `sys_role_menu` VALUES ('212', '2', '28');
+INSERT INTO `sys_role_menu` VALUES ('213', '2', '29');
+INSERT INTO `sys_role_menu` VALUES ('214', '2', '30');
+INSERT INTO `sys_role_menu` VALUES ('215', '2', '47');
+INSERT INTO `sys_role_menu` VALUES ('216', '2', '48');
+INSERT INTO `sys_role_menu` VALUES ('217', '2', '49');
+INSERT INTO `sys_role_menu` VALUES ('218', '2', '50');
+INSERT INTO `sys_role_menu` VALUES ('219', '2', '51');
+INSERT INTO `sys_role_menu` VALUES ('220', '2', '55');
+INSERT INTO `sys_role_menu` VALUES ('221', '2', '56');
+INSERT INTO `sys_role_menu` VALUES ('222', '2', '57');
+INSERT INTO `sys_role_menu` VALUES ('223', '2', '58');
+INSERT INTO `sys_role_menu` VALUES ('224', '2', '63');
+INSERT INTO `sys_role_menu` VALUES ('225', '2', '52');
+INSERT INTO `sys_role_menu` VALUES ('226', '2', '53');
+INSERT INTO `sys_role_menu` VALUES ('227', '2', '54');
+INSERT INTO `sys_role_menu` VALUES ('228', '2', '62');
+INSERT INTO `sys_role_menu` VALUES ('229', '2', '64');
+INSERT INTO `sys_role_menu` VALUES ('230', '2', '3');
+INSERT INTO `sys_role_menu` VALUES ('231', '2', '36');
+INSERT INTO `sys_role_menu` VALUES ('232', '2', '42');
+INSERT INTO `sys_role_menu` VALUES ('233', '2', '43');
+INSERT INTO `sys_role_menu` VALUES ('234', '2', '44');
+INSERT INTO `sys_role_menu` VALUES ('235', '2', '45');
+INSERT INTO `sys_role_menu` VALUES ('236', '2', '7');
+INSERT INTO `sys_role_menu` VALUES ('237', '2', '15');
+INSERT INTO `sys_role_menu` VALUES ('238', '2', '16');
+INSERT INTO `sys_role_menu` VALUES ('239', '2', '17');
+INSERT INTO `sys_role_menu` VALUES ('240', '2', '18');
+INSERT INTO `sys_role_menu` VALUES ('241', '2', '19');
+INSERT INTO `sys_role_menu` VALUES ('242', '2', '46');
+INSERT INTO `sys_role_menu` VALUES ('243', '2', '6');
+INSERT INTO `sys_role_menu` VALUES ('244', '2', '11');
+INSERT INTO `sys_role_menu` VALUES ('245', '2', '12');
+INSERT INTO `sys_role_menu` VALUES ('246', '2', '13');
+INSERT INTO `sys_role_menu` VALUES ('247', '2', '14');
+INSERT INTO `sys_role_menu` VALUES ('248', '2', '24');
+INSERT INTO `sys_role_menu` VALUES ('249', '2', '25');
+INSERT INTO `sys_role_menu` VALUES ('250', '2', '26');
+INSERT INTO `sys_role_menu` VALUES ('251', '2', '65');
+INSERT INTO `sys_role_menu` VALUES ('252', '2', '66');
+INSERT INTO `sys_role_menu` VALUES ('253', '2', '67');
+INSERT INTO `sys_role_menu` VALUES ('254', '2', '68');
+INSERT INTO `sys_role_menu` VALUES ('255', '2', '69');
+INSERT INTO `sys_role_menu` VALUES ('414', '4', '1');
+INSERT INTO `sys_role_menu` VALUES ('415', '4', '64');
+INSERT INTO `sys_role_menu` VALUES ('416', '4', '3');
+INSERT INTO `sys_role_menu` VALUES ('417', '4', '36');
+INSERT INTO `sys_role_menu` VALUES ('418', '4', '42');
+INSERT INTO `sys_role_menu` VALUES ('419', '4', '43');
+INSERT INTO `sys_role_menu` VALUES ('420', '4', '44');
+INSERT INTO `sys_role_menu` VALUES ('421', '4', '45');
+INSERT INTO `sys_role_menu` VALUES ('422', '4', '7');
+INSERT INTO `sys_role_menu` VALUES ('423', '4', '15');
+INSERT INTO `sys_role_menu` VALUES ('424', '4', '16');
+INSERT INTO `sys_role_menu` VALUES ('425', '4', '17');
+INSERT INTO `sys_role_menu` VALUES ('426', '4', '18');
+INSERT INTO `sys_role_menu` VALUES ('427', '4', '19');
+INSERT INTO `sys_role_menu` VALUES ('428', '4', '46');
+INSERT INTO `sys_role_menu` VALUES ('429', '4', '6');
+INSERT INTO `sys_role_menu` VALUES ('430', '4', '12');
+INSERT INTO `sys_role_menu` VALUES ('431', '4', '13');
+INSERT INTO `sys_role_menu` VALUES ('432', '4', '14');
+INSERT INTO `sys_role_menu` VALUES ('433', '4', '24');
+INSERT INTO `sys_role_menu` VALUES ('434', '4', '25');
+INSERT INTO `sys_role_menu` VALUES ('435', '4', '26');
+INSERT INTO `sys_role_menu` VALUES ('436', '4', '11');
 
 -- ----------------------------
 -- Table structure for sys_role_org
@@ -4694,7 +4937,7 @@ CREATE TABLE `sys_role_org` (
   `role_id` bigint(20) default NULL COMMENT '角色ID',
   `org_id` bigint(20) default NULL COMMENT '机构ID',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='角色与机构对应关系';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='角色与机构对应关系';
 
 -- ----------------------------
 -- Records of sys_role_org
@@ -4704,9 +4947,16 @@ INSERT INTO `sys_role_org` VALUES ('3', '1', '2');
 INSERT INTO `sys_role_org` VALUES ('4', '1', '4');
 INSERT INTO `sys_role_org` VALUES ('5', '1', '5');
 INSERT INTO `sys_role_org` VALUES ('6', '1', '3');
-INSERT INTO `sys_role_org` VALUES ('7', '2', '2');
-INSERT INTO `sys_role_org` VALUES ('8', '2', '4');
-INSERT INTO `sys_role_org` VALUES ('9', '2', '5');
+INSERT INTO `sys_role_org` VALUES ('7', '2', '1');
+INSERT INTO `sys_role_org` VALUES ('8', '2', '2');
+INSERT INTO `sys_role_org` VALUES ('9', '2', '4');
+INSERT INTO `sys_role_org` VALUES ('10', '2', '5');
+INSERT INTO `sys_role_org` VALUES ('11', '2', '3');
+INSERT INTO `sys_role_org` VALUES ('12', '4', '1');
+INSERT INTO `sys_role_org` VALUES ('13', '4', '2');
+INSERT INTO `sys_role_org` VALUES ('14', '4', '4');
+INSERT INTO `sys_role_org` VALUES ('15', '4', '5');
+INSERT INTO `sys_role_org` VALUES ('16', '4', '3');
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -4726,15 +4976,17 @@ CREATE TABLE `sys_user` (
   `gmt_modified` datetime default NULL COMMENT '修改时间',
   `dept_id` bigint(20) default NULL COMMENT '所属部门Id',
   PRIMARY KEY  (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='系统用户';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='系统用户';
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', '3', 'admin', 'd0af8fa1272ef5a152d9e27763eea293', 'admin@example.com', '123456', '1', '备注...', '1', '2017-08-15 21:40:39', '2019-01-03 15:00:17', '1');
-INSERT INTO `sys_user` VALUES ('2', '2', 'scott', '779ce9af22dd468e86ac396e8c18b877', 'scott@gmail.com', '18552144441', '1', '备注...', '1', '2019-01-03 14:43:38', '2019-01-03 17:34:31', '2');
-INSERT INTO `sys_user` VALUES ('3', '3', '张三', 'cbd16e1b453f49566808733419100cb1', 'zhangsan@gmail.com', '2533852114', '1', 'remark', '1', '2019-01-03 17:44:34', '2019-01-04 16:48:44', '4');
-INSERT INTO `sys_user` VALUES ('4', '4', 'test1', '8633f0d4269a3a5f0455cadcd64f02f3', null, null, '1', null, '1', '2019-01-04 14:13:26', null, '3');
+INSERT INTO `sys_user` VALUES ('1', '3', 'admin', 'd0af8fa1272ef5a152d9e27763eea293', 'admin@example.com', '18772101111', '1', '备注...', '1', '2017-08-15 21:40:39', '2019-01-03 15:00:17', '1');
+INSERT INTO `sys_user` VALUES ('2', '2', 'scott', '779ce9af22dd468e86ac396e8c18b877', 'scott@gmail.com', '18772101112', '1', '备注...', '1', '2019-01-03 14:43:38', '2019-02-27 15:31:34', '2');
+INSERT INTO `sys_user` VALUES ('3', '3', '张三', 'cbd16e1b453f49566808733419100cb1', 'zhangsan@gmail.com', '18772101113', '1', 'remark', '1', '2019-01-03 17:44:34', '2019-01-04 16:48:44', '4');
+INSERT INTO `sys_user` VALUES ('4', '4', 'test1', '8633f0d4269a3a5f0455cadcd64f02f3', 'zhangsan@gmail.com', '18772101114', '1', null, '1', '2019-01-04 14:13:26', '2019-01-24 15:21:52', '3');
+INSERT INTO `sys_user` VALUES ('5', '4', '123', '3c47bb446ccb4a6a993b3f17748b68a4', 'zhangsan@gmail.com', '18772101115', '1', null, '2', '2019-02-27 10:20:06', null, '3');
+INSERT INTO `sys_user` VALUES ('8', '3', 'scott1', '52806415ed0c1678e56fd7ab3710543b', '123123', '123123123123', '1', null, '2', '2019-02-27 11:40:00', '2019-02-27 15:33:15', '1');
 
 -- ----------------------------
 -- Table structure for sys_user_role
@@ -4745,15 +4997,17 @@ CREATE TABLE `sys_user_role` (
   `user_id` bigint(20) default NULL COMMENT '用户ID',
   `role_id` bigint(20) default NULL COMMENT '角色ID',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COMMENT='用户与角色对应关系';
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COMMENT='用户与角色对应关系';
 
 -- ----------------------------
 -- Records of sys_user_role
 -- ----------------------------
 INSERT INTO `sys_user_role` VALUES ('4', '1', '1');
-INSERT INTO `sys_user_role` VALUES ('28', '2', '2');
-INSERT INTO `sys_user_role` VALUES ('31', '4', '2');
 INSERT INTO `sys_user_role` VALUES ('32', '3', '2');
+INSERT INTO `sys_user_role` VALUES ('34', '4', '2');
+INSERT INTO `sys_user_role` VALUES ('35', '5', '4');
+INSERT INTO `sys_user_role` VALUES ('46', '2', '2');
+INSERT INTO `sys_user_role` VALUES ('47', '8', '4');
 
 -- ----------------------------
 -- Table structure for sys_user_token
