@@ -1,0 +1,98 @@
+@layout("../../system/layout.html", {title: "icheck组件"}){
+<div class="panel panel-default" style="padding-bottom: 10px;margin-top:10px;">
+        <div class="panel-heading">icheck示例</div>
+        <div>
+            <h3>&nbsp;&nbsp;&nbsp;官方文档</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="https://github.com/fronteed/iCheck" target="_blank">https://github.com/fronteed/iCheck</a>
+                </div>
+            </div>
+            <h3>&nbsp;&nbsp;&nbsp;基础示例</h3>
+            <div class="row">
+                <div class="col-md-4 checkList">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="C" v-model="checkList"/> C
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="C++" v-model="checkList"/> C++
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="Go" v-model="checkList"/> Go
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="Python" v-model="checkList"/> Python
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="Java" v-model="checkList"/> Java
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <div class="btn-group">
+                        <a class="btn btn-default" \@click="getCheck">获取多选框值</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    选择状态：【{{checkList}}】
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 typeRadio">
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="0" v-model="radioChecked"/> 目录
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="1" v-model="radioChecked"/> 菜单
+                    </label>
+                    <label class="radio-inline">
+                            <input type="radio" name="type" value="2" v-model="radioChecked"/> 按钮
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <div class="btn-group">
+                        <a class="btn btn-default" \@click="getRadio">获取单选框值</a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    选择状态：【{{radioChecked}}】
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el : '#dpLTE',
+        data : {
+            radioChecked: 1,
+            checkList: ['Java']
+        },
+        methods: {
+            getCheck : function() {
+                vm.checkList = [];
+                $(".checkList div.checked").each(function(idx){
+                    vm.checkList.push($(this).find("input[type='checkbox']").val());
+                })
+            },
+            getRadio : function() {
+                if ($(".typeRadio div").hasClass("checked")) {
+                    vm.radioChecked = $(".typeRadio div.checked").find("input[type='radio']").val();
+                }
+            }
+        }
+    });
+    $('label input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue'
+    });
+    $('.typeRadio label input').on('ifClicked', function () {
+        $(this).iCheck('toggle');
+        vm.getRadio()
+    });
+    $('.checkList label input').on('ifClicked', function () {
+        $(this).iCheck('toggle');
+        vm.getCheck()
+    });
+</script>
+@}
