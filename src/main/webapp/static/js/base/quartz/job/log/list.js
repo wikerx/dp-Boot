@@ -121,6 +121,15 @@ var vm = new Vue({
                     vm.load();
                 }
             });
+        },
+        clear: function() {
+            $.ConfirmAjax({
+                msg : "您确定要清空日志吗？",
+                url: '../../quartz/job/log/clear?_' + $.now(),
+                success: function(data) {
+                    vm.load();
+                }
+            });
         }
 	}
 })

@@ -20,8 +20,8 @@
         <div class="col-md-4 form-inline pull-right">
             <div class="btn-group">
                 <a v-if="hasPermission('quartz:job:log:list')" class="btn btn-default" onclick="reload();"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
-                <!--<a v-if="hasPermission('quartz:job:log:remove')" class="btn btn-default" \@click="remove(true)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
-                <a v-if="hasPermission('quartz:job:log:clear')" class="btn btn-default" \@click="clear"><i class="fa fa-eraser"></i>&nbsp;清空</a>-->
+                <a v-if="hasPermission('quartz:job:log:remove')" class="btn btn-default" \@click="remove(true)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                <a v-if="hasPermission('quartz:job:log:clear')" class="btn btn-default" \@click="clear"><i class="fa fa-eraser"></i>&nbsp;清空</a>
             </div>
         </div>
 </div>
