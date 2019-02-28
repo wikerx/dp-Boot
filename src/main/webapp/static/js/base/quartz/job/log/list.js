@@ -26,11 +26,12 @@ function getGrid() {
 		},
 		columns: [
 			{checkbox: true},
-            {field : "jobId", title : "任务id", width : "100px"},
-            {field : "beanName", title : "spring bean名称", width : "100px"},
-            {field : "methodName", title : "方法名", width : "100px"},
-            {field : "params", title : "参数", width : "100px"},
-            {field : "status", title : "任务状态", width : "100px",
+            {field : "logId", title : "序号", width : "5%"},
+            {field : "jobId", title : "任务id", width : "5%"},
+            {field : "beanName", title : "spring bean名称", width : "10%"},
+            {field : "methodName", title : "方法名", width : "10%"},
+            {field : "params", title : "参数", width : "20%"},
+            {field : "status", title : "任务状态", width : "5%",
                 formatter : function(value , row, index) {
                     if (value === 0) {
                         return '<b style="color: #FF3300;">执行失败</b>'
@@ -41,10 +42,10 @@ function getGrid() {
                     }
                 }
             },
-            {field : "error", title : "失败信息", width : "100px"},
-            {field : "times", title : "耗时(单位：毫秒)", width : "100px"},
-            {field : "gmtCreate", title : "创建时间", width : "100px"},
-            {title : "操作", formatter : function(value, row, index) {
+            {field : "error", title : "失败信息", width : "20%"},
+            {field : "times", title : "耗时(单位：毫秒)", width : "10%"},
+            {field : "gmtCreate", title : "创建时间", width : "10%"},
+            {title : "操作", width : "10%", formatter : function(value, row, index) {
                     var _html = '';
                     if (hasPermission('quartz:job:log:edit')) {
                         _html += '<a href="javascript:;" onclick="vm.edit(\''+row.logId+'\')" title="编辑"><i class="fa fa-pencil"></i></a>';

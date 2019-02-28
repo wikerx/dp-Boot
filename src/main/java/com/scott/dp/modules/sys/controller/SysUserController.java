@@ -126,9 +126,16 @@ public class SysUserController extends AbstractController {
 	@RequestMapping("/update")
 	public R update(@RequestBody SysUserEntity user)
 	{
-		if(getUserId()!=SystemConstant.SUPER_ADMIN && user.getUserId()==SystemConstant.SUPER_ADMIN){//超管可以修改自己
-			new SmsUtil().sendSms(getUser().getMobile(),"您的账户信息正在被修改，请及时查看!");
-			return R.error("当前权限不足以操作超管账户！");
+		if(user.getUserId()==SystemConstant.SUPER_ADMIN){//超管可以修改自己
+			if(getUserId()==SystemConstant.SUPER_ADMIN){
+				if(Ognl.isEmpty(user.getDeptId())) {
+					user.setDeptId(Long.parseLong(getSession().getAttribute("deptId").toString()));
+				}
+				return sysUserService.updateUser(user);
+			}else {
+				new SmsUtil().sendSms(getUser().getMobile(), "您的账户信息正在被修改，请及时查看!");
+				return R.error("当前权限不足以操作超管账户！");
+			}
 		}else{
 			if(Ognl.isEmpty(user.getDeptId())) {
 				user.setDeptId(Long.parseLong(getSession().getAttribute("deptId").toString()));
@@ -145,7 +152,6 @@ public class SysUserController extends AbstractController {
 	@SysLog("删除用户")
 	@RequestMapping("/remove")
 	public R batchRemove(@RequestBody Long[] id) {
-		System.out.println(id.toString());
 		if(isInArray(id)){
 			return R.error("当前权限不足以操作超管账户！");
 		}else {
@@ -201,7 +207,7 @@ public class SysUserController extends AbstractController {
 	@SysLog("禁用账户")
 	@RequestMapping("/disable")
 	public R updateUserDisable(@RequestBody Long[] id) {
-		if(getUserId()==SystemConstant.SUPER_ADMIN){
+		if(isInArray(id)){
 			return R.error("当前权限不足以操作超管账户！");
 		}else {
 			return sysUserService.updateUserDisable(id);
