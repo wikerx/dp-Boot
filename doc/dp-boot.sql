@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2019-02-27 15:57:28
+Date: 2019-03-01 18:57:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -170,7 +170,7 @@ CREATE TABLE `qrtz_scheduler_state` (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('quartzScheduler', 'PC-Xue1551253920981', '1551254241283', '15000');
+INSERT INTO `qrtz_scheduler_state` VALUES ('quartzScheduler', 'PC-Xue1551427964901', '1551437820658', '15000');
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -300,42 +300,28 @@ CREATE TABLE `quartz_job_log` (
   `gmt_create` datetime default NULL COMMENT '创建时间',
   PRIMARY KEY  (`log_id`),
   KEY `job_id` USING BTREE (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='定时任务日志';
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COMMENT='定时任务日志';
 
 -- ----------------------------
 -- Records of quartz_job_log
 -- ----------------------------
-INSERT INTO `quartz_job_log` VALUES ('1', '1', 'testTask', 'test', null, '1', null, '3', '2018-12-29 10:51:40');
-INSERT INTO `quartz_job_log` VALUES ('2', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:51:45');
-INSERT INTO `quartz_job_log` VALUES ('3', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:51:50');
-INSERT INTO `quartz_job_log` VALUES ('4', '1', 'testTask', 'test', null, '1', null, '47', '2018-12-29 10:51:55');
-INSERT INTO `quartz_job_log` VALUES ('5', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:52:00');
-INSERT INTO `quartz_job_log` VALUES ('6', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:52:05');
-INSERT INTO `quartz_job_log` VALUES ('7', '1', 'testTask', 'test', null, '1', null, '2', '2018-12-29 10:52:10');
-INSERT INTO `quartz_job_log` VALUES ('8', '1', 'testTask', 'test', null, '1', null, '2', '2018-12-29 10:52:15');
-INSERT INTO `quartz_job_log` VALUES ('9', '1', 'testTask', 'test', null, '1', null, '2', '2018-12-29 10:52:20');
-INSERT INTO `quartz_job_log` VALUES ('10', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:52:25');
-INSERT INTO `quartz_job_log` VALUES ('11', '1', 'testTask', 'test', null, '1', null, '2', '2018-12-29 10:52:30');
-INSERT INTO `quartz_job_log` VALUES ('12', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:52:35');
-INSERT INTO `quartz_job_log` VALUES ('13', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:52:40');
-INSERT INTO `quartz_job_log` VALUES ('14', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:52:45');
-INSERT INTO `quartz_job_log` VALUES ('15', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:52:50');
-INSERT INTO `quartz_job_log` VALUES ('16', '1', 'testTask', 'test', null, '1', null, '2', '2018-12-29 10:52:55');
-INSERT INTO `quartz_job_log` VALUES ('17', '1', 'testTask', 'test', null, '1', null, '2', '2018-12-29 10:53:00');
-INSERT INTO `quartz_job_log` VALUES ('18', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:53:05');
-INSERT INTO `quartz_job_log` VALUES ('19', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:53:10');
-INSERT INTO `quartz_job_log` VALUES ('20', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:53:15');
-INSERT INTO `quartz_job_log` VALUES ('21', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:53:20');
-INSERT INTO `quartz_job_log` VALUES ('22', '2', 'testTak', 'scaningFile', 'D:/', '0', 'org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named \'testTak\' available', '0', '2018-12-29 10:53:20');
-INSERT INTO `quartz_job_log` VALUES ('23', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:53:25');
-INSERT INTO `quartz_job_log` VALUES ('24', '2', 'testTak', 'scaningFile', 'D:/', '0', 'org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named \'testTak\' available', '1', '2018-12-29 10:53:30');
-INSERT INTO `quartz_job_log` VALUES ('25', '2', 'testTak', 'scaningFile', 'D:/', '0', 'org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named \'testTak\' available', '2', '2018-12-29 10:53:40');
-INSERT INTO `quartz_job_log` VALUES ('26', '2', 'testTak', 'scaningFile', 'D:/', '0', 'org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named \'testTak\' available', '1', '2018-12-29 10:53:50');
-INSERT INTO `quartz_job_log` VALUES ('27', '1', 'testTask', 'test', null, '1', null, '1', '2018-12-29 10:53:55');
-INSERT INTO `quartz_job_log` VALUES ('28', '1', 'testTask', 'test', null, '1', null, '2', '2018-12-29 10:54:00');
-INSERT INTO `quartz_job_log` VALUES ('29', '1', 'testTask', 'test', null, '1', null, '2', '2018-12-29 10:54:05');
-INSERT INTO `quartz_job_log` VALUES ('30', '1', 'testTask', 'test', null, '1', null, '2', '2019-01-04 15:03:34');
-INSERT INTO `quartz_job_log` VALUES ('31', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '5450', '2019-01-18 15:30:11');
+INSERT INTO `quartz_job_log` VALUES ('32', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '3', '2019-02-27 19:05:34');
+INSERT INTO `quartz_job_log` VALUES ('33', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '2', '2019-02-27 19:06:00');
+INSERT INTO `quartz_job_log` VALUES ('34', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '1', '2019-02-27 19:07:00');
+INSERT INTO `quartz_job_log` VALUES ('35', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '2', '2019-02-27 19:08:00');
+INSERT INTO `quartz_job_log` VALUES ('36', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '6', '2019-02-27 19:10:00');
+INSERT INTO `quartz_job_log` VALUES ('37', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '1', '2019-02-27 19:11:00');
+INSERT INTO `quartz_job_log` VALUES ('38', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '2', '2019-02-27 19:12:00');
+INSERT INTO `quartz_job_log` VALUES ('39', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '2', '2019-02-27 19:13:00');
+INSERT INTO `quartz_job_log` VALUES ('40', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '2', '2019-02-27 19:14:00');
+INSERT INTO `quartz_job_log` VALUES ('41', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '2', '2019-02-27 19:15:00');
+INSERT INTO `quartz_job_log` VALUES ('42', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '6', '2019-02-27 19:17:00');
+INSERT INTO `quartz_job_log` VALUES ('43', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '3', '2019-02-27 19:18:00');
+INSERT INTO `quartz_job_log` VALUES ('44', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '1', '2019-02-27 19:19:00');
+INSERT INTO `quartz_job_log` VALUES ('45', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '2', '2019-02-27 19:20:00');
+INSERT INTO `quartz_job_log` VALUES ('46', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '6', '2019-02-27 19:24:00');
+INSERT INTO `quartz_job_log` VALUES ('47', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '7', '2019-02-27 19:26:00');
+INSERT INTO `quartz_job_log` VALUES ('48', '2', 'testTask', 'scaningFile', 'E:\\work\\idea\\dp-BOOT\\doc', '1', null, '6', '2019-02-27 19:28:00');
 
 -- ----------------------------
 -- Table structure for sys_area
@@ -3926,7 +3912,7 @@ CREATE TABLE `sys_log` (
   `ip` varchar(64) default NULL COMMENT 'IP地址',
   `gmt_create` datetime default NULL COMMENT '创建时间',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=662 DEFAULT CHARSET=utf8 COMMENT='系统日志';
+) ENGINE=InnoDB AUTO_INCREMENT=768 DEFAULT CHARSET=utf8 COMMENT='系统日志';
 
 -- ----------------------------
 -- Records of sys_log
@@ -4592,6 +4578,112 @@ INSERT INTO `sys_log` VALUES ('658', '1', 'admin', '登录', '13', 'com.scott.dp
 INSERT INTO `sys_log` VALUES ('659', '1', 'admin', '禁用账户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserDisable()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-27 15:52:51');
 INSERT INTO `sys_log` VALUES ('660', '1', 'admin', '启用账户', '9', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserEnable()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-27 15:52:54');
 INSERT INTO `sys_log` VALUES ('661', '1', 'admin', '禁用账户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserDisable()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-27 15:52:56');
+INSERT INTO `sys_log` VALUES ('662', '1', 'admin', '新增菜单', '4', 'com.scott.dp.modules.sys.controller.SysMenuController.save()', '{\"menuId\":null,\"parentId\":0,\"parentName\":null,\"name\":\"程序开发\",\"url\":null,\"perms\":null,\"type\":0,\"icon\":\"fa fa-circle-o\",\"orderNum\":0,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 16:47:06');
+INSERT INTO `sys_log` VALUES ('663', '1', 'admin', '修改菜单', '4', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":70,\"parentId\":0,\"parentName\":null,\"name\":\"程序开发\",\"url\":null,\"perms\":null,\"type\":0,\"icon\":\"fa fa-keyboard-o\",\"orderNum\":0,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 16:48:22');
+INSERT INTO `sys_log` VALUES ('664', '1', 'admin', '修改菜单', '4', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":1,\"parentId\":0,\"parentName\":null,\"name\":\"系统管理\",\"url\":null,\"perms\":\"\",\"type\":0,\"icon\":\"fa fa-coffee\",\"orderNum\":1,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 16:48:34');
+INSERT INTO `sys_log` VALUES ('665', '1', 'admin', '修改菜单', '3', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":3,\"parentId\":0,\"parentName\":null,\"name\":\"组织机构\",\"url\":null,\"perms\":null,\"type\":0,\"icon\":\"fa fa-desktop\",\"orderNum\":2,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 16:48:44');
+INSERT INTO `sys_log` VALUES ('666', '-1', null, '退出系统', '3', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 16:49:08');
+INSERT INTO `sys_log` VALUES ('667', '1', 'admin', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 16:49:18');
+INSERT INTO `sys_log` VALUES ('668', '-1', '获取用户信息为空', '登录', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{\"errorMsg\":\"验证码错误\"}', '0:0:0:0:0:0:0:1', '2019-02-27 17:02:28');
+INSERT INTO `sys_log` VALUES ('669', '1', 'admin', '登录', '23', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:02:37');
+INSERT INTO `sys_log` VALUES ('670', '1', 'admin', '操作权限', '26', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRoleOptAuthorization()', '{\"roleId\":1,\"orgId\":2,\"orgName\":\"中国-深圳\",\"roleName\":\"超级管理员\",\"roleSign\":\"administrator\",\"remark\":\"【系统内置】\",\"userIdCreate\":null,\"menuIdList\":[70,1,37,38,39,40,41,2,20,21,22,23,4,32,33,34,35,27,28,29,30,47,48,49,50,51,55,56,57,58,63,52,53,54,59,60,61,62,64,3,36,42,43,44,45,7,15,16,17,18,19,46,6,11,12,13,14,24,25,26,65,66,67,68,69],\"orgIdList\":[1,2,4,5,3],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:03:05');
+INSERT INTO `sys_log` VALUES ('671', '-1', null, '退出系统', '3', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 17:03:21');
+INSERT INTO `sys_log` VALUES ('672', '2', 'scott', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:03:28');
+INSERT INTO `sys_log` VALUES ('673', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 17:03:51');
+INSERT INTO `sys_log` VALUES ('674', '8', 'scott1', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:04:00');
+INSERT INTO `sys_log` VALUES ('675', '8', 'scott1', '新增角色', '9', 'com.scott.dp.modules.sys.controller.SysRoleController.saveRole()', '{\"roleId\":null,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"roleName\":\"123123\",\"roleSign\":\"123123\",\"remark\":\"123\",\"userIdCreate\":8,\"menuIdList\":null,\"orgIdList\":null,\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:04:11');
+INSERT INTO `sys_log` VALUES ('676', '8', 'scott1', '修改角色', '7', 'com.scott.dp.modules.sys.controller.SysRoleController.updateRole()', '{\"roleId\":6,\"orgId\":3,\"orgName\":\"美国-洛杉矶\",\"roleName\":\"scott1_1\",\"roleSign\":\"scott1_1\",\"remark\":\"scott1下级权限\",\"userIdCreate\":null,\"menuIdList\":[],\"orgIdList\":[],\"gmtCreate\":null,\"gmtModified\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:04:58');
+INSERT INTO `sys_log` VALUES ('677', '-1', null, '退出系统', '1', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 17:05:11');
+INSERT INTO `sys_log` VALUES ('678', '2', 'scott', '登录', '12', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:05:20');
+INSERT INTO `sys_log` VALUES ('679', '-1', null, '退出系统', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.logout()', null, '0:0:0:0:0:0:0:1', '2019-02-27 17:08:00');
+INSERT INTO `sys_log` VALUES ('680', '1', 'admin', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:08:13');
+INSERT INTO `sys_log` VALUES ('681', '1', 'admin', '修改菜单', '6', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":2,\"parentId\":70,\"parentName\":\"程序开发\",\"name\":\"系统菜单\",\"url\":\"base/menu/list.html\",\"perms\":null,\"type\":1,\"icon\":\"fa fa-th-list\",\"orderNum\":1,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:08:50');
+INSERT INTO `sys_log` VALUES ('682', '1', 'admin', '修改菜单', '7', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":4,\"parentId\":70,\"parentName\":\"程序开发\",\"name\":\"通用字典\",\"url\":\"base/macro/list.html\",\"perms\":null,\"type\":1,\"icon\":\"fa fa-book\",\"orderNum\":2,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:09:12');
+INSERT INTO `sys_log` VALUES ('683', '1', 'admin', '修改菜单', '6', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":59,\"parentId\":70,\"parentName\":\"程序开发\",\"name\":\"敏捷开发\",\"url\":\"base/generator/list.html\",\"perms\":null,\"type\":1,\"icon\":\"fa fa-archive\",\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:09:34');
+INSERT INTO `sys_log` VALUES ('684', '1', 'admin', '修改菜单', '5', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":64,\"parentId\":70,\"parentName\":\"程序开发\",\"name\":\"接口管理\",\"url\":\"swagger-ui.html\",\"perms\":null,\"type\":1,\"icon\":\"fa fa-support\",\"orderNum\":4,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:10:09');
+INSERT INTO `sys_log` VALUES ('685', '1', 'admin', '修改菜单', '3', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":27,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"系统日志\",\"url\":\"base/log/list.html\",\"perms\":null,\"type\":1,\"icon\":\"fa fa-warning\",\"orderNum\":1,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:10:29');
+INSERT INTO `sys_log` VALUES ('686', '1', 'admin', '修改菜单', '5', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":47,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"定时任务\",\"url\":\"base/quartz/list.html\",\"perms\":null,\"type\":1,\"icon\":\"fa fa-bell\",\"orderNum\":2,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:10:42');
+INSERT INTO `sys_log` VALUES ('687', '1', 'admin', '修改菜单', '5', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":62,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"系统监控\",\"url\":\"druid/index.html\",\"perms\":null,\"type\":1,\"icon\":\"fa fa-bug\",\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:10:56');
+INSERT INTO `sys_log` VALUES ('688', '1', 'admin', '修改菜单', '5', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":55,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"日志列表\",\"url\":null,\"perms\":\"quartz:job:log\",\"type\":1,\"icon\":null,\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:12:15');
+INSERT INTO `sys_log` VALUES ('689', '1', 'admin', '修改菜单', '5', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":62,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"系统监控\",\"url\":\"druid/index.html\",\"perms\":null,\"type\":1,\"icon\":\"fa fa-bug\",\"orderNum\":4,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:12:35');
+INSERT INTO `sys_log` VALUES ('690', '1', 'admin', '修改菜单', '5', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":55,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"定时任务日志列表\",\"url\":null,\"perms\":\"quartz:job:log\",\"type\":1,\"icon\":null,\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:21:43');
+INSERT INTO `sys_log` VALUES ('691', '1', 'admin', '修改菜单', '6', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":55,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"定时任务日志列表\",\"url\":null,\"perms\":\"quartz:job:log\",\"type\":1,\"icon\":\"fa fa-eercast\",\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:22:04');
+INSERT INTO `sys_log` VALUES ('692', '1', 'admin', '修改菜单', '6', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":55,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"定时任务日志列表\",\"url\":null,\"perms\":\"quartz:job:log\",\"type\":1,\"icon\":\"fa fa-clock-o\",\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:23:21');
+INSERT INTO `sys_log` VALUES ('693', '1', 'admin', '修改菜单', '4', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":55,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"定时任务日志列表\",\"url\":\"/quartz/job/log/list\",\"perms\":\"quartz:job:log\",\"type\":1,\"icon\":\"fa fa-clock-o\",\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:26:23');
+INSERT INTO `sys_log` VALUES ('694', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:38:24');
+INSERT INTO `sys_log` VALUES ('695', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:42:43');
+INSERT INTO `sys_log` VALUES ('696', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:46:10');
+INSERT INTO `sys_log` VALUES ('697', '1', 'admin', '登录', '19', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:47:23');
+INSERT INTO `sys_log` VALUES ('698', '1', 'admin', '修改菜单', '47', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":55,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"定时任务日志列表\",\"url\":\"/base/quartz/job/log/list.html\",\"perms\":\"quartz:job:log\",\"type\":1,\"icon\":\"fa fa-clock-o\",\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:49:02');
+INSERT INTO `sys_log` VALUES ('699', '1', 'admin', '修改菜单', '8', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":55,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"定时任务日志列表\",\"url\":\"base/quartz/job/log/list.html\",\"perms\":\"quartz:job:log\",\"type\":1,\"icon\":\"fa fa-clock-o\",\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:49:15');
+INSERT INTO `sys_log` VALUES ('700', '1', 'admin', '登录', '21', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:51:43');
+INSERT INTO `sys_log` VALUES ('701', '1', 'admin', '登录', '12', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 17:53:09');
+INSERT INTO `sys_log` VALUES ('702', '1', 'admin', '修改菜单', '49', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":55,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"定时任务日志列表\",\"url\":\"base/quartz_job_log/list.html\",\"perms\":\"quartz:job:log\",\"type\":1,\"icon\":\"fa fa-clock-o\",\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 17:53:23');
+INSERT INTO `sys_log` VALUES ('703', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:02:05');
+INSERT INTO `sys_log` VALUES ('704', '1', 'admin', '登录', '7', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:04:05');
+INSERT INTO `sys_log` VALUES ('705', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:09:20');
+INSERT INTO `sys_log` VALUES ('706', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:10:28');
+INSERT INTO `sys_log` VALUES ('707', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '127.0.0.1', '2019-02-27 18:11:59');
+INSERT INTO `sys_log` VALUES ('708', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:13:21');
+INSERT INTO `sys_log` VALUES ('709', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:14:11');
+INSERT INTO `sys_log` VALUES ('710', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:15:21');
+INSERT INTO `sys_log` VALUES ('711', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:16:26');
+INSERT INTO `sys_log` VALUES ('712', '1', 'admin', '修改菜单', '6', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":55,\"parentId\":1,\"parentName\":\"系统管理\",\"name\":\"定时任务日志列表\",\"url\":\"base/quartz_job_log/list.html\",\"perms\":\"quartz:job:log:list\",\"type\":1,\"icon\":\"fa fa-clock-o\",\"orderNum\":3,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 18:16:39');
+INSERT INTO `sys_log` VALUES ('713', '1', 'admin', '修改菜单', '4', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":56,\"parentId\":55,\"parentName\":\"定时任务日志列表\",\"name\":\"刷新\",\"url\":\"/quartz/job/log/list\",\"perms\":\"quartz:job:log:list\",\"type\":2,\"icon\":null,\"orderNum\":0,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 18:16:51');
+INSERT INTO `sys_log` VALUES ('714', '1', 'admin', '修改菜单', '4', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":57,\"parentId\":55,\"parentName\":\"定时任务日志列表\",\"name\":\"删除\",\"url\":\"/quartz/job/log/remove\",\"perms\":\"quartz:job:log:remove\",\"type\":2,\"icon\":null,\"orderNum\":0,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 18:18:09');
+INSERT INTO `sys_log` VALUES ('715', '1', 'admin', '修改菜单', '4', 'com.scott.dp.modules.sys.controller.SysMenuController.update()', '{\"menuId\":58,\"parentId\":55,\"parentName\":\"定时任务日志列表\",\"name\":\"清空\",\"url\":\"/quartz/job/log/clear\",\"perms\":\"quartz:job:log:clear\",\"type\":2,\"icon\":null,\"orderNum\":0,\"gmtCreate\":null,\"gmtModified\":null,\"open\":null,\"list\":null}', '0:0:0:0:0:0:0:1', '2019-02-27 18:18:30');
+INSERT INTO `sys_log` VALUES ('716', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:21:19');
+INSERT INTO `sys_log` VALUES ('717', '1', 'admin', '删除定时任务日志', '8', 'com.scott.dp.modules.sys.controller.QuartzJobLogController.batchRemove()', '[31]', '0:0:0:0:0:0:0:1', '2019-02-27 18:21:50');
+INSERT INTO `sys_log` VALUES ('718', '1', 'admin', '删除定时任务日志', '3', 'com.scott.dp.modules.sys.controller.QuartzJobLogController.batchRemove()', '[22]', '0:0:0:0:0:0:0:1', '2019-02-27 18:22:06');
+INSERT INTO `sys_log` VALUES ('719', '1', 'admin', '登录', '11', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:25:01');
+INSERT INTO `sys_log` VALUES ('720', '1', 'admin', '登录', '19', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '127.0.0.1', '2019-02-27 18:36:21');
+INSERT INTO `sys_log` VALUES ('721', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:38:52');
+INSERT INTO `sys_log` VALUES ('722', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '127.0.0.1', '2019-02-27 18:39:38');
+INSERT INTO `sys_log` VALUES ('723', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:43:54');
+INSERT INTO `sys_log` VALUES ('724', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:49:50');
+INSERT INTO `sys_log` VALUES ('725', '1', 'admin', '登录', '11', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:53:32');
+INSERT INTO `sys_log` VALUES ('726', '1', 'admin', '删除定时任务日志', '6', 'com.scott.dp.modules.sys.controller.QuartzJobLogController.batchRemove()', '[25]', '0:0:0:0:0:0:0:1', '2019-02-27 18:53:47');
+INSERT INTO `sys_log` VALUES ('727', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 18:55:19');
+INSERT INTO `sys_log` VALUES ('728', '1', 'admin', '清空定时任务日志', '3', 'com.scott.dp.modules.sys.controller.QuartzJobLogController.batchRemoveAll()', null, '0:0:0:0:0:0:0:1', '2019-02-27 18:55:26');
+INSERT INTO `sys_log` VALUES ('729', '1', 'admin', '登录', '43', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:05:11');
+INSERT INTO `sys_log` VALUES ('730', '1', 'admin', '启用定时任务', '30', 'com.scott.dp.modules.sys.controller.QuartzJobController.resume()', '[2]', '0:0:0:0:0:0:0:1', '2019-02-27 19:05:26');
+INSERT INTO `sys_log` VALUES ('731', '1', 'admin', '立即运行定时任务', '20', 'com.scott.dp.modules.sys.controller.QuartzJobController.run()', '[2]', '0:0:0:0:0:0:0:1', '2019-02-27 19:05:34');
+INSERT INTO `sys_log` VALUES ('732', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:19:02');
+INSERT INTO `sys_log` VALUES ('733', '1', 'admin', '登录', '36', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:21:17');
+INSERT INTO `sys_log` VALUES ('734', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:23:28');
+INSERT INTO `sys_log` VALUES ('735', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:25:42');
+INSERT INTO `sys_log` VALUES ('736', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:27:04');
+INSERT INTO `sys_log` VALUES ('737', '1', 'admin', '暂停定时运行', '20', 'com.scott.dp.modules.sys.controller.QuartzJobController.pause()', '[2]', '0:0:0:0:0:0:0:1', '2019-02-27 19:28:12');
+INSERT INTO `sys_log` VALUES ('738', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:30:17');
+INSERT INTO `sys_log` VALUES ('739', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:32:28');
+INSERT INTO `sys_log` VALUES ('740', '1', 'admin', '登录', '18', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:34:52');
+INSERT INTO `sys_log` VALUES ('741', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:36:01');
+INSERT INTO `sys_log` VALUES ('742', '1', 'admin', '登录', '11', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:40:02');
+INSERT INTO `sys_log` VALUES ('743', '1', 'admin', '登录', '18', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:42:02');
+INSERT INTO `sys_log` VALUES ('744', '1', 'admin', '登录', '12', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:42:54');
+INSERT INTO `sys_log` VALUES ('745', '1', 'admin', '登录', '30', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:45:22');
+INSERT INTO `sys_log` VALUES ('746', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:46:58');
+INSERT INTO `sys_log` VALUES ('747', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:47:50');
+INSERT INTO `sys_log` VALUES ('748', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:49:19');
+INSERT INTO `sys_log` VALUES ('749', '1', 'admin', '登录', '10', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-27 19:50:30');
+INSERT INTO `sys_log` VALUES ('750', '1', 'admin', '登录', '79', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-28 09:24:22');
+INSERT INTO `sys_log` VALUES ('751', '1', 'admin', '登录', '9', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-28 09:33:16');
+INSERT INTO `sys_log` VALUES ('752', '1', 'admin', '禁用账户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserDisable()', '[8]', '0:0:0:0:0:0:0:1', '2019-02-28 09:37:13');
+INSERT INTO `sys_log` VALUES ('753', '1', 'admin', '启用账户', '9', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserEnable()', '[8]', '0:0:0:0:0:0:0:1', '2019-02-28 09:37:17');
+INSERT INTO `sys_log` VALUES ('754', '1', 'admin', '禁用账户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserDisable()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-28 09:37:19');
+INSERT INTO `sys_log` VALUES ('755', '1', 'admin', '禁用账户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserDisable()', '[2]', '0:0:0:0:0:0:0:1', '2019-02-28 09:37:50');
+INSERT INTO `sys_log` VALUES ('756', '1', 'admin', '登录', '6', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-28 09:40:19');
+INSERT INTO `sys_log` VALUES ('757', '1', 'admin', '禁用账户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserDisable()', '[3]', '0:0:0:0:0:0:0:1', '2019-02-28 09:40:26');
+INSERT INTO `sys_log` VALUES ('758', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-28 09:48:36');
+INSERT INTO `sys_log` VALUES ('759', '-1', '获取用户信息为空', '登录', '0', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{\"errorMsg\":\"验证码错误\"}', '0:0:0:0:0:0:0:1', '2019-02-28 11:36:13');
+INSERT INTO `sys_log` VALUES ('760', '1', 'admin', '登录', '5', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-28 11:36:19');
+INSERT INTO `sys_log` VALUES ('761', '1', 'admin', '禁用账户', '8', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserDisable()', '[2]', '0:0:0:0:0:0:0:1', '2019-02-28 11:36:38');
+INSERT INTO `sys_log` VALUES ('762', '1', 'admin', '启用账户', '4', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserEnable()', '[2]', '0:0:0:0:0:0:0:1', '2019-02-28 11:36:41');
+INSERT INTO `sys_log` VALUES ('763', '1', 'admin', '禁用账户', '0', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserDisable()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-28 11:36:44');
+INSERT INTO `sys_log` VALUES ('764', '1', 'admin', '启用账户', '2', 'com.scott.dp.modules.sys.controller.SysUserController.updateUserEnable()', '[1]', '0:0:0:0:0:0:0:1', '2019-02-28 11:36:47');
+INSERT INTO `sys_log` VALUES ('765', '1', 'admin', '登录', '16', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-28 11:40:46');
+INSERT INTO `sys_log` VALUES ('766', '1', 'admin', '登录', '8', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-02-28 11:41:59');
+INSERT INTO `sys_log` VALUES ('767', '1', 'admin', '登录', '140', 'com.scott.dp.modules.sys.controller.SysLoginController.login()', '{}', '0:0:0:0:0:0:0:1', '2019-03-01 14:46:15');
 
 -- ----------------------------
 -- Table structure for sys_macro
@@ -4631,15 +4723,15 @@ CREATE TABLE `sys_menu` (
   `gmt_create` datetime default NULL COMMENT '创建时间',
   `gmt_modified` datetime default NULL COMMENT '修改时间',
   PRIMARY KEY  (`menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8 COMMENT='菜单管理';
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8 COMMENT='菜单管理';
 
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
-INSERT INTO `sys_menu` VALUES ('1', '0', '系统管理', null, '', '0', 'fa fa-coffee', '0', '2017-08-09 22:49:47', '2017-09-11 17:25:22');
-INSERT INTO `sys_menu` VALUES ('2', '1', '系统菜单', 'base/menu/list.html', null, '1', 'fa fa-th-list', '1', '2017-08-09 22:55:15', '2017-08-17 10:00:12');
-INSERT INTO `sys_menu` VALUES ('3', '0', '组织机构', null, null, '0', 'fa fa-desktop', '1', '2017-08-09 23:06:55', '2017-08-17 09:54:28');
-INSERT INTO `sys_menu` VALUES ('4', '1', '通用字典', 'base/macro/list.html', null, '1', 'fa fa-book', '2', '2017-08-09 23:06:58', '2017-08-17 10:00:24');
+INSERT INTO `sys_menu` VALUES ('1', '0', '系统管理', null, '', '0', 'fa fa-coffee', '1', '2017-08-09 22:49:47', '2019-02-27 16:48:34');
+INSERT INTO `sys_menu` VALUES ('2', '70', '系统菜单', 'base/menu/list.html', null, '1', 'fa fa-th-list', '1', '2017-08-09 22:55:15', '2019-02-27 17:08:50');
+INSERT INTO `sys_menu` VALUES ('3', '0', '组织机构', null, null, '0', 'fa fa-desktop', '2', '2017-08-09 23:06:55', '2019-02-27 16:48:44');
+INSERT INTO `sys_menu` VALUES ('4', '70', '通用字典', 'base/macro/list.html', null, '1', 'fa fa-book', '2', '2017-08-09 23:06:58', '2019-02-27 17:09:12');
 INSERT INTO `sys_menu` VALUES ('6', '3', '用户管理', 'base/user/list.html', '', '1', 'fa fa-user', '2', '2017-08-10 14:12:11', '2017-09-05 12:57:42');
 INSERT INTO `sys_menu` VALUES ('7', '3', '角色管理', 'base/role/list.html', '', '1', 'fa fa-paw', '1', '2017-08-10 14:13:19', '2017-09-05 12:57:30');
 INSERT INTO `sys_menu` VALUES ('11', '6', '刷新', '/sys/user/list', 'sys:user:list', '2', null, '0', '2017-08-14 10:51:05', '2017-09-05 12:47:23');
@@ -4658,7 +4750,7 @@ INSERT INTO `sys_menu` VALUES ('23', '2', '删除', '/sys/menu/remove', 'sys:men
 INSERT INTO `sys_menu` VALUES ('24', '6', '启用', '/sys/user/enable', 'sys:user:enable', '2', null, '0', '2017-08-14 17:27:18', '2017-09-05 12:48:30');
 INSERT INTO `sys_menu` VALUES ('25', '6', '停用', '/sys/user/disable', 'sys:user:disable', '2', null, '0', '2017-08-14 17:27:43', '2017-09-05 12:48:49');
 INSERT INTO `sys_menu` VALUES ('26', '6', '重置密码', '/sys/user/rest', 'sys:user:resetPassword', '2', null, '0', '2017-08-14 17:28:34', '2017-09-05 12:49:17');
-INSERT INTO `sys_menu` VALUES ('27', '1', '系统日志', 'base/log/list.html', null, '1', 'fa fa-warning', '3', '2017-08-14 22:11:53', '2017-08-17 09:55:19');
+INSERT INTO `sys_menu` VALUES ('27', '1', '系统日志', 'base/log/list.html', null, '1', 'fa fa-warning', '1', '2017-08-14 22:11:53', '2019-02-27 17:10:29');
 INSERT INTO `sys_menu` VALUES ('28', '27', '刷新', '/sys/log/list', 'sys:log:list', '2', null, '0', '2017-08-14 22:30:22', '2017-09-05 13:05:24');
 INSERT INTO `sys_menu` VALUES ('29', '27', '删除', '/sys/log/remove', 'sys:log:remove', '2', null, '0', '2017-08-14 22:30:43', '2017-09-05 13:05:37');
 INSERT INTO `sys_menu` VALUES ('30', '27', '清空', '/sys/log/clear', 'sys:log:clear', '2', null, '0', '2017-08-14 22:31:02', '2017-09-05 13:05:53');
@@ -4677,7 +4769,7 @@ INSERT INTO `sys_menu` VALUES ('43', '36', '新增', '/sys/org/save', 'sys:org:s
 INSERT INTO `sys_menu` VALUES ('44', '36', '编辑', '/sys/org/update', 'sys:org:edit', '2', null, '0', '2017-08-17 10:04:11', '2017-09-05 12:43:06');
 INSERT INTO `sys_menu` VALUES ('45', '36', '删除', '/sys/org/remove', 'sys:org:remove', '2', null, '0', '2017-08-17 10:04:30', '2017-09-05 12:42:19');
 INSERT INTO `sys_menu` VALUES ('46', '7', '数据权限', '/sys/role/authorize/data', 'sys:role:authorizeData', '2', null, '0', '2017-08-17 13:48:11', '2017-09-05 12:45:54');
-INSERT INTO `sys_menu` VALUES ('47', '1', '定时任务', 'base/quartz/list.html', null, '1', 'fa fa-bell', '4', '2017-08-19 23:00:08', null);
+INSERT INTO `sys_menu` VALUES ('47', '1', '定时任务', 'base/quartz/list.html', null, '1', 'fa fa-bell', '2', '2017-08-19 23:00:08', '2019-02-27 17:10:42');
 INSERT INTO `sys_menu` VALUES ('48', '47', '刷新', '/quartz/job/list', 'quartz:job:list', '2', null, '0', '2017-08-19 23:00:54', '2017-09-05 13:08:18');
 INSERT INTO `sys_menu` VALUES ('49', '47', '新增', '/quartz/job/save', 'quartz:job:save', '2', null, '0', '2017-08-19 23:01:29', '2017-09-05 13:08:30');
 INSERT INTO `sys_menu` VALUES ('50', '47', '编辑', '/quartz/job/update', 'quartz:job:edit', '2', null, '0', '2017-08-19 23:01:58', '2017-09-05 13:08:44');
@@ -4685,21 +4777,22 @@ INSERT INTO `sys_menu` VALUES ('51', '47', '删除', '/quartz/job/remove', 'quar
 INSERT INTO `sys_menu` VALUES ('52', '63', '启用', '/quartz/job/enable', 'quartz:job:enable', '2', null, '0', '2017-08-19 23:08:59', '2017-09-13 22:12:35');
 INSERT INTO `sys_menu` VALUES ('53', '63', '停用', '/quartz/job/disable', 'quartz:job:disable', '2', null, '0', '2017-08-19 23:09:31', '2017-09-13 22:12:53');
 INSERT INTO `sys_menu` VALUES ('54', '63', '立即执行', '/quartz/job/run', 'quartz:job:run', '2', null, '0', '2017-08-19 23:10:09', '2017-09-13 22:13:11');
-INSERT INTO `sys_menu` VALUES ('55', '47', '日志列表', null, 'quartz:job:log', '1', null, '0', '2017-08-19 23:10:40', '2017-09-13 22:21:12');
-INSERT INTO `sys_menu` VALUES ('56', '55', '刷新', '/quartz/job/log/list', 'quartz:log:list', '2', null, '0', '2017-08-21 13:25:33', '2017-09-13 22:21:27');
-INSERT INTO `sys_menu` VALUES ('57', '55', '删除', '/quartz/job/log/remove', 'quartz:log:remove', '2', null, '0', '2017-08-21 13:25:52', '2017-09-13 22:21:46');
-INSERT INTO `sys_menu` VALUES ('58', '55', '清空', '/quartz/job/log/clear', 'quartz:log:clear', '2', null, '0', '2017-08-21 13:26:11', '2017-09-13 22:22:04');
-INSERT INTO `sys_menu` VALUES ('59', '1', '敏捷开发', 'base/generator/list.html', null, '1', 'fa fa-archive', '5', '2017-09-05 10:49:04', null);
+INSERT INTO `sys_menu` VALUES ('55', '1', '定时任务日志列表', 'base/quartz_job_log/list.html', 'quartz:job:log:list', '1', 'fa fa-clock-o', '3', '2017-08-19 23:10:40', '2019-02-27 18:16:39');
+INSERT INTO `sys_menu` VALUES ('56', '55', '刷新', '/quartz/job/log/list', 'quartz:job:log:list', '2', null, '0', '2017-08-21 13:25:33', '2019-02-27 18:16:51');
+INSERT INTO `sys_menu` VALUES ('57', '55', '删除', '/quartz/job/log/remove', 'quartz:job:log:remove', '2', null, '0', '2017-08-21 13:25:52', '2019-02-27 18:18:09');
+INSERT INTO `sys_menu` VALUES ('58', '55', '清空', '/quartz/job/log/clear', 'quartz:job:log:clear', '2', null, '0', '2017-08-21 13:26:11', '2019-02-27 18:18:30');
+INSERT INTO `sys_menu` VALUES ('59', '70', '敏捷开发', 'base/generator/list.html', null, '1', 'fa fa-archive', '3', '2017-09-05 10:49:04', '2019-02-27 17:09:34');
 INSERT INTO `sys_menu` VALUES ('60', '59', '刷新', '/sys/generator/list', 'sys:gen:list', '2', null, '0', '2017-09-05 10:49:25', '2017-09-05 13:07:33');
 INSERT INTO `sys_menu` VALUES ('61', '59', '生成代码', '/sys/generator/code', 'sys:gen:code', '2', null, '0', '2017-09-05 10:49:44', '2017-09-05 13:07:48');
-INSERT INTO `sys_menu` VALUES ('62', '1', '系统监控', 'druid/index.html', null, '1', 'fa fa-bug', '6', '2017-09-10 17:01:59', '2017-09-10 17:02:19');
+INSERT INTO `sys_menu` VALUES ('62', '1', '系统监控', 'druid/index.html', null, '1', 'fa fa-bug', '4', '2017-09-10 17:01:59', '2019-02-27 17:12:35');
 INSERT INTO `sys_menu` VALUES ('63', '47', '更多', null, 'quartz:job:more', '1', null, '0', '2017-09-13 22:11:51', '2017-09-13 22:12:12');
-INSERT INTO `sys_menu` VALUES ('64', '1', '接口管理', 'swagger-ui.html', null, '1', 'fa fa-support', '7', '2017-09-10 17:01:59', '2017-09-10 17:02:19');
+INSERT INTO `sys_menu` VALUES ('64', '70', '接口管理', 'swagger-ui.html', null, '1', 'fa fa-support', '4', '2017-09-10 17:01:59', '2019-02-27 17:10:09');
 INSERT INTO `sys_menu` VALUES ('65', '3', '部门管理', 'base/dept/list.html', null, '1', 'fa fa-hospital-o', '3', null, '2019-01-02 18:05:40');
 INSERT INTO `sys_menu` VALUES ('66', '65', '刷新', '/sys/dept/list', 'sys:dept:list', '2', 'fa fa-circle-o', null, null, null);
 INSERT INTO `sys_menu` VALUES ('67', '65', '新增', '/sys/dept/save', 'sys:dept:save', '2', 'fa fa-circle-o', null, null, null);
 INSERT INTO `sys_menu` VALUES ('68', '65', '修改', '/sys/dept/update', 'sys:dept:edit', '2', 'fa fa-circle-o', null, null, null);
 INSERT INTO `sys_menu` VALUES ('69', '65', '删除', '/sys/dept/remove', 'sys:dept:remove', '2', 'fa fa-circle-o', null, null, null);
+INSERT INTO `sys_menu` VALUES ('70', '0', '程序开发', null, null, '0', 'fa fa-keyboard-o', '0', '2019-02-27 16:47:06', '2019-02-27 16:48:22');
 
 -- ----------------------------
 -- Table structure for sys_org
@@ -4740,7 +4833,7 @@ CREATE TABLE `sys_role` (
   `gmt_create` datetime default NULL COMMENT '创建时间',
   `gmt_modified` datetime default NULL COMMENT '创建时间',
   PRIMARY KEY  (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='系统角色';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='系统角色';
 
 -- ----------------------------
 -- Records of sys_role
@@ -4749,6 +4842,7 @@ INSERT INTO `sys_role` VALUES ('1', '2', '超级管理员', 'administrator', '�
 INSERT INTO `sys_role` VALUES ('2', '2', '系统管理员', 'admin', '系统分管', '1', '2019-01-03 15:03:25', null);
 INSERT INTO `sys_role` VALUES ('3', '4', '信息管理员', 'message', '信息管理', '1', '2019-01-04 14:14:00', null);
 INSERT INTO `sys_role` VALUES ('4', '4', 'scott下级员工', 'scott下级员工', null, '2', '2019-02-27 10:02:55', null);
+INSERT INTO `sys_role` VALUES ('6', '3', 'scott1_1', 'scott1_1', 'scott1下级权限', '8', '2019-02-27 17:04:11', '2019-02-27 17:04:58');
 
 -- ----------------------------
 -- Table structure for sys_role_menu
@@ -4759,75 +4853,11 @@ CREATE TABLE `sys_role_menu` (
   `role_id` bigint(20) default NULL COMMENT '角色ID',
   `menu_id` bigint(20) default NULL COMMENT '菜单ID',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=437 DEFAULT CHARSET=utf8 COMMENT='角色与菜单对应关系';
+) ENGINE=InnoDB AUTO_INCREMENT=502 DEFAULT CHARSET=utf8 COMMENT='角色与菜单对应关系';
 
 -- ----------------------------
 -- Records of sys_role_menu
 -- ----------------------------
-INSERT INTO `sys_role_menu` VALUES ('60', '1', '1');
-INSERT INTO `sys_role_menu` VALUES ('61', '1', '65');
-INSERT INTO `sys_role_menu` VALUES ('62', '1', '66');
-INSERT INTO `sys_role_menu` VALUES ('63', '1', '67');
-INSERT INTO `sys_role_menu` VALUES ('64', '1', '68');
-INSERT INTO `sys_role_menu` VALUES ('65', '1', '69');
-INSERT INTO `sys_role_menu` VALUES ('66', '1', '37');
-INSERT INTO `sys_role_menu` VALUES ('67', '1', '38');
-INSERT INTO `sys_role_menu` VALUES ('68', '1', '39');
-INSERT INTO `sys_role_menu` VALUES ('69', '1', '40');
-INSERT INTO `sys_role_menu` VALUES ('70', '1', '41');
-INSERT INTO `sys_role_menu` VALUES ('71', '1', '2');
-INSERT INTO `sys_role_menu` VALUES ('72', '1', '20');
-INSERT INTO `sys_role_menu` VALUES ('73', '1', '21');
-INSERT INTO `sys_role_menu` VALUES ('74', '1', '22');
-INSERT INTO `sys_role_menu` VALUES ('75', '1', '23');
-INSERT INTO `sys_role_menu` VALUES ('76', '1', '4');
-INSERT INTO `sys_role_menu` VALUES ('77', '1', '32');
-INSERT INTO `sys_role_menu` VALUES ('78', '1', '33');
-INSERT INTO `sys_role_menu` VALUES ('79', '1', '34');
-INSERT INTO `sys_role_menu` VALUES ('80', '1', '35');
-INSERT INTO `sys_role_menu` VALUES ('81', '1', '27');
-INSERT INTO `sys_role_menu` VALUES ('82', '1', '28');
-INSERT INTO `sys_role_menu` VALUES ('83', '1', '29');
-INSERT INTO `sys_role_menu` VALUES ('84', '1', '30');
-INSERT INTO `sys_role_menu` VALUES ('85', '1', '47');
-INSERT INTO `sys_role_menu` VALUES ('86', '1', '48');
-INSERT INTO `sys_role_menu` VALUES ('87', '1', '49');
-INSERT INTO `sys_role_menu` VALUES ('88', '1', '50');
-INSERT INTO `sys_role_menu` VALUES ('89', '1', '51');
-INSERT INTO `sys_role_menu` VALUES ('90', '1', '55');
-INSERT INTO `sys_role_menu` VALUES ('91', '1', '56');
-INSERT INTO `sys_role_menu` VALUES ('92', '1', '57');
-INSERT INTO `sys_role_menu` VALUES ('93', '1', '58');
-INSERT INTO `sys_role_menu` VALUES ('94', '1', '63');
-INSERT INTO `sys_role_menu` VALUES ('95', '1', '52');
-INSERT INTO `sys_role_menu` VALUES ('96', '1', '53');
-INSERT INTO `sys_role_menu` VALUES ('97', '1', '54');
-INSERT INTO `sys_role_menu` VALUES ('98', '1', '59');
-INSERT INTO `sys_role_menu` VALUES ('99', '1', '60');
-INSERT INTO `sys_role_menu` VALUES ('100', '1', '61');
-INSERT INTO `sys_role_menu` VALUES ('101', '1', '62');
-INSERT INTO `sys_role_menu` VALUES ('102', '1', '64');
-INSERT INTO `sys_role_menu` VALUES ('103', '1', '3');
-INSERT INTO `sys_role_menu` VALUES ('104', '1', '36');
-INSERT INTO `sys_role_menu` VALUES ('105', '1', '42');
-INSERT INTO `sys_role_menu` VALUES ('106', '1', '43');
-INSERT INTO `sys_role_menu` VALUES ('107', '1', '44');
-INSERT INTO `sys_role_menu` VALUES ('108', '1', '45');
-INSERT INTO `sys_role_menu` VALUES ('109', '1', '7');
-INSERT INTO `sys_role_menu` VALUES ('110', '1', '15');
-INSERT INTO `sys_role_menu` VALUES ('111', '1', '16');
-INSERT INTO `sys_role_menu` VALUES ('112', '1', '17');
-INSERT INTO `sys_role_menu` VALUES ('113', '1', '18');
-INSERT INTO `sys_role_menu` VALUES ('114', '1', '19');
-INSERT INTO `sys_role_menu` VALUES ('115', '1', '46');
-INSERT INTO `sys_role_menu` VALUES ('116', '1', '6');
-INSERT INTO `sys_role_menu` VALUES ('117', '1', '11');
-INSERT INTO `sys_role_menu` VALUES ('118', '1', '12');
-INSERT INTO `sys_role_menu` VALUES ('119', '1', '13');
-INSERT INTO `sys_role_menu` VALUES ('120', '1', '14');
-INSERT INTO `sys_role_menu` VALUES ('121', '1', '24');
-INSERT INTO `sys_role_menu` VALUES ('122', '1', '25');
-INSERT INTO `sys_role_menu` VALUES ('123', '1', '26');
 INSERT INTO `sys_role_menu` VALUES ('180', '3', '1');
 INSERT INTO `sys_role_menu` VALUES ('181', '3', '37');
 INSERT INTO `sys_role_menu` VALUES ('182', '3', '38');
@@ -4927,6 +4957,71 @@ INSERT INTO `sys_role_menu` VALUES ('433', '4', '24');
 INSERT INTO `sys_role_menu` VALUES ('434', '4', '25');
 INSERT INTO `sys_role_menu` VALUES ('435', '4', '26');
 INSERT INTO `sys_role_menu` VALUES ('436', '4', '11');
+INSERT INTO `sys_role_menu` VALUES ('437', '1', '70');
+INSERT INTO `sys_role_menu` VALUES ('438', '1', '1');
+INSERT INTO `sys_role_menu` VALUES ('439', '1', '37');
+INSERT INTO `sys_role_menu` VALUES ('440', '1', '38');
+INSERT INTO `sys_role_menu` VALUES ('441', '1', '39');
+INSERT INTO `sys_role_menu` VALUES ('442', '1', '40');
+INSERT INTO `sys_role_menu` VALUES ('443', '1', '41');
+INSERT INTO `sys_role_menu` VALUES ('444', '1', '2');
+INSERT INTO `sys_role_menu` VALUES ('445', '1', '20');
+INSERT INTO `sys_role_menu` VALUES ('446', '1', '21');
+INSERT INTO `sys_role_menu` VALUES ('447', '1', '22');
+INSERT INTO `sys_role_menu` VALUES ('448', '1', '23');
+INSERT INTO `sys_role_menu` VALUES ('449', '1', '4');
+INSERT INTO `sys_role_menu` VALUES ('450', '1', '32');
+INSERT INTO `sys_role_menu` VALUES ('451', '1', '33');
+INSERT INTO `sys_role_menu` VALUES ('452', '1', '34');
+INSERT INTO `sys_role_menu` VALUES ('453', '1', '35');
+INSERT INTO `sys_role_menu` VALUES ('454', '1', '27');
+INSERT INTO `sys_role_menu` VALUES ('455', '1', '28');
+INSERT INTO `sys_role_menu` VALUES ('456', '1', '29');
+INSERT INTO `sys_role_menu` VALUES ('457', '1', '30');
+INSERT INTO `sys_role_menu` VALUES ('458', '1', '47');
+INSERT INTO `sys_role_menu` VALUES ('459', '1', '48');
+INSERT INTO `sys_role_menu` VALUES ('460', '1', '49');
+INSERT INTO `sys_role_menu` VALUES ('461', '1', '50');
+INSERT INTO `sys_role_menu` VALUES ('462', '1', '51');
+INSERT INTO `sys_role_menu` VALUES ('463', '1', '55');
+INSERT INTO `sys_role_menu` VALUES ('464', '1', '56');
+INSERT INTO `sys_role_menu` VALUES ('465', '1', '57');
+INSERT INTO `sys_role_menu` VALUES ('466', '1', '58');
+INSERT INTO `sys_role_menu` VALUES ('467', '1', '63');
+INSERT INTO `sys_role_menu` VALUES ('468', '1', '52');
+INSERT INTO `sys_role_menu` VALUES ('469', '1', '53');
+INSERT INTO `sys_role_menu` VALUES ('470', '1', '54');
+INSERT INTO `sys_role_menu` VALUES ('471', '1', '59');
+INSERT INTO `sys_role_menu` VALUES ('472', '1', '60');
+INSERT INTO `sys_role_menu` VALUES ('473', '1', '61');
+INSERT INTO `sys_role_menu` VALUES ('474', '1', '62');
+INSERT INTO `sys_role_menu` VALUES ('475', '1', '64');
+INSERT INTO `sys_role_menu` VALUES ('476', '1', '3');
+INSERT INTO `sys_role_menu` VALUES ('477', '1', '36');
+INSERT INTO `sys_role_menu` VALUES ('478', '1', '42');
+INSERT INTO `sys_role_menu` VALUES ('479', '1', '43');
+INSERT INTO `sys_role_menu` VALUES ('480', '1', '44');
+INSERT INTO `sys_role_menu` VALUES ('481', '1', '45');
+INSERT INTO `sys_role_menu` VALUES ('482', '1', '7');
+INSERT INTO `sys_role_menu` VALUES ('483', '1', '15');
+INSERT INTO `sys_role_menu` VALUES ('484', '1', '16');
+INSERT INTO `sys_role_menu` VALUES ('485', '1', '17');
+INSERT INTO `sys_role_menu` VALUES ('486', '1', '18');
+INSERT INTO `sys_role_menu` VALUES ('487', '1', '19');
+INSERT INTO `sys_role_menu` VALUES ('488', '1', '46');
+INSERT INTO `sys_role_menu` VALUES ('489', '1', '6');
+INSERT INTO `sys_role_menu` VALUES ('490', '1', '11');
+INSERT INTO `sys_role_menu` VALUES ('491', '1', '12');
+INSERT INTO `sys_role_menu` VALUES ('492', '1', '13');
+INSERT INTO `sys_role_menu` VALUES ('493', '1', '14');
+INSERT INTO `sys_role_menu` VALUES ('494', '1', '24');
+INSERT INTO `sys_role_menu` VALUES ('495', '1', '25');
+INSERT INTO `sys_role_menu` VALUES ('496', '1', '26');
+INSERT INTO `sys_role_menu` VALUES ('497', '1', '65');
+INSERT INTO `sys_role_menu` VALUES ('498', '1', '66');
+INSERT INTO `sys_role_menu` VALUES ('499', '1', '67');
+INSERT INTO `sys_role_menu` VALUES ('500', '1', '68');
+INSERT INTO `sys_role_menu` VALUES ('501', '1', '69');
 
 -- ----------------------------
 -- Table structure for sys_role_org
