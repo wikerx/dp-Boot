@@ -46,3 +46,7 @@
 -  插入的方法用 save(推荐) 或 insert 做前缀
 -  删除的方法用 remove(推荐) 或 delete 做前缀
 -  修改的方法用 update 做前缀
+
+### 备注
+-  doc:说明文件以及数据库
+- jars-lib:外部引入的jar(暂时没有)
