@@ -202,7 +202,7 @@ public class SysUserController extends AbstractController {
 	/**
 	 * 禁用账户
 	 * @param id
-	 * @return
+	 * @return R
 	 */
 	@SysLog("禁用账户")
 	@RequestMapping("/disable")
