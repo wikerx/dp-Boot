@@ -50,3 +50,6 @@
 ### 备注
 -  doc:说明文件以及数据库
 - jars-lib:外部引入的jar(暂时没有)
+
+### 结构设计图
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/upload/file/SpringBootFream.jpg)
