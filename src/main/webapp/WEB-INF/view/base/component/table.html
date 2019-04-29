@@ -1,0 +1,179 @@
+@layout("../../system/layout.html", {title: "打印组件"}){
+<link href="${ctxPath}/static/css/materiel.css" rel="stylesheet"/>
+
+<div class="page">
+    <!--数据部分-->
+    <div class="top1">
+        <!--No.1-->
+        <table class="tab1">
+            <tr>
+                <td>
+                    <table border="1" cellpadding="0" cellspacing="0" style="width:500px;border-collapse:collapse;">
+                        <tr>
+                            <td class="f1" width="100px">生产令号</td>
+                            <td class="f1" width="150px">产品代号或名称</td>
+                            <td class="f1" width="250px">工艺路线</td>
+                        </tr>
+                        <tr>
+                            <td class="f2"><input type="text" value="" name="" id="" class="t1" style="width:100px;"/></td>
+                            <td class="f2"><input type="text" value="" name="" id="" class="t1" style="width:150px;"/></td>
+                            <td class="f2"><input type="text" value="" name="" id="" class="t1" style="width:250px;"/></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <!--No.2-->
+                    <table border="0" cellpadding="0" cellspacing="0" style="width:278px;border-collapse:collapse;">
+                        <tr>
+                            <td class="f3" width="278px">产品投料单</td>
+                        </tr>
+                        <tr>
+                            <td class="f2" width="278px">
+                                填单&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="" id="" name="" class="t2" style="width:180px;"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table border="0" cellpadding="0" cellspacing="0" style="width:224px">
+                        <tr>
+                            <td class="f4" width="70px">投料编号</td>
+                            <td class="f4" width="154px"><input type="text" value="" name="" id="" class="t3" style="width:154px;"/></td>
+                        </tr>
+                        <tr>
+                            <td class="f4" width="70px">发料编号</td>
+                            <td class="f4" width="154px"><input type="text" value="" name="" id="" class="t3" style="width:154px;"/></td>
+                        </tr>
+                        <tr>
+                            <td class="f4" width="70px">记账日期</td>
+                            <td class="f4" width="154px">
+                                <input type="text" value="" id="" name="" class="t2" style="width:154px;"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!--No.3-->
+        <table border="1" cellpadding="0" cellspacing="0" style="width:1024px;height:90px;text-align:center;font-family:Verdana, Geneva, sans-serif;font-size:14px;border-collapse:collapse;">
+            <tr>
+                <td width="100px" style="height:30px;">零件号</td>
+                <td width="100px">零件名称</td>
+                <td colspan="3" width="300px">材料</td>
+                <td colspan="2" width="250px">单件定额</td>
+                <td colspan="2" width="250px">材料尺寸</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><textarea style="width:90px;height:100px;" id="" name=""></textarea></td>
+                <td rowspan="3"><textarea style="width:90px;height:100px;" id="" name=""></textarea></td>
+                <td height="30px">名称</td>
+                <td>品号</td>
+                <td>规格</td>
+                <td width="100px">尺寸</td>
+                <td width="150px"><input type="text" value="" name="" id="" class="t3" style="width:150px;height:30px;"/></td>
+                <td width="100px">尺寸</td>
+                <td width="150px"><input type="text" value="" name="" id="" class="t3" style="width:150px;height:30px;"/></td>
+            </tr>
+            <tr>
+                <td rowspan="2"><textarea style="width:98px;height:60px;" id="" name=""></textarea></td>
+                <td rowspan="2"><textarea style="width:98px;height:60px;" id="" name=""></textarea></td>
+                <td rowspan="2"><textarea style="width:98px;height:60px;" id="" name=""></textarea></td>
+                <td height="30px">重量</td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:150px;height:30px;"/></td>
+                <td>件数</td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:150px;height:30px;"/></td>
+            </tr>
+            <tr>
+                <td>件数</td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:150px;height:30px;"/></td>
+                <td>夹头</td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:150px;height:30px;"/></td>
+            </tr>
+        </table>
+        <!--No.4-->
+        <table border="1" cellpadding="0" cellspacing="0" style="width:1024px;height:60px;text-align:center;font-family:Verdana, Geneva, sans-serif;font-size:14px;border-collapse:collapse;">
+            <tr>
+                <td rowspan="2" width="100px" height="60px">应投件数</td>
+                <td colspan="2" width="140px">应发材料</td>
+                <td rowspan="2" width="80px">实际下料件数</td>
+                <td colspan="2" width="140px">实发材料</td>
+                <td colspan="2" width="150px">计划价格</td>
+                <td rowspan="2" width="70px">炉、批号</td>
+                <td rowspan="2" width="130px"><input type="text" value="" name="" id="" class="t3" style="width:130px;height:30px;"/></td>
+                <td rowspan="2" width="70px">料帐编号</td>
+                <td rowspan="2" width="130px"><input type="text" value="" name="" id="" class="t3" style="width:130px;height:30px;"/></td>
+            </tr>
+            <tr>
+                <td>单位</td>
+                <td>数量</td>
+                <td>单位</td>
+                <td>数量</td>
+                <td>单价</td>
+                <td>金额</td>
+            </tr>
+            <tr>
+                <td width="100px"><input type="text" value="" name="" id="" class="t3" style="width:98px;height:30px;"/></td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:70px;height:30px;"/></td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:70px;height:30px;"/></td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:70px;height:30px;"/></td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:70px;height:30px;"/></td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:70px;height:30px;"/></td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:70px;height:30px;"/></td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:70px;height:30px;"/></td>
+                <td width="70px">货位号</td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:130px;height:30px;"/></td>
+                <td width="70px">代用单号</td>
+                <td><input type="text" value="" name="" id="" class="t3" style="width:130px;height:30px;"/></td>
+            </tr>
+        </table>
+        <!--No.15-->
+        <table border="1" cellpadding="0" cellspacing="0" style="width:1024px;height:60px;text-align:center;font-family:Verdana, Geneva, sans-serif;font-size:14px;border-collapse:collapse;">
+            <tr>
+                <td width="40px" height="60px" rowspan="2">备<br/>注</td>
+                <td width="150px" height="60px"  rowspan="2"><textarea style="width:150px;height:60px;" id="" name=""></textarea></td>
+                <td width="100px" height="30px">收料</td>
+                <td width="100px" height="30px">会计</td>
+                <td width="100px" height="30px">送料</td>
+                <td width="100px" height="30px">检验</td>
+                <td width="100px" height="30px">下料</td>
+                <td width="100px" height="30px">保管</td>
+                <td width="100px" height="30px">核料</td>
+                <td width="100px" height="30px">填单</td>
+            </tr>
+            <tr>
+                <td width="100px" height="30px"><input type="text" value="" name="" id="" class="t3" style="width:100px;height:30px;"/></td>
+                <td width="100px" height="30px"><input type="text" value="" name="" id="" class="t3" style="width:100px;height:30px;"/></td>
+                <td width="100px" height="30px"><input type="text" value="" name="" id="" class="t3" style="width:100px;height:30px;"/></td>
+                <td width="100px" height="30px"><input type="text" value="" name="" id="" class="t3" style="width:100px;height:30px;"/></td>
+                <td width="100px" height="30px"><input type="text" value="" name="" id="" class="t3" style="width:100px;height:30px;"/></td>
+                <td width="100px" height="30px"><input type="text" value="" name="" id="" class="t3" style="width:100px;height:30px;"/></td>
+                <td width="100px" height="30px"><input type="text" value="" name="" id="" class="t3" style="width:100px;height:30px;"/></td>
+                <td width="100px" height="30px"><input type="text" value="" name="" id="" class="t3" style="width:100px;height:30px;"/></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#dpLTE',
+        methods : {
+            doPrint: function(){
+                var newstr = document.getElementsByClassName('col-md-12')[0].innerHTML;
+                document.body.innerHTML = newstr;
+                window.print();
+                // 重新加载页面，以刷新数据
+                window.location.reload();
+            },
+            preview:function(){//第二种打印方式
+                var sprnhtml=$('.page').html();   //获取区域内容
+                var selfhtml=$('body').html(); //获取当前页的html
+                $('body').html(sprnhtml);
+                window.print();
+                $('body').html(selfhtml);
+            }
+        }
+    });
+</script>
+@}
