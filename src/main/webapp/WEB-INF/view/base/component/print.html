@@ -1,0 +1,39 @@
+@layout("../../system/layout.html", {title: "打印组件"}){
+<div class="panel panel-default" style="padding-bottom: 10px;margin-top:10px;">
+    <div class="panel-heading">打印示例</div>
+    <div>
+        <h3>&nbsp;&nbsp;&nbsp;基础示例</h3>
+        <div class="row"><a class="btn btn-default" \@click="doPrint"><i class="fa fa-file"></i>&nbsp;打印</a>
+            <strong style="color: #FF3300;">打印内容为设定的div中的内容</strong>
+            <div class="col-md-12">
+                <pre>
+“你看这个面它又长又宽，就像这个碗它又大又圆”。一直被网友们调侃的freestyle梗，没想到真的被吴亦凡写成了自黑的歌——《大碗宽面》。
+此微博发布的不到一天的时间里，转发数量超过36万。本文作者用Python爬取其中的10万条数据，告诉你大家是怎么看待《大碗宽面》这首歌的呢？这些惊人的转发数据里，是否有假流量呢？
+按照惯例，我们把转发中所带的评论制作成了词云图。
+可以看到：
+1. 正如微博配词所说“大碗宽面能让你开心，这确是我本意”，大家对于这首自嘲歌的最大反应是“哈哈哈”；
+2. 大家觉得这首歌很好听、有趣、有意思，觉得吴亦凡很可爱；
+3. 有人第一次对吴亦凡说了“对不起”，对吴亦凡开始有Respect，开始路转粉；
+4. 还有人拿蔡徐坤出来比较，拿律师函出来调侃。
+看来，在娱乐圈里生存，开阔的心胸和善于自嘲的态度是很必要的。眼看着吴亦凡被万千吐槽，今天还能收获掌声一片，从一开始的流量明星转变为一个具有真流量的谐星。
+所以说，千万别虚荣心作祟，娱乐圈嘛，快乐才是真谛，何必针锋相对。有时候不缺硬刚的勇气，缺的是娱乐的智慧。人生如戏开个玩笑，听完歌就洗洗睡。
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#dpLTE',
+        methods : {
+            doPrint: function(){
+                var newstr = document.getElementsByClassName('col-md-12')[0].innerHTML;
+                document.body.innerHTML = newstr;
+                window.print();
+                // 重新加载页面，以刷新数据
+                window.location.reload();
+            }
+        }
+    });
+</script>
+@}

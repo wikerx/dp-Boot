@@ -46,6 +46,7 @@
         <kaptcha-version>2.3.2</kaptcha-version>
         <jwt-version>0.9.0</jwt-version>
         <common-version>3.8.1</common-version>
+        <poi-vesion>3.16</poi-vesion>
     </properties>
 
     <dependencies>
@@ -230,7 +231,16 @@
             <artifactId>commons-lang3</artifactId>
             <version>${common-version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi-vesion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi-vesion}</version>
+        </dependency>
     </dependencies>
 
     <build>

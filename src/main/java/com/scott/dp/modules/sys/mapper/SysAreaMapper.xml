@@ -126,4 +126,9 @@
 		</foreach>
 	</delete>
 
+	<!--获取所有数据结果集-->
+	<select id="getAllAreas" resultType="com.scott.dp.modules.sys.entity.SysAreaEntity">
+		SELECT * FROM sys_area
+	</select>
+
 </mapper>

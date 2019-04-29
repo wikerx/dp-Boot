@@ -1,0 +1,89 @@
+@layout("../../system/layout.html", {title: "下载组件"}){
+<div class="panel panel-default" style="padding-bottom: 10px;margin-top:10px;">
+    <div class="panel-heading">下载示例</div>
+    <div>
+        <h3>&nbsp;&nbsp;&nbsp;基础示例</h3>
+        <div class="row">
+            <a class="btn btn-default" \@click="downPage"><i class="fa fa-Example of download"></i>&nbsp;下载页面表格数据</a>
+            <a class="btn btn-default" \@click="downAll"><i class="fa fa-Example of download"></i>&nbsp;下载所有表格数据</a>
+            <a class="btn btn-default" \@click="downOneFileA"><i class="fa fa-Example of download"></i>&nbsp;单文件下载_A标签</a>
+            <a class="btn btn-default" \@click="downMoreFile"><i class="fa fa-Example of download"></i>&nbsp;多文件下载_IO</a>
+
+            <div class="col-md-12">
+            <pre>
+                A标签下载的缺陷在于：下载图片默认是打开，需要右键保存作为下载，txt等部分基础类型，默认都是直接打开的，而且容易乱码；
+                同时容易暴露服务器位置，虽然可以通过隐藏式路径指向下载但是同样容易暴露服务器，
+                不安全，不建议使用，除非没有安全考虑才可以使用。
+                下载页面表格数据：下载当前table样式中的表格数据
+                下载所有表格数据：下载数据库中数据导出为excel
+                单文件下载：文件下载（根据地址指向下载）
+                多文件下载：多个文件打成压缩包之后在下载（一样的，打压缩包的方式自己百度，不再写了）
+            </pre>
+                <table id="tableExcel" width="100%" border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td colspan="5" align="center">html 表格导出道Excel</td>
+                    </tr>
+                    <tr>
+                        <td>列标题1</td>
+                        <td>列标题2</td>
+                        <td>类标题3</td>
+                        <td>列标题4</td>
+                        <td>列标题5</td>
+                    </tr>
+                    <tr>
+                        <td>aaa</td>
+                        <td>bbb</td>
+                        <td>ccc</td>
+                        <td>ddd</td>
+                        <td>eee</td>
+                    </tr>
+                    <tr>
+                        <td>AAA</td>
+                        <td>BBB</td>
+                        <td>CCC</td>
+                        <td>DDD</td>
+                        <td>EEE</td>
+                    </tr>
+                    <tr>
+                        <td>FFF</td>
+                        <td>GGG</td>
+                        <td>HHH</td>
+                        <td>III</td>
+                        <td>JJJ</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/js/file/jquery-2.0.3.min.js"></script>
+<script src="${ctxPath}/static/js/file/tableExport.min.js"></script>
+<script src="${ctxPath}/static/js/file/xlsx.core.min.js"></script>
+<script src="${ctxPath}/static/plugins/layer/layer.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#dpLTE',
+        methods : {
+            downPage: function(){
+                $("#tableExcel").tableExport({
+                    type:"xlsx",
+                    escape:"false",
+                });
+            },
+            downAll: function(){
+                var url = "${ctxPath}/upFile/downFile";
+                window.location.href = url;
+
+            },
+            downOneFileA: function(){
+                window.location.href = "${ctxPath}/static/upload/file/win-cmd.xls";//本窗口下载
+                //window.open(url, '_blank'); // 新开窗口下载
+            },
+            downMoreFile: function(){
+                layer.msg("将多个文件压缩为一个压缩包，在下载，类似单个文件下载");
+            }
+        }
+    });
+</script>
+@}

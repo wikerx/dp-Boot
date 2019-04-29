@@ -106,4 +106,11 @@ public class SysAreaServiceImpl implements SysAreaService {
 		return CommonUtils.msg(areas);
 	}
 
+	/**
+	 * 查询所有数据结果集
+	 */
+	public List<SysAreaEntity> getAllAreas(){
+		return sysAreaMapper.getAllAreas();
+	}
+
 }

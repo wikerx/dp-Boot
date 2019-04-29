@@ -53,5 +53,10 @@ public interface SysAreaService {
 	 * @return
 	 */
 	R batchRemoveArea(Long[] id);
-	
+
+
+	/**
+	 * 查询所有数据结果集
+	 */
+	List<SysAreaEntity> getAllAreas();
 }
