@@ -38,6 +38,9 @@
 - 开关组件：switchery
 - 富文本组件：wangEditor
 - 表单校验：validator
+- 图表组件：Highchars
+- 打印组件：doPrint
+- 文件下载：页面数据、后台数据
 
 ### 命名规范（参考阿里巴巴Java开发手册）
 -  获取单个对象的方法用 get 做前缀
@@ -53,3 +56,25 @@
 
 ### 结构设计图
 ![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/SpringBootFream.jpg)
+
+### 项目式样图
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/chart1.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/chart2.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/chart3.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/chart4.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/chart5.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/m1.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/m2.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/m3.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b1.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b2.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b3.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b4.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b5.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b6.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b7.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b8.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b9.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b10.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/b11.png)
+![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/print.png)
