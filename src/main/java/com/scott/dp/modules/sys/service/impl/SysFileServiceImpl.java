@@ -10,6 +10,7 @@ import com.scott.dp.common.utils.CommonUtils;
 import com.scott.dp.modules.sys.dao.SysFileMapper;
 import com.scott.dp.modules.sys.entity.SysFileEntity;
 import com.scott.dp.modules.sys.service.SysFileService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -79,7 +80,8 @@ public class SysFileServiceImpl implements SysFileService {
 		int count = sysFileMapper.batchRemove(id);
 		return CommonUtils.msg(id, count);
 	}
-	public List<SysFileEntity> getFileIds(Long[] ids){
+
+	public List<SysFileEntity> getFileIds(@Param("ids") Long[] ids){
 		return sysFileMapper.getFileIds(ids);
 	}
 }

@@ -94,11 +94,8 @@
 		</foreach>
 	</delete>
 
-	<select id="getFileIds" resultMap="com.scott.dp.modules.sys.entity.SysFileEntity">
-		select * from sys_file where id in
-		<foreach collection="ids" item="id" open="(" close=")" separator=",">
-			#{id}
-		</foreach>
+	<select id="getFileIds" resultType="com.scott.dp.modules.sys.entity.SysFileEntity">
+		select * from sys_file where file_id in (#{ids})
 	</select>
 
 </mapper>

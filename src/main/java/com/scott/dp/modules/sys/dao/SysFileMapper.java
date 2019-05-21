@@ -2,6 +2,7 @@ package com.scott.dp.modules.sys.dao;
 
 import com.scott.dp.modules.sys.entity.SysFileEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -12,5 +13,5 @@ import java.util.List;
  */
 @Mapper
 public interface SysFileMapper extends BaseMapper<SysFileEntity> {
-	List<SysFileEntity> getFileIds(Long[] ids);
+	List<SysFileEntity> getFileIds(@Param("ids") Long[] ids);
 }

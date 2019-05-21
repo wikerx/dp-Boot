@@ -3,6 +3,7 @@ package com.scott.dp.modules.sys.service;
 import com.scott.dp.common.entity.Page;
 import com.scott.dp.common.entity.R;
 import com.scott.dp.modules.sys.entity.SysFileEntity;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -49,5 +50,5 @@ public interface SysFileService {
      */
 	R batchRemove(Long[] id);
 
-    List<SysFileEntity> getFileIds(Long[] ids);
+    List<SysFileEntity> getFileIds(@Param("ids") Long[] ids);
 }
