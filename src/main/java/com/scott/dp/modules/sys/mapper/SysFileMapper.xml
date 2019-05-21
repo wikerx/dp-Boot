@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.scott.dp.modules.sys.dao.SysFileMapper">
+	
+	<select id="listForPage" resultType="com.scott.dp.modules.sys.entity.SysFileEntity">
+		SELECT
+			`file_id`, 
+			`file_name`, 
+			`file_add`, 
+			`file_up_id`, 
+			`remark`, 
+			`up_time`, 
+			`file_type`, 
+			`file_new_name`
+		FROM
+			sys_file
+		<where>
+			<if test="fileName != null">
+				AND file_name = #{fileName}
+			</if>
+		</where>
+		ORDER BY
+			file_id DESC
+	</select>
+	
+	<insert id="save">
+		INSERT INTO sys_file (
+			`file_name`, 
+			`file_add`, 
+			`file_up_id`, 
+			`remark`, 
+			`up_time`, 
+			`file_type`, 
+			`file_new_name`
+		)
+		VALUES (
+			#{fileName}, 
+			#{fileAdd}, 
+			#{fileUpId}, 
+			#{remark}, 
+			#{upTime}, 
+			#{fileType}, 
+			#{fileNewName}
+		)
+	</insert>
+	
+	<select id="getObjectById" resultType="com.scott.dp.modules.sys.entity.SysFileEntity">
+		SELECT
+			`file_id`, 
+			`file_name`, 
+			`file_add`, 
+			`file_up_id`, 
+			`remark`, 
+			`up_time`, 
+			`file_type`, 
+			`file_new_name`
+		FROM
+			sys_file
+		<where>
+            			<if test="fileName != null">file_name = #{fileName}, </if>
+            			<if test="fileAdd != null">file_add = #{fileAdd}, </if>
+            			<if test="fileUpId != null">file_up_id = #{fileUpId}, </if>
+            			<if test="remark != null">remark = #{remark}, </if>
+            			<if test="upTime != null">up_time = #{upTime}, </if>
+            			<if test="fileType != null">file_type = #{fileType}, </if>
+            			<if test="fileNewName != null">file_new_name = #{fileNewName}</if>
+		</where>
+	</select>
+	
+	<update id="update">
+		UPDATE sys_file
+	 	<set>
+			<if test="fileName != null">`file_name` = #{fileName}, </if>
+			<if test="fileAdd != null">`file_add` = #{fileAdd}, </if>
+			<if test="fileUpId != null">`file_up_id` = #{fileUpId}, </if>
+			<if test="remark != null">`remark` = #{remark}, </if>
+			<if test="upTime != null">`up_time` = #{upTime}, </if>
+			<if test="fileType != null">`file_type` = #{fileType}, </if>
+			<if test="fileNewName != null">`file_new_name` = #{fileNewName}</if>
+		</set>
+		WHERE
+			file_id = #{fileId}
+	</update>
+	
+	<delete id="batchRemove">
+		DELETE
+		FROM
+			sys_file
+		WHERE
+			file_id IN
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<select id="getFileIds" resultMap="com.scott.dp.modules.sys.entity.SysFileEntity">
+		select * from sys_file where id in
+		<foreach collection="ids" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</select>
+
+</mapper>
