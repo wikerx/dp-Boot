@@ -11,6 +11,8 @@ import com.scott.dp.modules.sys.entity.ISysFileEntity;
 import com.scott.dp.modules.sys.entity.SysFileEntity;
 import com.scott.dp.modules.sys.service.ISysFileService;
 import com.scott.dp.modules.sys.service.SysFileService;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +41,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/sys/file")
 public class SysFileController extends AbstractController{
+    static Log log = LogFactory.getLog(SysFileController.class);
     @Autowired
     ISysFileService fileService;
     @Autowired
@@ -75,7 +78,7 @@ public class SysFileController extends AbstractController{
                     String myFileName = file.getOriginalFilename();
                     //如果名称不为“”,说明该文件存在，否则说明该文件不存在
                     if (myFileName.trim() != "") {
-                        System.out.println(myFileName);
+                        log.info(myFileName);
                         //重命名上传后的文件名
                         String fileName = String.valueOf(new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss_SSS").format(new Date())+String.valueOf((int)(1+Math.random()*999999)) +"_"+ file.getOriginalFilename());
                         try {
@@ -91,7 +94,7 @@ public class SysFileController extends AbstractController{
                         fileEntity.setFile_type(1);
                         fileEntity.setFile_new_name(fileName.split("[.]")[0]);
                         count = fileService.insertFileMessage(fileEntity);//录入信息
-                        System.out.println(filePath + fileName);
+                        log.info(filePath + fileName);
                     }
                 }
             }
@@ -116,7 +119,7 @@ public class SysFileController extends AbstractController{
             if (!upload.exists()) {
                 upload.mkdirs();
             }
-            System.out.println("upload path:" + upload.getAbsolutePath());
+            log.info("upload path:" + upload.getAbsolutePath());
             filePath = upload.getAbsolutePath() + "/";
         } catch (Exception e) {
         }
@@ -136,7 +139,7 @@ public class SysFileController extends AbstractController{
             if (!upload.exists()) {
                 upload.mkdirs();
             }
-            System.out.println("upload path:" + upload.getAbsolutePath());
+            log.info("upload path:" + upload.getAbsolutePath());
             filePath = upload.getAbsolutePath() + "/";
         } catch (Exception e) {
         }

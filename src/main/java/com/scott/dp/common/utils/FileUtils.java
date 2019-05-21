@@ -1,4 +1,7 @@
 package com.scott.dp.common.utils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -12,6 +15,7 @@ import java.util.LinkedList;
  * @Status : 编写
  **/
 public class FileUtils {
+    static Log log = LogFactory.getLog(FileUtils.class);
     private static ArrayList<Object> scanFiles = new ArrayList<Object>();
 
     /**linkedList实现**/
@@ -188,7 +192,7 @@ public class FileUtils {
     public static boolean delete(String fileName) {
         File file = new File(fileName);
         if (!file.exists()) {
-            System.out.println("删除文件失败:" + fileName + "不存在！");
+            log.info("删除文件失败:" + fileName + "不存在！");
             return false;
         } else {
             if (file.isFile())
@@ -210,14 +214,14 @@ public class FileUtils {
         // 如果文件路径所对应的文件存在，并且是一个文件，则直接删除
         if (file.exists() && file.isFile()) {
             if (file.delete()) {
-                System.out.println("删除单个文件" + fileName + "成功！");
+                log.info("删除单个文件" + fileName + "成功！");
                 return true;
             } else {
-                System.out.println("删除单个文件" + fileName + "失败！");
+                log.info("删除单个文件" + fileName + "失败！");
                 return false;
             }
         } else {
-            System.out.println("删除单个文件失败：" + fileName + "不存在！");
+            log.info("删除单个文件失败：" + fileName + "不存在！");
             return false;
         }
     }
@@ -237,7 +241,7 @@ public class FileUtils {
         File dirFile = new File(dir);
         // 如果dir对应的文件不存在，或者不是一个目录，则退出
         if ((!dirFile.exists()) || (!dirFile.isDirectory())) {
-            System.out.println("删除目录失败：" + dir + "不存在！");
+            log.info("删除目录失败：" + dir + "不存在！");
             return false;
         }
         boolean flag = true;
@@ -259,12 +263,12 @@ public class FileUtils {
             }
         }
         if (!flag) {
-            System.out.println("删除目录失败！");
+            log.info("删除目录失败！");
             return false;
         }
         // 删除当前目录
         if (dirFile.delete()) {
-            System.out.println("删除目录" + dir + "成功！");
+            log.info("删除目录" + dir + "成功！");
             return true;
         } else {
             return false;
@@ -275,10 +279,10 @@ public class FileUtils {
 //        ArrayList<Object> list = FileUtils.scanFilesWithRecursion("E:\\work\\idea\\dp-BOOT\\doc");
 //        ArrayList<Object> list = FileUtils.scanFilesWithNoRecursion("E:\\work\\idea\\dp-BOOT\\doc");
 //        for(Object o:list){
-//            System.out.println(o);
+//            log.info(o);
 //        }
-//        System.out.println(getFileType("a.jpg"));
-        System.out.println(fileType("a.jpg"));
+//        log.info(getFileType("a.jpg"));
+        log.info(fileType("a.jpg"));
     }
 
 
