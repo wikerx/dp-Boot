@@ -591,7 +591,7 @@ public class RedisStringUtil {
 	    
 	/**  
 	 * 批量删除key及值  
-	 * @param key  
+	 * @param keys
 	 * @return  
 	 */    
 	public static boolean delete(String[] keys){    
@@ -600,7 +600,7 @@ public class RedisStringUtil {
 	    
 	/**  
 	 * 批量删除key及值  
-	 * @param key  
+	 * @param keys
 	 * @return  
 	 */    
 	public static boolean remove(String[] keys){    

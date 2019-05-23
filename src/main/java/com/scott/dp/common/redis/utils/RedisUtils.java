@@ -1,6 +1,7 @@
 package com.scott.dp.common.redis.utils;
 import java.util.ResourceBundle;
 
+import org.springframework.beans.factory.annotation.Value;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -13,7 +14,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * @Company: 自贸通
  */
 public class RedisUtils {
-	
+
 	static ResourceBundle resource = ResourceBundle.getBundle("config");//配置文件自己写，spring中都在配置文件yml里面，自己改一下就好了
 	//服务器IP地址
     private static String ADDR = resource.getString("redis.ip");

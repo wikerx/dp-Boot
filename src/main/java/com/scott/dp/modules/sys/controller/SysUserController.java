@@ -4,11 +4,14 @@ import java.util.List;
 import java.util.Map;
 
 import com.scott.dp.common.annotation.SysLog;
+import com.scott.dp.common.redis.utils.RedisStringUtil;
 import com.scott.dp.common.utils.CommonUtils;
 import com.scott.dp.common.utils.Ognl;
 import com.scott.dp.modules.message.phone.SmsUtil;
 import com.scott.dp.modules.sys.entity.SysUserEntity;
 import com.scott.dp.modules.sys.service.SysUserService;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +28,7 @@ import com.scott.dp.common.entity.R;
 @RestController
 @RequestMapping("/sys/user")
 public class SysUserController extends AbstractController {
-	
+	static Log log = LogFactory.getLog(SysUserController.class);
 	@Autowired
 	private SysUserService sysUserService;
 	
@@ -47,6 +50,7 @@ public class SysUserController extends AbstractController {
 				params.put("userIdCreate", getUserId());//查询所有，可跨越部门
 			}
 		}
+//		log.info(RedisStringUtil.get("name"));//redis应用实例
 		return sysUserService.listUser(params);
 	}
 

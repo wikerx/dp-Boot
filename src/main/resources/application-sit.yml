@@ -37,11 +37,11 @@ spring:
           config:
             multi-statement-allow: true
   reids:
-    host: 127.0.0.1
+    host: 192.168.0.164
     port: 6379
-    password:
+    password: zaq123ZMT
     database: 0
-    timeout: 1000
+    timeout: 10000
     jedis:
       pool:
         max-active: 6000
