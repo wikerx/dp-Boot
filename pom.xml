@@ -47,7 +47,7 @@
         <jwt-version>0.9.0</jwt-version>
         <common-version>3.8.1</common-version>
         <poi-vesion>3.16</poi-vesion>
-        <mq-version>5.2.0</mq-version>
+        <mq-version>5.15.9</mq-version>
     </properties>
 
     <dependencies>
@@ -242,17 +242,14 @@
             <artifactId>poi-ooxml</artifactId>
             <version>${poi-vesion}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-core -->
-        <!--<dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-core</artifactId>
-            <version>${mq-version}</version>
-        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-all -->
         <dependency>
             <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-pool</artifactId>
+            <artifactId>activemq-all</artifactId>
             <version>${mq-version}</version>
         </dependency>
+
     </dependencies>
 
     <build>
