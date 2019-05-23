@@ -36,15 +36,23 @@ spring:
         wall:
           config:
             multi-statement-allow: true
-  reids:
+  redis:
+#  ip
     host: 192.168.0.164
+#    端口
     port: 6379
+#    密码
     password: zaq123ZMT
+    #默认是索引为0的数据库
     database: 0
+#    超时
     timeout: 10000
     jedis:
       pool:
+#      最大活跃量
         max-active: 6000
+#        最大等待时间
         max-wait: 1000
+#        最小空闲量
         max-idle: 400
 

@@ -7,7 +7,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 /**   
  * @ClassName:  RedisClient   
- * @Description:redis客户端 非集群模式
+ * @Description:redis客户端 非集群模式  不推荐服务使用
  * @author: Mr.薛 
  * @date:   2019年5月15日 下午4:44:17     
  * @Copyright: 2019 

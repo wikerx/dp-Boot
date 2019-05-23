@@ -41,6 +41,7 @@
 - 图表组件：Highchars
 - 打印组件：doPrint
 - 文件下载：页面数据、后台数据
+- 缓存插件：redis
 
 ### 命名规范（参考阿里巴巴Java开发手册）
 -  获取单个对象的方法用 get 做前缀
@@ -53,6 +54,7 @@
 ### 备注
 -  doc:说明文件以及数据库
 - jars-lib:外部引入的jar(暂时没有)
+- redis：参考sysUserControler中分页下面注释的代码，两种写法，如果未配置redis，确使用了redis，默认加载本地redis，且无密码
 
 ### 结构设计图
 ![Image text](https://github.com/18772101110/dp-Boot/blob/master/src/main/webapp/static/upload/file/SpringBootFream.jpg)
