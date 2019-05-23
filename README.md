@@ -1,6 +1,8 @@
 # dp-BOOT(账户:admin/scott/张三/test1/123/scott1   密码:123456)
 基于SpringBoot框架的权限管理系统，支持操作权限和数据权限，后端采用SpringBoot、Mybatis、Shiro，前端采用adminLTE、vue.js、bootstrap-table、tree-grid、layer，对前后端进行封装，可快速完成CRUD的开发，基于项目结构通过代码生成器可生成前端后台部分代码，更加方便地进行二次开发。项目采用Maven分模块构建，方便扩展自定义模块。
 
+## 地址：<A href="https://github.com/18772101110/dp-Boot">https://github.com/18772101110/dp-Boot</A>
+
 ### 项目介绍
 - 一个轻量级的Java快速开发框架，基于SpringBoot开发，能快速开发项目并交付
 - 友好的代码结构及注释，便于阅读及二次开发，命名规范和工程分层规约参考阿里巴巴JAVA开发规范
