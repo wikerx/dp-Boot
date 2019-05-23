@@ -1,4 +1,4 @@
-package com.scott.dp.common.activemq;
+package com.scott.dp.common.utils;
 
 import com.scott.dp.common.utils.Ognl;
 import org.apache.http.HttpEntity;

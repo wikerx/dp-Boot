@@ -25,12 +25,12 @@ public class TestActiveMQ {
     
 	public static void main(String[] args) throws JMSException, InterruptedException {
 		ActiveMessageUtil active = new ActiveMessageUtil();
-		String messageName = "Mr-Xue";
+		String messageName = "redis";
 //		生产
-//		product(messageName, active);
+		product(messageName, active);
 		
 //		消费
-		consume(messageName, active);
+//		consume(messageName, active);
 		
 //		初始化 - 消费 - 推送 用的是http tcp的见后面
 //		consumeN(messageName, active);

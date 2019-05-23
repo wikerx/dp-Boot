@@ -11,6 +11,7 @@ import javax.jms.Queue;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
+import com.scott.dp.common.utils.HttpClientRequest;
 import com.scott.dp.common.utils.JSON;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
@@ -149,8 +150,6 @@ public class ActiveMessageUtil {
      * @param messageName:消息名称
      * @param ms：等待时间 ms
      * @param num 推送次数
-     * @param url 推送地址
-     * @param map 请求参数
 	 * @throws JMSException 
 	 * @throws InterruptedException 
      * */

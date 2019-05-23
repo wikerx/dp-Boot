@@ -51,7 +51,6 @@ public class SendMessageByMq {
 	      * @date 2017-4-11上午11:44:17
 	      * @param sendType
 	      *            发送类型 1发布一对一 ；2订阅一对多
-	      * @param ipport
 	      *            发送ip和端口
 	      * @param modeName
 	      *            模式名称

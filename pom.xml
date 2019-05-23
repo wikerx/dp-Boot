@@ -243,12 +243,16 @@
             <version>${poi-vesion}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-core -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-core</artifactId>
             <version>${mq-version}</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-pool</artifactId>
+            <version>${mq-version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
