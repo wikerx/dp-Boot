@@ -116,7 +116,8 @@
 			user_id_create,
 			org_id,
 			gmt_create,
-			dept_id
+			dept_id,
+			remark
 		)
 		VALUES (
 			#{username},
@@ -127,7 +128,8 @@
 			#{userIdCreate},
 			#{orgId},
 			NOW(),
-			#{deptId}
+			#{deptId},
+			#{remark}
 		)
 	</insert>
 	
