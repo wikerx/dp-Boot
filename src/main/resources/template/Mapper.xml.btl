@@ -10,6 +10,13 @@
 <% } %>
 		FROM
 			${tableName}
+			<where> 1=1
+            			<% for(column in columns!) { %>
+                        <% if(column.columnName != pk.columnName) { %>
+                        			<if test="${column.fieldName} != null  and ${column.fieldName} != ''"> AND ${column.columnName} = #{${column.fieldName}}<% if(!columnLP.last) { %> <% } %></if>
+                        <% } %>
+                        <% } %>
+            	</where>
 		ORDER BY
 			${pk.columnName} DESC
 	</select>
@@ -38,13 +45,6 @@
 <% } %>
 		FROM
 			${tableName}
-		<where>
-			<% for(column in columns!) { %>
-            <% if(column.columnName != pk.columnName) { %>
-            			<if test="${column.fieldName} != null">${column.columnName} = #{${column.fieldName}}<% if(!columnLP.last) { %>, <% } %></if>
-            <% } %>
-            <% } %>
-		</where>
 	</select>
 	
 	<update id="update">

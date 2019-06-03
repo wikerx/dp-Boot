@@ -1,14 +1,14 @@
 package ${package}.modules.${module}.service.impl;
 
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import Page;
-import Query;
-import R;
-import CommonUtils;
+import com.scott.dp.common.constant.SystemConstant;
+import com.scott.dp.common.entity.Page;
+import com.scott.dp.common.entity.Query;
+import com.scott.dp.common.entity.R;
+import com.scott.dp.common.support.properties.JwtProperties;
+import com.scott.dp.common.utils.CommonUtils;
 import ${package}.modules.${module}.entity.${className}Entity;
 import ${package}.modules.${module}.dao.${className}Mapper;
 import ${package}.modules.${module}.service.${className}Service;

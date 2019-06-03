@@ -1,16 +1,15 @@
 package ${package}.modules.${module}.controller;
-
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import SysLog;
-import AbstractController;
-import Page;
-import R;
+import com.scott.dp.modules.sys.controller.AbstractController;
+import com.scott.dp.common.annotation.SysLog;
+import com.scott.dp.common.utils.CommonUtils;
+import com.scott.dp.common.constant.SystemConstant;
+import com.scott.dp.common.entity.Page;
+import com.scott.dp.common.entity.R;
 import ${package}.modules.${module}.entity.${className}Entity;
 import ${package}.modules.${module}.service.${className}Service;
 
