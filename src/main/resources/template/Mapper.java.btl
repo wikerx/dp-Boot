@@ -3,7 +3,6 @@ package ${package}.modules.${module}.dao;
 import org.apache.ibatis.annotations.Mapper;
 import com.scott.dp.modules.sys.dao.BaseMapper;
 import ${package}.modules.${module}.entity.${className}Entity;
-import BaseMapper;
 
 /**
  * ${comments}
