@@ -45,6 +45,8 @@
 <% } %>
 		FROM
 			${tableName}
+			WHERE
+            			${pk.columnName} = #{${pk.fieldName}}
 	</select>
 	
 	<update id="update">

@@ -27,7 +27,7 @@ function getGrid() {
 			{checkbox: true},
 <% for(column in columns!) { %>
     <% if(column.columnName != pk.columnName || pk.extra != 'auto_increment') { %>
-            {field : "${column.fieldName}", title : "${column.columnComment}", width : "100px"},
+            {field : "${column.fieldName}", title : "${column.columnComment}", align:"center",width : "100px"},
     <% } %>
 <% } %>
             {title : "操作", formatter : function(value, row, index) {
