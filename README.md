@@ -54,7 +54,7 @@
 -  修改的方法用 update 做前缀
 
 ### 备注
--  doc:说明文件以及数据库
+- doc:说明文件以及数据库(包括打包jar和打包war的xml，用的时候自己替换，注意tomcat版本适配8.5+，因为springboot版本比较高)，登陆页面样式
 - jars-lib:外部引入的jar(暂时没有)
 - redis：参考sysUserControler中分页下面注释的代码，两种写法，如果未配置redis，却使用了redis，默认加载本地redis，且无密码
 

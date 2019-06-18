@@ -40,3 +40,6 @@ spring:
 mybatis:
   configLocation: classpath:mybatis.xml
   mapper-locations: classpath*:com/scott/dp/**/mapper/*.xml
+
+logging:
+  file: log/claimsAdmin.log

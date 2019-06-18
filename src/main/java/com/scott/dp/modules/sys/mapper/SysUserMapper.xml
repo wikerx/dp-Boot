@@ -34,6 +34,8 @@
 				OR u.email LIKE concat('%',#{username},'%') 
 				OR u.mobile LIKE concat('%',#{username},'%') 
 			</if>
+			<if test="deptId != null and deptId != ''"> AND u.dept_id = #{deptId}  </if>
+			<if test="userId != null and userId != ''"> AND u.user_id = #{userId}  </if>
 		</where>
 		ORDER BY 
 			u.user_id DESC
@@ -61,9 +63,8 @@
 			d.manager_id
 			FROM
 			sys_user u  LEFT JOIN sys_org o ON o.org_id = u.org_id LEFT JOIN sys_department d on d.id = u.dept_id WHERE u.user_id = #{userId}
-		<if test="deptId != null"> AND dept_id = #{deptId}  </if>
-	</select>
 
+	</select>
 
 	<!--查询所有当前人员信息-->
 	<select id="selectAll" resultType="com.scott.dp.modules.sys.entity.SysUserEntity">
