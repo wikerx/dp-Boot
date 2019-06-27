@@ -33,14 +33,14 @@ public class SysUserController extends AbstractController {
 	static Log log = LogFactory.getLog(SysUserController.class);
 	@Autowired
 	private SysUserService sysUserService;
-	@Autowired
-	private StringRedisTemplate stringRedisTemplate;
-
-	@Autowired
-	private RedisTemplate redisTemplate;
-
-	@Autowired
-	private RedisHelperServiceImpl redisHelper;
+//	@Autowired
+//	private StringRedisTemplate stringRedisTemplate;
+//
+//	@Autowired
+//	private RedisTemplate redisTemplate;
+//
+//	@Autowired
+//	private RedisHelperServiceImpl redisHelper;
 	/**
 	 * 用户列表
 	 * @param params

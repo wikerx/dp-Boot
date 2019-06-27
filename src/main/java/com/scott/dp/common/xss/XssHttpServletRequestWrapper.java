@@ -35,7 +35,6 @@ public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
         if(!super.getHeader(HttpHeaders.CONTENT_TYPE).equalsIgnoreCase(MediaType.APPLICATION_JSON_VALUE)){
             return super.getInputStream();
         }
-
         //为空，直接返回
         String json = IOUtils.toString(super.getInputStream(), "utf-8");
         if (StringUtils.isBlank(json)) {

@@ -42,4 +42,4 @@ mybatis:
   mapper-locations: classpath*:com/scott/dp/**/mapper/*.xml
 
 logging:
-  file: log/claimsAdmin.log
+  file: log/scott.log

@@ -1,6 +1,6 @@
 @layout("../../system/layout.html", {title: "${comments}"}){
 <div class="row">
-    <div class="col-md-4 form-inline pull-left">
+    <div class="col-md-8 form-inline pull-left">
         <div class="form-group">
         <% for(column in columns!) { %>
                 <% if(column.columnName != pk.columnName || pk.extra != 'auto_increment') { %>
@@ -8,12 +8,8 @@
                  <% } %>
                 <% } %>
         </div>
-    </div>
-        <div class="col-md-4 form-inline pull-center">
-            <div class="form-group">
                 <a class="btn btn-primary" \@click="load"><i class="fa fa-search"></i>&nbsp;查询</a>
-            </div>
-        </div>
+    </div>
     <div class="col-md-4">
         <div class="btn-toolbar pull-right">
             <div class="btn-group">

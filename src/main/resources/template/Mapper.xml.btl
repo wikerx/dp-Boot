@@ -46,7 +46,7 @@
 		FROM
 			${tableName}
 			WHERE
-            			${pk.columnName} = #{${pk.fieldName}}
+            			${pk.columnName} = #{id}
 	</select>
 	
 	<update id="update">
