@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.scott.dp.modules.doc.dao.DocNoticeMapper">
+	
+	<select id="listForPage" resultType="com.scott.dp.modules.doc.entity.DocNoticeEntity">
+		SELECT a.*,b.username as person
+		FROM
+			doc_notice a left join sys_user b on a.creator = b.user_id
+		<where> 1=1
+			<if test="title != null  and title != ''"> AND a.title = #{title} </if>
+			<if test="creator != null  and creator != ''"> AND a.creator = #{creator} </if>
+			<if test="createTime != null  and createTime != ''"> AND a.create_time = #{createTime} </if>
+			<if test="endTime != null  and endTime != ''"> AND a.end_time = #{endTime} </if>
+			<if test="status != null  and status != ''"> AND a.status = #{status} </if>
+			<if test="intendedFor != null  and intendedFor != ''"> AND a.intended_for = #{intendedFor} </if>
+			<if test="content != null  and content != ''"> AND a.content = #{content}</if>
+			<if test="person != null  and person != ''"> AND b.person = #{person}</if>
+		</where>
+		ORDER BY
+			id DESC
+	</select>
+	
+	<insert id="save">
+		INSERT INTO doc_notice (
+			`title`, 
+			`creator`, 
+			`create_time`, 
+			`end_time`, 
+			`status`, 
+			`intended_for`, 
+			`content`
+		)
+		VALUES (
+			#{title}, 
+			#{creator}, 
+			#{createTime}, 
+			#{endTime}, 
+			#{status}, 
+			#{intendedFor}, 
+			#{content}
+		)
+	</insert>
+	
+	<select id="getObjectById" resultType="com.scott.dp.modules.doc.entity.DocNoticeEntity">
+		SELECT
+			`id`, 
+			`title`, 
+			`creator`, 
+			`create_time`, 
+			`end_time`, 
+			`status`, 
+			`intended_for`, 
+			`content`
+		FROM
+			doc_notice
+			WHERE
+            			id = #{id}
+	</select>
+	
+	<update id="update">
+		UPDATE doc_notice
+	 	<set>
+			<if test="title != null">`title` = #{title}, </if>
+			<if test="creator != null">`creator` = #{creator}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="endTime != null">`end_time` = #{endTime}, </if>
+			<if test="status != null">`status` = #{status}, </if>
+			<if test="intendedFor != null">`intended_for` = #{intendedFor}, </if>
+			<if test="content != null">`content` = #{content}</if>
+		</set>
+		WHERE
+			id = #{id}
+	</update>
+	
+	<delete id="batchRemove">
+		DELETE
+		FROM
+			doc_notice
+		WHERE
+			id IN
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

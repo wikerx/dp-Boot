@@ -1,0 +1,39 @@
+@layout("../../system/layout.html", {title: "InnoDB free: 206848 kB"}){
+<table class="form" id="form">
+    <input type="hidden" class="form-control" placeholder="发布时间" v-model="docArticle.createTime" isvalid="yes" checkexpession="NotNull">
+    <input type="hidden" class="form-control" placeholder="发布人" v-model="docArticle.creator" isvalid="yes" checkexpession="NotNull">
+    <input type="hidden" class="form-control" placeholder="浏览量" v-model="docArticle.clicks" isvalid="yes" checkexpession="NotNull">
+
+    <tr>
+        <td class="formTitle" align="center">
+            文章标题<font face="宋体">*</font>
+        </td>
+        <td class="formValue" colspan="5" align="center">
+            <span type="text" class="form-control" placeholder="文章标题" v-model="docArticle.title" isvalid="yes" checkexpession="NotNull"/>
+        </td>
+        <td class="formTitle" align="center">类目<font face="宋体">*</font></td>
+        <td class="formValue" align="center">
+            <span type="text" class="form-control" placeholder="类目" v-model="docArticle.category" isvalid="yes" checkexpession="NotNull"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle" align="center">标签属性<font face="宋体">*</font></td>
+        <td class="formValue" align="center"><span type="text" class="form-control" placeholder="标签属性" v-model="docArticle.tag" isvalid="yes" checkexpession="NotNull"/></td>
+        <td class="formTitle" align="center">所属分类<font face="宋体">*</font></td>
+        <td class="formValue" align="center">
+            <span type="text" class="form-control" placeholder="所属分类" v-model="docArticle.type" isvalid="yes" checkexpession="NotNull"/>
+        </td>
+        <td class="formTitle" align="center">综合属性<font face="宋体">*</font></td>
+        <td class="formValue" align="center">
+            <span type="text" class="form-control" placeholder="综合属性" v-model="docArticle.attribute" isvalid="yes" checkexpession="NotNull"/>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="8" class="formValue">
+            <textarea  class="form-control" placeholder="内容" v-model="docArticle.content" isvalid="yes" checkexpession="NotNull" rows="20" readonly></textarea>
+        </td>
+    </tr>
+
+</table>
+<script src="${ctxPath}/static/js/doc/arc/edit.js"></script>
+@}

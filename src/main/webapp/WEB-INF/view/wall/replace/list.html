@@ -1,0 +1,38 @@
+@layout("../../system/layout.html", {title: "一键换机"}){
+<div class="panel panel-default" style="padding-bottom: 10px;margin-top:10px;">
+    <div class="panel-heading">一键换机</div>
+    <div>
+        <h3>&nbsp;&nbsp;&nbsp;基础示例</h3>
+            <div class="row">
+                <table class="form" id="form">
+                    <tr align="center">
+                        <td class="formTitle" align="center">源码位置：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="crawlPath" placeholder="源码位置" value="http://192.168.0.55:80/scott" isvalid="yes" checkexpession="NotNull"></td>
+                        <td class="formTitle" align="center">换机位置：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="savePath" placeholder="换机位置" value="http://192.168.0.55/Tomcate8.0/webapp/" isvalid="yes" checkexpession="NotNull"></td>
+                    </tr>
+                    <tr align="center">
+                        <td class="formTitle" align="center">源码服务器账户：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="crawlAccount" placeholder="源码服务器账户" value="root" isvalid="yes" checkexpession="NotNull"></td>
+                        <td class="formTitle" align="center">换机服务器账户：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="saveAccount" placeholder="换机服务器账户" value="root" isvalid="yes" checkexpession="NotNull"></td>
+                    </tr>
+                    <tr align="center">
+                        <td class="formTitle" align="center">源码服务器密码：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="crawlPwd" placeholder="源码服务器密码" value="ftp123456" isvalid="yes" checkexpession="NotNull"></td>
+                        <td class="formTitle" align="center">换机服务器密码：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="savePwd" placeholder="换机服务器密码" value="ftp123456" isvalid="yes" checkexpession="NotNull"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="center"><a v-if="hasPermission('wall:replace:list')" class="btn btn-default" \@click="craw">&nbsp;开始换机</a></td>
+                    </tr>
+                </table>
+                <div class="row">
+                    <span id="outPut"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/js/wall/replace/list.js"></script>
+@}

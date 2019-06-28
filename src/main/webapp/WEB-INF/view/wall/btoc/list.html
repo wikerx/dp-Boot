@@ -1,0 +1,42 @@
+@layout("../../system/layout.html", {title: "备份与恢复"}){
+<div class="panel panel-default" style="padding-bottom: 10px;margin-top:10px;">
+    <div class="panel-heading">备份与恢复</div>
+    <div>
+        <h3>&nbsp;&nbsp;&nbsp;基础示例</h3>
+            <div class="row">
+                <table class="form" id="form">
+                    <tr align="center">
+                        <td class="formTitle" align="center">备份位置：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="crawlPath" placeholder="备份位置" value="E:/scott_back/scott" isvalid="yes" checkexpession="NotNull"></td>
+                        <td class="formTitle" align="center">恢复位置：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="savePath" placeholder="恢复位置" value="E:/scott_reback/scott" isvalid="yes" checkexpession="NotNull"></td>
+                    </tr>
+
+                    <tr align="center">
+                        <td class="formTitle" align="center">备份服务器账户：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="crawlAccount" placeholder="源码服务器账户" value="root" isvalid="yes" checkexpession="NotNull"></td>
+                        <td class="formTitle" align="center">恢复服务器账户：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="saveAccount" placeholder="换机服务器账户" value="root" isvalid="yes" checkexpession="NotNull"></td>
+                    </tr>
+                    <tr align="center">
+                        <td class="formTitle" align="center">备份服务器密码：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="crawlPwd" placeholder="源码服务器密码" value="ftp123456" isvalid="yes" checkexpession="NotNull"></td>
+                        <td class="formTitle" align="center">恢复服务器密码：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="savePwd" placeholder="换机服务器密码" value="ftp123456" isvalid="yes" checkexpession="NotNull"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="center"><a v-if="hasPermission('wall:btoc:list')" class="btn btn-default" \@click="start_back">&nbsp;开始备份</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="center"><a v-if="hasPermission('wall:btoc:list')" class="btn btn-default" \@click="start_reback">&nbsp;开始恢复</a></td>
+                    </tr>
+                </table>
+                <div class="row">
+                    <span id="outPut"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/js/wall/btoc/list.js"></script>
+@}

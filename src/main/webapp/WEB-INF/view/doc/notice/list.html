@@ -1,0 +1,34 @@
+@layout("../../system/layout.html", {title: "InnoDB free: 206848 kB"}){
+<div class="row">
+    <div class="col-md-8 form-inline pull-left">
+        <div class="form-group">
+            <input v-model="title" \@keyup.enter="load" type="text" class="form-control" placeholder="标题" style="width: 80px;" />
+            <input v-model="person" \@keyup.enter="load" type="text" class="form-control" placeholder="发布人" style="width: 80px;" />
+            状态:<select v-model="status" \@keyup.enter="load" class="form-control" style="width: 80px;" >
+                <option value="">全部</option>
+                <option value="0">结束</option>
+                <option value="1">生效</option>
+            </select>
+            适用人群:<select v-model="intendedFor" \@keyup.enter="load" class="form-control" style="width: 80px;" >
+                <option value="">全部</option>
+                <option value="N">互联网用户</option>
+                <option value="Y">内部员工</option>
+            </select>
+        </div>
+        <a class="btn btn-primary" \@click="load"><i class="fa fa-search"></i>&nbsp;查询</a>
+    </div>
+    <div class="col-md-4">
+        <div class="btn-toolbar pull-right">
+            <div class="btn-group">
+                <a v-if="hasPermission('doc:notice:list')" class="btn btn-default" onclick="reload();"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                <a v-if="hasPermission('doc:notice:save')" class="btn btn-default" \@click="save"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                <a v-if="hasPermission('doc:notice:remove')" class="btn btn-default" \@click="remove(true)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <table id="dataGrid"></table>
+</div>
+<script src="${ctxPath}/static/js/doc/notice/list.js"></script>
+@}

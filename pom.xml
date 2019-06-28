@@ -259,6 +259,12 @@
             <artifactId>activemq-all</artifactId>
             <version>${mq-version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>2.2</version>
+        </dependency>
 
     </dependencies>
 

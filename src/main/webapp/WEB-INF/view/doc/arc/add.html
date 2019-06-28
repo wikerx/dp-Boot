@@ -1,0 +1,59 @@
+@layout("../../system/layout.html", {title: "InnoDB free: 206848 kB"}){
+<table class="form" id="form">
+    <tr>
+        <td class="formTitle" align="center">
+            文章标题<font face="宋体">*</font>
+        </td>
+        <td class="formValue" colspan="3" align="center">
+            <input type="text" class="form-control" placeholder="文章标题" v-model="docArticle.title" isvalid="yes" checkexpession="NotNull">
+        </td>
+        <td class="formTitle" align="center">类目<font face="宋体">*</font></td>
+        <td class="formValue" align="center">
+            <select class="form-control" placeholder="类目" v-model="docArticle.category" isvalid="yes" checkexpession="NotNull">
+            <option value="自然">自然</option>
+            <option value="文化">文化</option>
+            <option value="地理">地理</option>
+            <option value="历史">历史</option>
+            <option value="生活">生活</option>
+            <option value="社会">社会</option>
+            <option value="艺术">艺术</option>
+            <option value="人物">人物</option>
+            <option value="经济">经济</option>
+            <option value="科技">科技</option>
+            <option value="体育">体育</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle" align="center">标签属性<font face="宋体">*</font></td>
+        <td class="formValue" align="center"><input type="text" class="form-control" placeholder="标签属性" v-model="docArticle.tag" isvalid="yes" checkexpession="NotNull"></td>
+        <td class="formTitle" align="center">所属分类<font face="宋体">*</font></td>
+        <td class="formValue" align="center">
+            <select class="form-control" placeholder="所属分类" v-model="docArticle.type" isvalid="yes" checkexpession="NotNull">
+                <option value="公益">公益</option>
+                <option value="公司">公司</option>
+                <option value="通告">通告</option>
+                <option value="学习">学习</option>
+            </select>
+        </td>
+        <td class="formTitle" align="center">综合属性<font face="宋体">*</font></td>
+        <td class="formValue" align="center">
+            <select class="form-control" placeholder="综合属性" v-model="docArticle.attribute" isvalid="yes" checkexpession="NotNull">
+                <option value="0" selected>普通</option>
+                <option value="1">小人气</option>
+                <option value="2">人气榜</option>
+                <option value="3">热门聚焦</option>
+            </select>
+        </td>
+    </tr>
+<tr>
+    <td colspan="6" class="formValue">
+        <textarea  class="form-control" placeholder="内容" v-model="docArticle.content" isvalid="yes" checkexpession="NotNull" rows="20"></textarea>
+        <!--<div class="col-md-12" id="editor" placeholder="内容" contenteditable="true" v-html="docArticle.content"></div>-->
+    </td>
+</tr>
+
+</table>
+<script src="${ctxPath}/static/js/doc/arc/add.js"></script>
+
+@}

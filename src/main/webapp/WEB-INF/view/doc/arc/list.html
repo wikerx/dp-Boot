@@ -1,0 +1,42 @@
+@layout("../../system/layout.html", {title: "InnoDB free: 206848 kB"}){
+<div class="row">
+    <div class="col-md-8 form-inline pull-left">
+        <div class="form-group">
+            <input v-model="title" \@keyup.enter="load" type="text" class="form-control" placeholder="文章标题" style="width: 80px;" />
+            <input v-model="creator" \@keyup.enter="load" type="text" class="form-control" placeholder="发布人" style="width: 80px;" />
+            <input v-model="category" \@keyup.enter="load" type="text" class="form-control" placeholder="类目" style="width: 80px;" />
+            状态:<select v-model="status" \@keyup.enter="load" class="form-control" style="width: 80px;" >
+            <option value="">全部</option>
+            <option value="0">待审核</option>
+            <option value="1">开放浏览</option>
+            <option value="2">审核不通过</option>
+            <option value="3">文章下架</option>
+            <option value="4">只读</option>
+        </select>
+            <input v-model="tag" \@keyup.enter="load" type="text" class="form-control" placeholder="标签属性" style="width: 80px;" />
+            <input v-model="type" \@keyup.enter="load" type="text" class="form-control" placeholder="所属分类" style="width: 80px;" />
+            综合属性:<select v-model="attribute" \@keyup.enter="load" class="form-control" style="width: 80px;" >
+            <option value="">全部</option>
+            <option value="0">普通</option>
+            <option value="1">小人气</option>
+            <option value="2">人气榜</option>
+            <option value="3">热门聚焦</option>
+        </select>
+        </div>
+        <a class="btn btn-primary" \@click="load"><i class="fa fa-search"></i>&nbsp;查询</a>
+    </div>
+    <div class="col-md-4">
+        <div class="btn-toolbar pull-right">
+            <div class="btn-group">
+                <a v-if="hasPermission('doc:arc:list')" class="btn btn-default" onclick="reload();"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                <a v-if="hasPermission('doc:arc:save')" class="btn btn-default" \@click="save"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                <a v-if="hasPermission('doc:arc:remove')" class="btn btn-default" \@click="remove(true)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <table id="dataGrid"></table>
+</div>
+<script src="${ctxPath}/static/js/doc/arc/list.js"></script>
+@}

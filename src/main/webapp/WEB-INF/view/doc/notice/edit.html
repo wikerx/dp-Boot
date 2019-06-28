@@ -1,0 +1,44 @@
+@layout("../../system/layout.html", {title: "InnoDB free: 206848 kB"}){
+<table class="form" id="form">
+    <input type="hidden" class="form-control" placeholder="发布者" v-model="docNotice.creator" isvalid="yes" checkexpession="NotNull">
+    <input type="hidden" class="form-control" placeholder="发布时间" v-model="docNotice.createTime" isvalid="yes" checkexpession="NotNull">
+
+    <tr>
+        <td class="formTitle">标题<font face="宋体">*</font></td>
+        <td class="formValue">
+            <input type="text" class="form-control" placeholder="标题" v-model="docNotice.title" isvalid="yes" checkexpession="NotNull">
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">截止时间<font face="宋体">*</font></td>
+        <td class="formValue">
+            <input type="text" class="form-control" placeholder="截止时间" v-model="docNotice.endTime" isvalid="yes" checkexpession="NotNull">
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">状态<font face="宋体">*</font></td>
+        <td class="formValue">
+            <select v-model="docNotice.status" isvalid="yes" checkexpession="NotNull" class="form-control">
+                <option value="0">结束</option>
+                <option value="1" selected>生效</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">适用人群<font face="宋体">*</font></td>
+        <td class="formValue">
+            <select v-model="docNotice.intendedFor" isvalid="yes" checkexpession="NotNull" class="form-control">
+                <option value="N">全网共享</option>
+                <option value="Y" selected>内部共享</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="formTitle">公告内容<font face="宋体">*</font></td>
+        <td class="formValue">
+            <input type="text" class="form-control" placeholder="" v-model="docNotice.content" isvalid="yes" checkexpession="NotNull">
+        </td>
+    </tr>
+</table>
+<script src="${ctxPath}/static/js/doc/notice/edit.js"></script>
+@}

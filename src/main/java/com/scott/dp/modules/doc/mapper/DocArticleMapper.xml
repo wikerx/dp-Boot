@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.scott.dp.modules.doc.dao.DocArticleMapper">
+	
+	<select id="listForPage" resultType="com.scott.dp.modules.doc.entity.DocArticleEntity">
+		SELECT *
+		FROM
+			doc_article
+			<where> 1=1
+					<if test="title != null  and title != ''"> AND title = #{title} </if>
+					<if test="createTime != null  and createTime != ''"> AND create_time = #{createTime} </if>
+					<if test="updateTime != null  and updateTime != ''"> AND update_time = #{updateTime} </if>
+					<if test="creator != null  and creator != ''"> AND creator = #{creator} </if>
+					<if test="category != null  and category != ''"> AND category = #{category} </if>
+					<if test="clicks != null  and clicks != ''"> AND clicks = #{clicks} </if>
+					<if test="status != null  and status != ''"> AND status = #{status} </if>
+					<if test="tag != null  and tag != ''"> AND tag = #{tag} </if>
+					<if test="type != null  and type != ''"> AND type = #{type} </if>
+					<if test="attribute != null  and attribute != ''"> AND attribute = #{attribute} </if>
+					<if test="content != null  and content != ''"> AND content = #{content}</if>
+			</where>
+		ORDER BY
+			id DESC
+	</select>
+	
+	<insert id="save">
+		INSERT INTO doc_article (
+			`title`, 
+			`create_time`, 
+			`update_time`, 
+			`creator`, 
+			`category`, 
+			`clicks`, 
+			`status`, 
+			`tag`, 
+			`type`, 
+			`attribute`, 
+			`content`
+		)
+		VALUES (
+			#{title}, 
+			#{createTime}, 
+			#{updateTime}, 
+			#{creator}, 
+			#{category}, 
+			#{clicks}, 
+			#{status}, 
+			#{tag}, 
+			#{type}, 
+			#{attribute}, 
+			#{content}
+		)
+	</insert>
+	
+	<select id="getObjectById" resultType="com.scott.dp.modules.doc.entity.DocArticleEntity">
+		SELECT
+			`id`, 
+			`title`, 
+			`create_time`, 
+			`update_time`, 
+			`creator`, 
+			`category`, 
+			`clicks`, 
+			`status`, 
+			`tag`, 
+			`type`, 
+			`attribute`, 
+			`content`
+		FROM
+			doc_article
+			WHERE
+            			id = #{id}
+	</select>
+	
+	<update id="update">
+		UPDATE doc_article
+	 	<set>
+			<if test="title != null">`title` = #{title}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="updateTime != null">`update_time` = #{updateTime}, </if>
+			<if test="creator != null">`creator` = #{creator}, </if>
+			<if test="category != null">`category` = #{category}, </if>
+			<if test="clicks != null">`clicks` = #{clicks}, </if>
+			<if test="status != null">`status` = #{status}, </if>
+			<if test="tag != null">`tag` = #{tag}, </if>
+			<if test="type != null">`type` = #{type}, </if>
+			<if test="attribute != null">`attribute` = #{attribute}, </if>
+			<if test="content != null">`content` = #{content}</if>
+		</set>
+		WHERE
+			id = #{id}
+	</update>
+	
+	<delete id="batchRemove">
+		DELETE
+		FROM
+			doc_article
+		WHERE
+			id IN
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

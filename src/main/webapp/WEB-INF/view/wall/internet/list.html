@@ -1,0 +1,36 @@
+@layout("../../system/layout.html", {title: "一键爬取"}){
+<div class="panel panel-default" style="padding-bottom: 10px;margin-top:10px;">
+    <div class="panel-heading">Java爬虫</div>
+    <div>
+        <h3>&nbsp;&nbsp;&nbsp;基础示例</h3>
+            <div class="row">
+                <table class="form" id="form">
+                    <tr align="center">
+                        <td class="formTitle" align="center">爬取位置：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="crawlPath" placeholder="爬取地址" value="http://tu.duowan.com/m/bxgif" isvalid="yes" checkexpession="NotNull"></td>
+                        <td class="formTitle" align="center">存放路径：</td>
+                        <td class="formValue" align="center"><input type="text" class="form-control" id="savePath" placeholder="存放路径" value="E:/craw/" isvalid="yes" checkexpession="NotNull"></td>
+                        <td class="formTitle" align="center">爬取类型：</td>
+                        <td class="formValue" align="center">
+                            <input type="checkbox" name="ck" value="1" v-model="checkList"/> 站点
+                            <input type="checkbox" name="ck" value="2" v-model="checkList"/> 网页
+                            <input type="checkbox" name="ck" value="3" v-model="checkList"/> 图片
+                            <input type="checkbox" name="ck" value="4" v-model="checkList"/> 链接
+                            <input type="checkbox" name="ck" value="5" v-model="checkList"/> Js
+                            <input type="checkbox" name="ck" value="6" v-model="checkList"/> Css
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" align="center"><a v-if="hasPermission('wall:internet:list')" class="btn btn-default" \@click="craw"><i
+                                class="fa fa-download"></i>&nbsp;开始爬取</a></td>
+                    </tr>
+                </table>
+                <div class="row">
+                    <span id="outPut"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/js/wall/internet/list.js"></script>
+@}
