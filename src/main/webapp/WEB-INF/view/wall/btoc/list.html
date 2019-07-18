@@ -25,10 +25,11 @@
                         <td class="formValue" align="center"><input type="text" class="form-control" id="savePwd" placeholder="换机服务器密码" value="ftp123456" isvalid="yes" checkexpession="NotNull"></td>
                     </tr>
                     <tr>
-                        <td colspan="4" align="center"><a v-if="hasPermission('wall:btoc:list')" class="btn btn-default" \@click="start_back">&nbsp;开始备份</a></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" align="center"><a v-if="hasPermission('wall:btoc:list')" class="btn btn-default" \@click="start_reback">&nbsp;开始恢复</a></td>
+                        <td colspan="4" align="center">
+                            <a v-if="hasPermission('wall:btoc:list')" class="btn btn-default" \@click="start_back">&nbsp;开始备份</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a v-if="hasPermission('wall:btoc:list')" class="btn btn-default" \@click="start_reback">&nbsp;开始恢复</a>
+                        </td>
                     </tr>
                 </table>
                 <div class="row">

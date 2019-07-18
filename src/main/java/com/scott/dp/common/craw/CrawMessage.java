@@ -16,16 +16,16 @@ public class CrawMessage {
 
     public static void main(String[] args) {
     String savepath = "E:/craw/";
-    String url = "";
+    String url = "https://www.baidu.com";
 //            文件夹结构搭建
         FileUtilsForCraw.createSubordinate(savepath);
         downList.addAll(CrawHtml.crawHtml(url,savepath));
-        downList.addAll(CrawImg.carwImg("http://tu.duowan.com/m/bxgif",savepath));
-        downList.addAll(CrawJs.carwJs("http://tu.duowan.com/m/bxgif",savepath));
-        downList.addAll(CrawCss.carwCss("http://tu.duowan.com/m/bxgif",savepath));
-        downList.addAll(CrawLink.carwLink("http://tu.duowan.com/m/bxgif",savepath));
+        downList.addAll(CrawImg.carwImg(url,savepath));
+        downList.addAll(CrawJs.carwJs(url,savepath));
+        downList.addAll(CrawCss.carwCss(url,savepath));
+        downList.addAll(CrawLink.carwLink(url,savepath));
         for (String str:downList) {
-            System.out.println("++++++++++===:"+str);
+            System.out.println("=============:"+str);
         }
     }
 

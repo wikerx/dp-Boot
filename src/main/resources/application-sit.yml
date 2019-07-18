@@ -8,9 +8,9 @@ spring:
         username: root
         password: test
       slave-data-source:  #从库数据源
-        url: jdbc:mysql://127.0.0.1:3306/dp-boot?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+        url: jdbc:mysql://192.168.0.131:3306/dp_back?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
         username: root
-        password: test
+        password: root
       initial-size: 10
       max-active: 100
       min-idle: 10
