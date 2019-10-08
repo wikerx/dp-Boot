@@ -3,39 +3,39 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
     druid:
-      master-data-source:  #主库数据源
+      master-data-source:
         url: jdbc:mysql://127.0.0.1:3306/dp-boot?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
         username: root
         password: test
-      slave-data-source:  #从库数据源
-        url: jdbc:mysql://192.168.0.131:3306/dp_back?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
-        username: root
-        password: root
-      initial-size: 10
-      max-active: 100
-      min-idle: 10
-      max-wait: 60000
-      pool-prepared-statements: true
-      max-pool-prepared-statement-per-connection-size: 20
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
-      validation-query: SELECT 1 FROM DUAL
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      stat-view-servlet:
-        enabled: true
-        url-pattern: /druid/*
-        #login-username: admin
-        #login-password: admin
-      filter:
-        stat:
-          log-slow-sql: true
-          slow-sql-millis: 1000
-          merge-sql: true
-        wall:
-          config:
-            multi-statement-allow: true
+      # slave-data-source:
+      #   url: jdbc:mysql://127.0.0.1:3306/dp-boot?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+      #   username: root
+      #   password: test
+        initial-size: 10
+        max-active: 100
+        min-idle: 10
+        max-wait: 60000
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 20
+        time-between-eviction-runs-millis: 300000
+        min-evictable-idle-time-millis: 1800000
+        validation-query: SELECT 1 FROM DUAL
+        test-while-idle: true
+        test-on-borrow: true
+        test-on-return: false
+        stat-view-servlet:
+          enabled: true
+          url-pattern: /druid/*
+          #login-username: admin
+          #login-password: admin
+        filter:
+          stat:
+            log-slow-sql: true
+            slow-sql-millis: 1000
+            merge-sql: true
+          wall:
+            config:
+              multi-statement-allow: true
   redis:
 #  ip
     host: 192.168.0.164
@@ -56,3 +56,6 @@ spring:
 #        最小空闲量
         max-idle: 400
 
+
+logging:
+  file: log/dp-boot.log
