@@ -4,7 +4,7 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
     druid:
       master-data-source:
-        url: jdbc:mysql://127.0.0.1:3306/dp-boot?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+        url: jdbc:mysql://127.0.0.1:3306/dp-boot?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
         username: root
         password: test
       # slave-data-source:

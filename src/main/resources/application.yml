@@ -10,8 +10,8 @@ server:
 
 # 系统自定义全局配置，可根据实际需要扩展使用
 global:
-  upload-location: E://work//idea//dp-BOOT//target//classes//static// #文件上传目录
-  upload-mapping: /upload/ #文件上传目录访问路径
+#  upload-location: E://work//idea//dp-BOOT//target//classes//static// #文件上传目录
+#  upload-mapping: /upload/ #文件上传目录访问路径
   redis-session-dao: false #是否使用使用redis会话管理器，true为开启，false为关闭
   kaptcha-enable: true #是否开启验证码，true为开启，false为关闭
 
@@ -37,9 +37,13 @@ spring:
       enabled: true
 
 # Mybatis配置
+#mybatis:
+#  configLocation: classpath:mybatis.xml
+#  mapper-locations: classpath*:com/scott/dp/**/mapper/*.xml
+# mybatis 配置文件
 mybatis:
   configLocation: classpath:mybatis.xml
-  mapper-locations: classpath*:com/scott/dp/**/mapper/*.xml
+  mapper-locations: classpath:mappers/*.xml
 
 logging:
   file: log/scott.log

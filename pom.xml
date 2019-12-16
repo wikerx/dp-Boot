@@ -6,10 +6,9 @@
     <groupId>com.scott.dp</groupId>
     <artifactId>dp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <!-- 生成war时放开注释，以及第58行注释
+    <!--<packaging>jar</packaging>-->
+    <!-- 生成war时放开注释，以及第58行注释-->
     <packaging>war</packaging>
-    -->
 
     <name>dp-boot</name>
     <description>dp-lte开发框架SpringBoot版本</description>
@@ -29,7 +28,7 @@
 
         <!-- lib versions -->
         <mybatis-springboot-version>1.3.0</mybatis-springboot-version>
-        <mysql-version>5.1.38</mysql-version>
+        <mysql-version>8.0.11</mysql-version>
         <druid-version>1.1.9</druid-version>
         <commons-lang-version>2.6</commons-lang-version>
         <commons-fileupload-version>1.3.1</commons-fileupload-version>
@@ -268,12 +267,21 @@
 
     </dependencies>
 
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <dependencies>
+                    <!-- spring热部署 -->
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.6.RELEASE</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <fork>true</fork>
                 </configuration>
@@ -286,21 +294,32 @@
                     <skipTests>true</skipTests>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <delimiters>
+                        <delimiter>@</delimiter>
+                    </delimiters>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                </configuration>
+            </plugin>
         </plugins>
         <resources>
             <resource>
-                <directory>src/main/webapp</directory>
+                <directory>src/main/resources</directory>
             </resource>
-            <resource>
+            <!--<resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
-            </resource>
-            <!--<resource>-->
-                <!--<directory>src/main/java</directory>-->
-                <!--<includes>-->
-                    <!--<include>**/*.xml</include>-->
-                <!--</includes>-->
-            <!--</resource>-->
+            </resource>-->
+            <!--<resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>-->
         </resources>
     </build>
 

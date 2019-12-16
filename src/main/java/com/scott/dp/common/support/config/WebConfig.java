@@ -38,23 +38,23 @@ public class WebConfig implements WebMvcConfigurer, ErrorPageRegistrar {
      * 文件上传路径虚拟映射
      * @param registry
      */
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        if (StringUtils.isBlank(globalProperties.getUploadLocation())) {
-            throw new RuntimeException("文件上传路径为空，请先在application.yml中配置{global.upload-location}路径！");
-        }
-        if (!globalProperties.getUploadLocation().endsWith("/")) {
-            throw new RuntimeException("文件上传路径必须以 / 结束！");
-        }
-        File uploadDest = new File(globalProperties.getUploadLocation());
-        if (!uploadDest.exists()) {
-            throw new RuntimeException("配置的文件上传路径不存在，请配置已存在的路径！");
-        }
-        registry.addResourceHandler(globalProperties.getRegisterUploadMapping())
-                .addResourceLocations(globalProperties.getRegisterUploadLocation());
-        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
-    }
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        if (StringUtils.isBlank(globalProperties.getUploadLocation())) {
+//            throw new RuntimeException("文件上传路径为空，请先在application.yml中配置{global.upload-location}路径！");
+//        }
+//        if (!globalProperties.getUploadLocation().endsWith("/")) {
+//            throw new RuntimeException("文件上传路径必须以 / 结束！");
+//        }
+//        File uploadDest = new File(globalProperties.getUploadLocation());
+//        if (!uploadDest.exists()) {
+//            throw new RuntimeException("配置的文件上传路径不存在，请配置已存在的路径！");
+//        }
+//        registry.addResourceHandler(globalProperties.getRegisterUploadMapping())
+//                .addResourceLocations(globalProperties.getRegisterUploadLocation());
+//        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+//        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+//    }
 
     /**
      * 配置拦截器
