@@ -38,7 +38,7 @@
         <aspect-version>1.8.10</aspect-version>
         <shiro-version>1.3.2</shiro-version>
         <quartz-version>2.2.3</quartz-version>
-        <httpclient-version>4.5.3</httpclient-version>
+        <httpclient-version>4.5.13</httpclient-version>
         <beetl-version>1.1.60.RELEASE</beetl-version>
         <swagger-version>2.9.2</swagger-version>
         <servlet-version>3.1.0</servlet-version>
